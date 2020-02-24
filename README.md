@@ -22,5 +22,5 @@ USER STORIES
 - As an authenticated user, I can be able to vote answers offered by tutors
 
 -As an authenticated tutor, I can be able to setup meetings
-- As an authenticated tutor, I can be able to answer questions
-- As an authenticated tutor, I can get paid after offering a service
+-As an authenticated tutor, I can be able to answer questions
+-As an authenticated tutor, I can get paid after offering a service
