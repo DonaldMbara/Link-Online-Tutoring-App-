@@ -26,6 +26,10 @@ before_install:
   - yes | sdkmanager "platforms;android-28"
 
 script:
+  - ./gradlew assembleDebug
+  - ./gradlew connectedAndroidTest
+  - echo "Travis branch is $TRAVIS_BRANCH"
+  - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"
   - ./gradlew connectedAndroidTest coveralls
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
