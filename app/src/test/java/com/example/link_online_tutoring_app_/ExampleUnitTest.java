@@ -2,6 +2,7 @@ package com.example.link_online_tutoring_app_;
 
 import org.junit.Test;
 
+import static android.os.Build.VERSION_CODES.M;
 import static org.junit.Assert.*;
 
 /**
@@ -12,6 +13,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+       // assertEquals("Hello World", "foo " ,name.getText());
     }
 }
