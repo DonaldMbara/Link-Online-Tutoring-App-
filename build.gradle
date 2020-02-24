@@ -6,6 +6,18 @@ buildscript {
         jcenter()
         
     }
+    
+    
+    //added:
+    android {
+
+  buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+    }
+}
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
         
