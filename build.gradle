@@ -1,13 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        
-    }
-    
-    
     //added:
     android {
 
@@ -18,8 +10,17 @@ buildscript {
     }
 }
 
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:3.5.1'
         
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -37,3 +38,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//newly added:
+apply plugin: 'com.github.kt3k.coveralls'
+coveralls {
+    jacocoReportPath = "${buildDir}/reports/coverage/debug/report.xml"
+}
+
+tasks.coveralls {
+    dependsOn 'connectedAndroidTest'
+    onlyIf { System.env.'CI' }
+}
+
+
+
