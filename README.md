@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/DonaldMbara/Link-Online-Tutoring-App-.svg?branch=master)](https://travis-ci.org/DonaldMbara/Link-Online-Tutoring-App-)
 
+[![codecov](https://codecov.io/gh/DonaldMbara/Link-Online-Tutoring-App-/branch/master/graph/badge.svg)](https://codecov.io/gh/DonaldMbara/Link-Online-Tutoring-App-)
+
 # Link-Online-Tutoring-App
 COMS3009A (SOFTWARE DESIGN)
 
