@@ -12,17 +12,3 @@ Our Team Name is: Binary Autocrats.
 
 The Scrum Master: Mongezi @sweetmoh
 
-USER STORIES
-- As a new user/tutor, I can signup to Link
-- As an authenticated user/tutor, I can log in to use Link
-- As an authenticated user, I can request for a tutor
-- As an authenticated user, I can talk to my tutor in private for meet ups
-- As an authenticated user, I can be able to pay a tutor after offering services on the app
-- As an authenticated user, I can be able to filter my course and post questions
-- As an authenticated user, I can be able to vote answers offered by tutors
-
-
-
-- As an authenticated tutor, I can be able to setup meetings
-- As an authenticated tutor, I can be able to answer questions
-- As an authenticated tutor, I can get paid after offering a service
