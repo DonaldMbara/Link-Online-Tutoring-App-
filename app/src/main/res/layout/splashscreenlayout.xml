@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AIblue">
+
+    <ImageView
+        android:id="@+id/LinkHands"
+        android:layout_width="332dp"
+        android:layout_height="262dp"
+        android:src="@mipmap/linkhands3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.232"/>
+
+    <TextView
+        android:id="@+id/WelcomeTextView"
+        android:layout_width="213dp"
+        android:layout_height="58dp"
+        android:fontFamily="sans-serif"
+        android:text="Welcome"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LinkHands"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
+
+    <Button
+        android:id="@+id/ContinueButton"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:background="@drawable/button_borders"
+        android:text="Continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinkHands"
+        app:layout_constraintVertical_bias="0.819" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
