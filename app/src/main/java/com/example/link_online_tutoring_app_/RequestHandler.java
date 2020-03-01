@@ -39,25 +39,28 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     String name=strings[0];
                     String password=strings[1];
                     httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoInput(true);
-                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.setDoInput(true);     //allows us to use input stream
+                    httpURLConnection.setDoOutput(true);    //allows us to use output stream
 
-                    OutputStream outputStream=httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                    OutputStream outputStream=httpURLConnection.getOutputStream(); //used to write to url
+                    BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8")); //used to load text  in buffer and formatting it before being sent
 
                     String data= URLEncoder.encode("studentNo","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&&"+URLEncoder.encode("password","UTF-8")+"="
-                            +URLEncoder.encode(password,"UTF-8");
+                            +URLEncoder.encode(password,"UTF-8");   //note I did not encode '=' and '&&'
+
                     bufferedWriter.write(data); //send data to the php file
                     bufferedWriter.flush();
                     bufferedWriter.close();
 
-                    InputStream inputStream=httpURLConnection.getInputStream();
+                    InputStream inputStream=httpURLConnection.getInputStream(); //used to get read data from the url
                     BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
                     String line="";
                     while ((line=bufferedReader.readLine())!=null){
                         //reading the response we got from the php file
                         result+=line;
                     }
+                    //the response is stored in result
+                    //note that in the case that the response is in jason format you will have to JSON objects
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -70,6 +73,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 break;
 
         }
+        //the result that is returned here is the one in onPostExecute signature
         return result;
     }
 
@@ -77,8 +81,6 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String s) {
         //s is equal to result returned in do in the background method
-       // super.onPostExecute(s);
-        //Toast.makeText(context,s,Toast.LENGTH_LONG).show();
         switch (s){
             case "data matched":
                 //in case login successful
