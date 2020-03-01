@@ -41,6 +41,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="76dp"
         android:text="login"
+        android:background="@drawable/button_borders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,4 +49,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.974" />
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="281dp"
+        android:layout_height="360dp"
+        android:src="@mipmap/logo"
+        android:foregroundGravity="bottom"
+        app:layout_constraintBottom_toTopOf="@+id/NameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
