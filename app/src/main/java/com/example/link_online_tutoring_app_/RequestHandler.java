@@ -34,13 +34,14 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
         switch (task){
             case "login":
                 try {
-                    URL url=new URL("http://localhost/login.php");
+                    URL url=new URL("http://lamp.ms.wits.ac.za/~s1819369/login.php");
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String name=strings[0];
                     String password=strings[1];
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoInput(true);
                     httpURLConnection.setDoOutput(true);
+
                     OutputStream outputStream=httpURLConnection.getOutputStream();
                     BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
 
@@ -77,6 +78,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     protected void onPostExecute(String s) {
         //s is equal to result returned in do in the background method
        // super.onPostExecute(s);
+        //Toast.makeText(context,s,Toast.LENGTH_LONG).show();
         switch (s){
             case "data matched":
                 //in case login successful
