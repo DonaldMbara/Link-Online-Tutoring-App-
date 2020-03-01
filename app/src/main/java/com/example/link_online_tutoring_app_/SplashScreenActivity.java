@@ -15,7 +15,7 @@ public class SplashScreenActivity extends Activity {
 
         setContentView(R.layout.splashscreenlayout);
 
-        final TextView tv = findViewById(R.id.WelcomeTextView);
+        final TextView log = findViewById(R.id.WelcomeTextView);
         final ImageView ivLogo = findViewById(R.id.LinkHands);
         final Button CB = findViewById(R.id.ContinueButton);
         // final ImageView ivArrow = findViewById(R.id.ContinueArrow);

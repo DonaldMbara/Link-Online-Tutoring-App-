@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/AIblue">
+    android:background="@color/AIblue"><![CDATA[
+
+
+
+    app:layout_constraintVertical_bias="0.509" />
+
+
+
+
+    ]]>
 
     <ImageView
         android:id="@+id/LinkHands"
@@ -13,10 +22,10 @@
         android:src="@mipmap/linkhands3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.232"/>
+        app:layout_constraintVertical_bias="0.407" />
 
     <TextView
         android:id="@+id/WelcomeTextView"
@@ -30,10 +39,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/LinkHands"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.509" />
+
+        app:layout_constraintVertical_bias="0.208" />
 
     <Button
         android:id="@+id/ContinueButton"

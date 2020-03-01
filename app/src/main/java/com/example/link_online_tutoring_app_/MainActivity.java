@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText std_number= findViewById(R.id.NameEditText);
         final EditText password= findViewById(R.id.PassEditText);
         final Button login = findViewById(R.id.button);
+        final Button Register = findViewById(R.id.RegisterButton);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
                    new RequestHandler(getApplicationContext(),"login").execute(stdNumber,PassWord);
 
                 }
+            }
+        });
+
+
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
     }
