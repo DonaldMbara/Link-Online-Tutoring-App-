@@ -33,11 +33,10 @@
         app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         app:layout_constraintVertical_bias="1.0" />
-=======
+
         app:layout_constraintVertical_bias="0.509" />
->>>>>>> a77661e0303ec575407c2b49a4c8455e3d7980b8
+
 
     <Button
         android:id="@+id/ContinueButton"
