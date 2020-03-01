@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final EditText std_number= findViewById(R.id.NameEditText);
         final EditText password= findViewById(R.id.PassEditText);
-        Button login = findViewById(R.id.button);
+        final Button login = findViewById(R.id.button);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,29 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(Alltrue){
-                    ContentValues cv = new ContentValues();
-                    cv.put("StudentNumber", stdNumber);
-                    cv.put("Password", PassWord);
-                    new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1857333/loginuserlink.php", cv){
-                        @Override
-                        protected void onPreExecute(){
+                    //in case all credentials are filled attempt login
+                   new RequestHandler(getApplicationContext(),"login").execute(stdNumber,PassWord);
 
-                        }
-                        @Override
-                        protected void onPostExecute(String output){
-                            try{
-                                JSONObject ob = new JSONObject(output);
-                                String StudentN = ob.getString("STUDENT_NO");
-                                startActivity(new Intent(MainActivity.this, HomeActivity.class));
-
-                            } catch (JSONException e){
-                                Toast T = Toast.makeText(getApplicationContext(),"Login Failed", Toast.LENGTH_SHORT);
-                                T.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                                T.show();
-                                e.printStackTrace();
-                            }
-                        }
-                    }.execute();
                 }
             }
         });
