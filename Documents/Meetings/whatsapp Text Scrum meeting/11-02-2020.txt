@@ -1,0 +1,23 @@
+[11:06, 2/11/2020] Donald: It's sending an idea via email with user stories that we gonna have in the project...
+
+He'll send it here first before he sends it to him
+[11:06, 2/11/2020] Sikhanyiso: Ayt
+[11:16, 2/11/2020] Mongezi: Okay sweet
+[11:32, 2/11/2020] Tebogo: (sents a screenshot of the email containing ideas of the 
+			   project we want to do,
+			    he want to send to Rylan(Client))
+[11:33, 2/11/2020] Mongezi: Nice
+[11:33, 2/11/2020] Donald: Nice
+[11:33, 2/11/2020] Tebogo: Okay I’m sending it through
+[11:34, 2/11/2020] Donnie: let's wait for @Sikhanyiso and @Emmanuel_  to share their thoughts
+[11:34, 2/11/2020] Sikhanyiso: Agreed
+[11:36, 2/11/2020] Sikhanyiso: Do you hve an Idea maybe as to how will create a virtual bank, that kinda scares me bt im game
+[11:37, 2/11/2020] Tebogo: We can just use mysql database as the bank and make maybe another android app that works as the bank idk 
+[11:37, 2/11/2020] Tebogo: Or maybe a simple web idk
+[11:37, 2/11/2020] Mongezi: Yeah it doesn’t have to be complicated
+[11:37, 2/11/2020] Sikhanyiso: Ayt
+[11:43, 2/11/2020] Tebogo: So I’m sending it
+[11:43, 2/11/2020] Tebog: ?
+[11:44, 2/11/2020] Mongezi: Yeah send it
+[11:44, 2/11/2020] Tebogo: Gone
+[11:46, 2/11/2020] Donnie: it is something much similar to this https://youtu.be/wQbEH4tVMJA since we wont be using real money we can have database which stores transaction records... much similar to what @MJ is saying...

@@ -1,0 +1,3 @@
+[01:48, 2/22/2020] Sikhanyiso: The skeleton project is upthere! 
+If you want to clone it open android studio -> VCS->checkout from version control-> Git -> choose to login, enter yr details then select the repo then clone
+[07:33, 2/22/2020] Tebogo: For testing u need to setup travisCI and codecov, I'll send u links on how to do it, then I'll need a day to meetup with u guys to show you how testing is done

@@ -1,0 +1,9 @@
+[21:56, 2/21/2020] Sikhanyiso: Gents can someone create a project on android studio and upload a skeleton code to the repo, "hellow world"
+[21:56, 2/21/2020] Sikhanyiso: Ill add badges to the repo after
+[22:02, 2/21/2020] Sikhanyiso: And gents we need to decide on the database we will use, firebase or lamp mysql, if we use lamp, monda someone will have to go ask pravesh fr the server space.
+[22:02, 2/21/2020] Sikhanyiso: Monday*
+[22:02, 2/21/2020] Donnie: so we are allowed to use Firebase?
+[22:03, 2/21/2020] Sikhanyiso: Yeap,
+[22:11, 2/21/2020] Donnie: I prefer it but then it will go with majority votes
+[22:13, 2/21/2020] Sikhanyiso: I would advise the scrum master to try and get us a meeting with terrence for monday
+[22:14, 2/21/2020] Mongezi: I sent him an email to request a meeting, still waiting on his response

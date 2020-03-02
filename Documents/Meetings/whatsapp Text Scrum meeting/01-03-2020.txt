@@ -1,0 +1,249 @@
+[11:51, 2/29/2020] Anastacia: For US #11 Are only tutors allowed to answer questions?
+ Is this like Stackoverflow or CheggStudies? 
+
+Are we offering both q/a and private tutoring services (meetings)?
+[13:26, 2/29/2020] Donnie: This is the idea we sent
+
+[13:27, 2/29/2020] Donnie: this is what he told us(Client)
+[13:42, 2/29/2020] Anastacia: So then there won't be face to face interactions and payments. We doing exactly what Stackoverflow does?
+[13:49, 2/29/2020] Donnie: not exactly but quite similar.
+
+F2F interaction will happen when a student talks to the tutor via dm for meet ups...Payments will happen the same way taxify/ uber driver earn...it could be end of week or month end ...we'll get to that when we break it down.
+[13:50, 2/29/2020] Donnie: F2F we'll happen during meet ups I meant , after talking via dm
+[13:50, 2/29/2020] Donnie: will*
+[13:51, 2/29/2020] Donnie: we'll
+[13:51, 2/29/2020] Anastacia: Cool
+[16:50, 2/29/2020] MJ: @Donnie  @Emmanuel_  we will be doing the splash and register screens plus their testing from 19:00? Want to join us or you want to do in your rooms?
+[16:55, 2/29/2020] Donnie: tell us the venue
+[16:55, 2/29/2020] MJ: Grahams hall or down there by Williams if it’s will not be occupied by then
+[16:58, 2/29/2020] Donnie: okay
+[19:01, 2/29/2020] Mongezi: I’m down there
+[19:01, 2/29/2020] MJ: Cool
+[19:10, 2/29/2020] Emmanuel_: Where
+[19:11, 2/29/2020] Donnie: by the gym??
+[07:21, 3/1/2020] Sikhanyiso: Im on load shedding, so I wont b able to help
+[11:09, 3/1/2020] MJ: The power should be back now mos?
+[11:10, 3/1/2020] MJ: Guys we have a lot of tasks to do
+[11:10, 3/1/2020] Sikhanyiso: Yah wassup
+[11:10, 3/1/2020] MJ: Let’s divide the work so all have something to do
+[11:19, 3/1/2020] MJ: For this to work, we need to know who is can do what coz it’ll be bad for someone who is good at databases to work on android instead of databases
+[11:19, 3/1/2020] MJ: So the tasks available are:
+Setting up database tables
+Register php
+Android interface
+Android register back end
+UML diagrams
+[11:20, 3/1/2020] Mongezi: Guys can we please say which stuff we’re comfortable with doing
+[11:22, 3/1/2020] MJ: And also android testing
+[11:26, 3/1/2020] Donnie: for Sprint one ... we just need the badge for code coverage under TDD in the rubric...correct me
+[11:32, 3/1/2020] MJ: Eish im not sure
+[11:37, 3/1/2020] Donnie: Database
+
+registration
+
+ID: int
+Username: varchar 
+Password: varchar
+FirstName: varchar
+LastName: varchar
+Email: varchar
+contactNo: int
+
+
+what to add and what to remove?
+[11:43, 3/1/2020] Donnie: @Sikhanyiso  .right?
+[11:45, 3/1/2020] Mongezi: I think it’s cool, is there a need for contactNo though?
+[11:45, 3/1/2020] Donnie: not really
+[11:45, 3/1/2020] MJ: StudentNo?
+[11:45, 3/1/2020] Sikhanyiso: Yha  I think that will be enough uhm
+[11:46, 3/1/2020] Donnie: and that...
+[11:47, 3/1/2020] Sikhanyiso: Ill just write two unit tests nje
+[11:52, 3/1/2020] Mongezi: Which ones?
+[11:54, 3/1/2020] Donnie: Database
+
+registration final
+
+ID: int
+Username: varchar 
+Password: varchar
+FirstName: varchar
+LastName: varchar
+Email: varchar
+studentNo: int
+
+
+which means layout for registration will have:
+
+
+ FirstName 
+ LastName 
+Username
+Password studentNo 
+ Email 
+
+
+right?
+[11:56, 3/1/2020] Mulisa: Why are you registering students on the app? The app is gonna be used by wits students only ryt?
+[11:57, 3/1/2020] Donnie: yep
+[11:57, 3/1/2020] Donnie: There's no need?
+[12:01, 3/1/2020] MJ: But we don’t have that lspa what what thing for tomorrow
+[12:03, 3/1/2020] Donnie: ya man??
+
+
+but then with login it's gonna be like moodle right when we get that thing?
+[12:04, 3/1/2020] MJ: Yup
+[12:08, 3/1/2020] Donnie: Then should we stick to our to do list until we get it?
+[12:30, 3/1/2020] MJ: I think so, what do you think guys
+[12:43, 3/1/2020] Sikhanyiso: Which is the to do list.
+[12:45, 3/1/2020] Mulisa: U gonna have to delete the code afterwards ur presentation, ur reinventing the wheel, I'll give you the LDPA
+[12:46, 3/1/2020] MJ: So is it cool if we just use it for the first spring only?
+[12:47, 3/1/2020] Donnie: @Sikhanyiso
+[12:48, 3/1/2020] Sikhanyiso: Ohhhhhhhh
+[12:49, 3/1/2020] Donnie: no problem
+[13:06, 3/1/2020] Anastacia: I've started on the class diagrams
+[13:08, 3/1/2020] Donnie: great??
+[13:10, 3/1/2020] MJ: You mean the UMLs?
+[13:15, 3/1/2020] MJ: If so then it’s in progress in taiga, you can check there
+[13:33, 3/1/2020] Emmanuel_: @MJ can we have lamp details
+[13:33, 3/1/2020] Emmanuel_: We want to create tables and PHP files
+[13:34, 3/1/2020] MJ: 1857333
+Password: 102030mj
+[13:34, 3/1/2020] Mongezi: You and who
+[13:35, 3/1/2020] Emmanuel_: Me and Donald
+[13:37, 3/1/2020] Donnie: don't mind..I updated him that we'll use wamp
+[13:37, 3/1/2020] MJ: Cool
+[13:38, 3/1/2020] Mongezi: Donald : I assigned you to php on taiga
+Emmanuel : I assigned you to setting up initial tables 
+ When you’re done you can put it in the closed tab
+[13:38, 3/1/2020] Donnie: no problem
+[15:31, 3/1/2020] Sikhanyiso: Ill add stuff t the wiki
+[15:33, 3/1/2020] MJ: Tell us when you’re done so we can check it before we finalize
+[16:01, 3/1/2020] MJ: Emanuel, does the request handler you added work ?
+[16:03, 3/1/2020] MJ: Ahh Emanuel your request handler is confusing me ??????
+[16:11, 3/1/2020] Emmanuel_: Yah
+[16:11, 3/1/2020] MJ: Which database does it use
+[16:11, 3/1/2020] Emmanuel_: Try login using 123 and 123 it should work
+[16:12, 3/1/2020] Emmanuel_: It's the only user in the table
+[16:12, 3/1/2020] MJ: Doesn’t work
+[16:12, 3/1/2020] MJ: Only our user works
+[16:12, 3/1/2020] MJ: Coz what you did today neh, we already did that yesterday and it was also working
+[16:17, 3/1/2020] Emmanuel_: I remember yesterday u were complaining about passwords
+[16:17, 3/1/2020] Emmanuel_: So i used my lamp
+[16:17, 3/1/2020] MJ: Oh okay, yah we solved that after you left
+[16:17, 3/1/2020] Emmanuel_: My student number is 1819369
+Password is 44330023
+[16:19, 3/1/2020] MJ: Problem now is the app on my side seems to be using my lamp and not yours??
+[16:19, 3/1/2020] Emmanuel_: ????ohh damn pull the latest
+[16:20, 3/1/2020] MJ: I did
+[16:20, 3/1/2020] MJ: But let’s pull from another PC
+[16:21, 3/1/2020] Emmanuel_: So the url contains ur student number in RequestHandler
+[16:21, 3/1/2020] MJ: No it doesn’t contain any student number
+[16:21, 3/1/2020] MJ: Not even yours
+[16:22, 3/1/2020] Emmanuel_: Url there
+[16:23, 3/1/2020] Emmanuel_: Ohh that one it was when we were using wamp
+[16:24, 3/1/2020] Emmanuel_: The server gave us hard time so we switched to lamp
+[16:24, 3/1/2020] Emmanuel_: Check the latest
+[16:24, 3/1/2020] MJ: I’ll try again
+[16:25, 3/1/2020] MJ: But guys when you do a task tell us coz I thought you were just dealing with the database and php but now android
+[16:26, 3/1/2020] Emmanuel_: Cool
+[16:32, 3/1/2020] MJ: ??????Like i understand and accept that we did things wrong yesterday by doing this as if it was only up to us(mongezi and I), but this is happening again. Let’s be a group guys. Coz problem seems to be that we code differently, I don’t understand your code and Donald might have not understood mine and that’s why it gets confusing when we don’t communicate
+[16:32, 3/1/2020] MJ: It’s cool now ??????
+[16:33, 3/1/2020] Emmanuel_: Yah man
+[16:34, 3/1/2020] Emmanuel_: It's cool I'll comment on that one to explain what each line is doing
+[16:34, 3/1/2020] MJ: Yah and also notify us on the group
+[16:39, 3/1/2020] MJ: Yeses guys, writing unit tests  might be a little more difficult coz I have to understand Emanuel’s code???????
+[16:46, 3/1/2020] Emmanuel_: I commented man hopefully it is clearer now
+[16:50, 3/1/2020] MJ: Ayt
+[16:58, 3/1/2020] MJ: This is the one neh?
+[16:59, 3/1/2020] MJ: @Emmanuel_
+[16:59, 3/1/2020] Donnie: I am done with my side man...php..we should meet up
+[16:59, 3/1/2020] MJ: Php for register neh?
+[16:59, 3/1/2020] Donnie: yes
+[17:00, 3/1/2020] MJ: Okay cool,@Donnie who is doing the register android ?
+[17:00, 3/1/2020] Emmanuel_: Yah my lamp
+[17:00, 3/1/2020] MJ: I thought this is where you have that 123 123
+[17:00, 3/1/2020] Emmanuel_: Check registration table
+[17:01, 3/1/2020] MJ: Ayt
+[17:02, 3/1/2020] MJ: Did you hash the password?
+[17:02, 3/1/2020] Donnie: If no one has been assigned yet...I'll do that
+[17:02, 3/1/2020] MJ: It’s cool, mongezi is doing it
+[17:03, 3/1/2020] Donnie: yep
+[17:03, 3/1/2020] MJ: All good bra
+[17:03, 3/1/2020] MJ: And your using Emanuel’s database neh?
+[17:07, 3/1/2020] Donnie: yep...wamp is being blocked by the wifi...????... forgot to tell you guys...let's stick to lamp
+[17:08, 3/1/2020] MJ: It’s cool, it just seems unhashed here
+[17:09, 3/1/2020] Donnie: those were added manually for testing..check php file
+
+[17:47, 3/1/2020] MJ: That’s cool with me
+[17:47, 3/1/2020] Donnie: As for me its cool
+[17:48, 3/1/2020] Donnie: ????????????
+
+[17:49, 3/1/2020] Mongezi: Eish I won’t be available on Tuesday
+[17:51, 3/1/2020] Mulisa: Not all of u have to come, if I show how to test code to 1 person or 2 people, you should be fine, u can explain to each other, another simple thing is that, if multiple people are working on Android, for each code u write, u also test it, that will make things simpler
+[17:51, 3/1/2020] Mongezi: Oh okay cool
+[17:51, 3/1/2020] Donnie: noted????
+[17:57, 3/1/2020] MJ: So you think we don’t have to write the tests for the register we are going to have tomorrow?
+[17:59, 3/1/2020] Sikhanyiso: According to the rubric nah
+
+What time is the sprint?
+[19:04, 3/1/2020] MJ: Let’s make it 21:00
+[19:04, 3/1/2020] MJ: And yesterday we didn’t have a proper sprint
+[19:04, 3/1/2020] Anastacia: For the UML representations I managed to do package hierarchy, use case diagram and class diagram....is it enough for how since the other views will still be discussed in class?
+[19:06, 3/1/2020] Anastacia: I thought we were actually meeting Rylan??
+Who's the assessor? The scrum master?
+[19:07, 3/1/2020] MJ: Ohh sorry I thought you meant the daily scrum ????
+[19:07, 3/1/2020] MJ: No we are not meeting rylan tomorrow, I think the sprints happen in the labs
+[19:07, 3/1/2020] MJ: I think that’s fine, someone confirm
+[19:10, 3/1/2020] MJ: If you are done you can move the task to closed
+[19:11, 3/1/2020] MJ: I think you can also add attachments
+[19:18, 3/1/2020] Sikhanyiso: Uhm can you attach them on the wiki on github..
+Or u can just send em to me ill attach em
+[19:20, 3/1/2020] MJ: Also attach on taiga
+[19:27, 3/1/2020] Sikhanyiso: I think architecture will be enough github
+[19:28, 3/1/2020] MJ: It’s never a bad thing to have extra though
+[19:31, 3/1/2020] Anastacia: Foe the entity diagrams tutors can also be students right?
+[19:31, 3/1/2020] Anastacia: ????
+Mongezi changed the group description. Click to view.
+[19:46, 3/1/2020] MJ: I’m pushing to github, CHANGES:
+Resized Logo on splash screen
+Added logo to login screen 
+Removed ActionBar
+Designed login button.
+[19:46, 3/1/2020] MJ: That’s all no functional changes
+[19:47, 3/1/2020] MJ: Eish I don’t know
+[20:10, 3/1/2020] Donnie: Sorry??????
+[20:10, 3/1/2020] Donnie: We should verify from Rylan...I also dont know
+[20:57, 3/1/2020] MJ: Daily scrum at 21:00
+[21:13, 3/1/2020] Donnie: Daily Scrum
+
+I created php files which are needed for login and registration.
+[21:14, 3/1/2020] Emmanuel_: Daily scrum 
+I created tables in the database
+[21:14, 3/1/2020] MJ: Daily Scrum 
+
+Finished designing the first two activities of the app
+[21:18, 3/1/2020] Mongezi: Daily Scrum
+
+In the process of completing the Registration activity in android
+[21:19, 3/1/2020] Anastacia: Daily Scrum
+
+Finished 3 views of the architectural presentation
+[21:22, 3/1/2020] Donnie: Hey guys u should check the doc for daily scrum and add some parts if I didnt add everything...I'll document whatsapp texts also thou before 00:00
+[21:27, 3/1/2020] Sikhanyiso: Created the wikki and some level of description
+[21:51, 3/1/2020] MJ: Where is the document?
+[22:03, 3/1/2020] Donnie: Github /Documents/Meetings
+[22:05, 3/1/2020] MJ: What happened ??????
+[22:06, 3/1/2020] Donnie: ??ooh dear
+
+
+lemme check what happened
+[22:07, 3/1/2020] Sikhanyiso: Try to reverse yr commit
+[22:07, 3/1/2020] Donnie: lemme do that
+[22:17, 3/1/2020] Emmanuel_: @MJ  can u try committing again
+[22:17, 3/1/2020] Emmanuel_: The last commit
+[22:18, 3/1/2020] MJ: Now?
+[22:18, 3/1/2020] MJ: What if it overwrites
+[22:24, 3/1/2020] Donnie: don't do anything man..I'll revert my previous commits
+[22:24, 3/1/2020] MJ: Cool
+[22:25, 3/1/2020] MJ: Coz it was giving me errors when I pulled from git
+[23:47, 3/1/2020] Donnie: sorry guys...it's my android ...it added some stuff i

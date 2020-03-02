@@ -1,0 +1,8 @@
+[09:17, 2/24/2020] Donnie: What time are we meeting him?
+[09:18, 2/24/2020] Mongezi: I’ll send an email and request a meeting
+[09:18, 2/24/2020] Tebogo: I think we have to email him first
+[09:19, 2/24/2020] Mongezi: Can we talk to him today after the lab?
+[09:20, 2/24/2020] Tebogo: I guess but just email him anyway, to talk to him after the lab.
+[09:21, 2/24/2020] Tebogo: and maybe we have our first scrum meeting today
+[09:25, 2/24/2020] Mongezi: Just sent the email
+

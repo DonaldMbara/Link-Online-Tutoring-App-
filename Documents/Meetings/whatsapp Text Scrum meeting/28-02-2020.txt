@@ -1,0 +1,49 @@
+[14:38, 2/27/2020] Anastacia: Can we use the LinxOne and OrangeScrum for cloud services instead of lamp since it was provided in the outline?
+[14:40, 2/27/2020] Anastacia: Shouldn't it look like this explaining the actual features instead of just the functionality?
+[14:42, 2/27/2020] Mulisa: If you know how to use it then it's cool, you can use it, but if you don't, best to stick with lamp because you already know it, incase you might be worried that lamp is not mentioned on the rubric, it doesn't mean you can't use it, you can use it and if the marker tries to give you probs, u jyst tell them that we chose to work with the lamp because you know how to use it and it's similar to those other cloud services
+[14:42, 2/27/2020] Anastacia: Cool
+[14:46, 2/27/2020] Mongezi: Wait so this is also compulsory??? @Mulisa
+[14:48, 2/27/2020] Mulisa: Yeah it's what I showed you yesterday with the tasks, like new tasks, completed tasks, need testing, etc...
+[14:48, 2/27/2020] Mulisa: And remember to update them all once u complete them
+[14:49, 2/27/2020] MJ: Ohhhhh okay I thought it was something different
+[16:04, 2/27/2020] Donnie: How is this for documenting meetings...then in the same folder which will have this doc, we will have texts files with messages copied from here on whatsapp(only necesary messages) ...
+[16:06, 2/27/2020] MJ: Too awesome ????????????
+[16:18, 2/27/2020] Donnie: With the server, if we're sticking to lamp we can use wamp(myPHP admin ) for now..it's much similar to lamp. .we'll just copy the commands for creating tables and move them to the virtual machine that Emmanuel is talking about since it's similar to lamp until we get to use the virtual machine
+
+what do u think?
+[16:57, 2/27/2020] Anastacia: Awesome
+[17:07, 2/27/2020] Sikhanyiso: Ayt????
+[20:03, 2/27/2020] Mongezi: SCRUM AT NINE
+[20:10, 2/27/2020] Mongezi: SCRUM AT NINE
+[20:20, 2/27/2020] Mongezi: SCRUM AT NINE
+[20:20, 2/27/2020] Emmanuel_: Sure
+[20:30, 2/27/2020] Mongezi: SCRUM AT NINE
+[20:36, 2/27/2020] Donnie: sure
+[20:40, 2/27/2020] Mongezi: SCRUM AT NINE
+[20:50, 2/27/2020] Mongezi: SCRUM AT NINE
+[21:02, 2/27/2020] Mongezi: DAILY SCRUM
+
+Yesterday I finalized all the user stories on the Taiga product backlog
+
+Today I didn’t do anything.
+
+Tomorrow I will begin with updating the user story on our sprint and writing all the tasks to be done
+[21:07, 2/27/2020] Donnie: Daily Scrum
+
+
+I set up github.
+Today I documented meetings.
+
+I am currently researching how testing in Android studio is done.
+[21:09, 2/27/2020] Emmanuel_: Yesterday I didn't do anything 
+Right now I'm setting up local serves so I can start brushing my PHP skills (including working with databases)
+[21:15, 2/27/2020] MJ: Daily Scrum
+
+Yesterday I didn’t do anything
+
+Today I’m practicing connecting android app to the internet and how to testing android code.
+[21:16, 2/27/2020] Sikhanyiso: Yesterday I finished integrating travis, github and coveralls.
+Today I am practicing testing .
+[21:21, 2/27/2020] Anastacia: SCRUM DAILY
+
+Practicing Android and Testing
