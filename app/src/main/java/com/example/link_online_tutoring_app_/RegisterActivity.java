@@ -73,21 +73,9 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d("BeforeCheckTingz","BeforeCheckTings");
 
                 if(checkMyThings == true){
-                    /*
-                    cv.put("studentNo",StudentNumber);
-                    // Log.d("afterPut","afterPut");
 
-                    cv.put("first_name",FirstName);
-                    cv.put("last_name",LastName);
-                    cv.put("username",UserName);
-                    cv.put("password",Password);
-                    cv.put("email",Email);
-
-
-                    register(cv,RegisterActivity.this);
-                    //Log.d("afterPut","afterPut");
-                    */
                     new RequestHandler(getApplicationContext(),"register").execute(UserName,Password,Email,FirstName,LastName,StudentNumber);
+                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 }
                 else{
                     Log.d("InElseForT","InElseForT");
@@ -100,29 +88,29 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private static void register(ContentValues cv, final Context c){
-        new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/registration.php",cv){
-
-
-            @Override
-            protected void onPreExecute() {
-
-            }
-
-            @Override
-            protected void onPostExecute(String output) {
-                Log.d("afterLink","afterLink");
-                if(output!=null && output.equals("Registered Successfully")){
-                    Toast t = Toast.makeText(c,"You can now Log In",Toast.LENGTH_SHORT);
-                    t.show();
-                    c.startActivity(new Intent(c,HomeActivity.class));
-                }
-
-                else{
-                    Toast t = Toast.makeText(c,"Something Went Wrong",Toast.LENGTH_SHORT);
-                    t.show();
-                }
-            }
-        }.execute();
-    }
+//    private static void register(ContentValues cv, final Context c){
+//        new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/registration.php",cv){
+//
+//
+//            @Override
+//            protected void onPreExecute() {
+//
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String output) {
+//                Log.d("afterLink","afterLink");
+//                if(output!=null && output.equals("Registered Successfully")){
+//                    Toast t = Toast.makeText(c,"You can now Log In",Toast.LENGTH_SHORT);
+//                    t.show();
+//                    c.startActivity(new Intent(c,HomeActivity.class));
+//                }
+//
+//                else{
+//                    Toast t = Toast.makeText(c,"Something Went Wrong",Toast.LENGTH_SHORT);
+//                    t.show();
+//                }
+//            }
+//        }.execute();
+//    }
 }

@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/ContinueButton"
-        android:layout_width="187dp"
-        android:layout_height="62dp"
+        android:layout_width="142dp"
+        android:layout_height="54dp"
         android:background="@drawable/button_borders"
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"

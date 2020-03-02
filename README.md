@@ -9,7 +9,7 @@ COMS3009A (SOFTWARE DESIGN)
 An app that connects people who need help to tutors who are accomplished in a particular course (Stackoverflow format)
 
 Team
-Our Team Name is: Boolean Autocrats.
+Our Team Name is: Binary Autocrats.
 
 The Scrum Master: Mongezi @sweetmoh
 
