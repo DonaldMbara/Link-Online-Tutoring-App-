@@ -15,20 +15,14 @@ public class SplashScreenActivity extends Activity {
 
         setContentView(R.layout.splashscreenlayout);
 
-        final TextView log = findViewById(R.id.WelcomeTextView);
-        final ImageView ivLogo = findViewById(R.id.LinkHands);
-        final Button CB = findViewById(R.id.ContinueButton);
-        // final ImageView ivArrow = findViewById(R.id.ContinueArrow);
+
+        final Button continueBtn = findViewById(R.id.ContinueButton);
 
 
-        CB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
-                finish();
-
-            }
-        });
     }
 
+    public void onClickContinue(View view) {
+        startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+        finish();
+    }
 }
