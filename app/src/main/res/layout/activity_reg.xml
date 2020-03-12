@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/AIblue">
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/userNameTxt"
@@ -101,14 +101,13 @@
         app:layout_constraintVertical_bias="0.059" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/comfirmBtn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_borders"
         android:onClick="onClickRegister"
         android:text="REGISTER"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

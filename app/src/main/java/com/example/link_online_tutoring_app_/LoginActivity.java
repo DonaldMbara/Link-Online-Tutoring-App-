@@ -2,19 +2,16 @@ package com.example.link_online_tutoring_app_;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText std_number,password;
     Button login;
@@ -23,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         std_number = findViewById(R.id.StudentNoEditText);
         password  = findViewById(R.id.PassEditText);
         login = findViewById(R.id.loginBtn);
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OnClickRegisterHere(View view) {
-        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 
     public void onClickLogin(View view) {
@@ -51,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         if (Alltrue) {
             //in case all credentials are filled attempt login
             new RequestHandler(getApplicationContext(), "login").execute(stdNumber, PassWord);
-
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
         }
     }
 }

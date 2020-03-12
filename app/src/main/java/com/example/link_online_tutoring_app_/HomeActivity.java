@@ -9,7 +9,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homelayout);
+        setContentView(R.layout.activity_home);
         TextView v = findViewById(R.id.dummyTV);
     }
 }
