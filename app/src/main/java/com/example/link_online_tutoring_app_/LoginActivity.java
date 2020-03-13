@@ -2,7 +2,9 @@ package com.example.link_online_tutoring_app_;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,19 +15,42 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
+    Button login_btn,regis_btn;
+
     EditText std_number,password;
     Button login;
     TextView Register;
+    static Context context;
+    public static String SHARED_PREF_LOGIN="shared_prefs_login";
+    public static String LOGIN_STATUS="login status";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        std_number = findViewById(R.id.StudentNoEditText);
-        password  = findViewById(R.id.PassEditText);
-        login = findViewById(R.id.loginBtn);
-        Register = findViewById(R.id.RegisterButton);
+        context = this;
 
+
+        SharedPreferences sharedPreferences1=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
+        boolean login_status=sharedPreferences1.getBoolean(LOGIN_STATUS,false);
+        if(login_status){
+            startActivity(new Intent(this,HomeActivity.class));
+        }
+        else {
+
+            std_number = findViewById(R.id.StudentNoEditText);
+            password = findViewById(R.id.PassEditText);
+            login = findViewById(R.id.loginBtn);
+            Register = findViewById(R.id.RegisterButton);
+
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 
     public void OnClickRegisterHere(View view) {

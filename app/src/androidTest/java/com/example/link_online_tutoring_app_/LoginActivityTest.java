@@ -25,14 +25,14 @@ public class LoginActivityTest {
     @Rule
     public ActivityTestRule<LoginActivity> activityTestRule = new ActivityTestRule<>(LoginActivity.class);
 
-    private LoginActivity loginActivity=null;
+
 
     Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
     @Before
     public void setUp() throws Exception {
         //runs before the test
-        loginActivity=activityTestRule.getActivity();
+
     }
 
     @Test
@@ -80,18 +80,7 @@ public class LoginActivityTest {
         }
     }
 
-    @Test
-    public void CanLogin(){
-        //test if given correct details will i be able to login and go to home screen
-        //this test allows connecting to the internet so it is a way of testing request handler
-        //onView(withId(R.id.StudentNoEditText)).perform(typeText("12345678"),closeSoftKeyboard());
-       // onView(withId(R.id.PassEditText)).perform(typeText("justtest"),closeSoftKeyboard());
 
-        //Espresso.closeSoftKeyboard();
-        new RequestHandler(loginActivity.getApplicationContext(),"login").execute("12345678","justtest");
-        //onView(withId(R.id.loginBtn)).perform(click());
-        Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,9000);
-        assertNotNull(secondActivity);
-    }
+
 
 }

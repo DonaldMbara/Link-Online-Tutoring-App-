@@ -2,6 +2,7 @@ package com.example.link_online_tutoring_app_;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -129,18 +130,29 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
         switch (s){
             case "data matched":
                 //in case login successful
-                context.startActivity(new Intent(context, HomeActivity.class));
-                Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
-                //TODO go to users home menu
 
+                SharedPreferences sharedPreferences=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
+               SharedPreferences.Editor editor=sharedPreferences.edit();
+               editor.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
+               editor.apply();
+
+               Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
+
+                context.startActivity(new Intent(context, HomeActivity.class)); //go to home menu login success
                 break;
             case "try again":
                 Toast.makeText(context,"login attempt failed",Toast.LENGTH_SHORT).show();
-                //TODO handle failed login request like not registered and wrong password
                 break;
             case "Registered Successfully":
-                context.startActivity(new Intent(context, HomeActivity.class));
+
+                SharedPreferences sharedPreferences1=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor1=sharedPreferences1.edit();
+                editor1.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
+                editor1.apply();
+
+
                 Toast.makeText(context,"registration successful",Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, HomeActivity.class)); //registration success go to home menu
                 break;
             case "Something went wrong":
                 Toast.makeText(context,"registration not successful",Toast.LENGTH_SHORT).show();
