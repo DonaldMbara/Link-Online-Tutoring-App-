@@ -7,10 +7,9 @@
 
     <TextView
         android:id="@+id/dummyTV"
-        android:layout_width="298dp"
-        android:layout_height="89dp"
-        android:text="TEXTVIEW"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="welcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

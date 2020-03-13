@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         if (Alltrue) {
             //in case all credentials are filled attempt login
             new RequestHandler(getApplicationContext(), "login").execute(stdNumber, PassWord);
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
         }
     }
 }

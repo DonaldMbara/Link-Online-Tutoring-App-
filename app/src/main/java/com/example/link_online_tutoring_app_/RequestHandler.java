@@ -1,6 +1,7 @@
 package com.example.link_online_tutoring_app_;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -130,6 +131,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 //in case login successful
                 Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
                 //TODO go to users home menu
+                context.startActivity(new Intent(context, HomeActivity.class));
                 break;
             case "try again":
                 Toast.makeText(context,"login attempt failed",Toast.LENGTH_SHORT).show();
