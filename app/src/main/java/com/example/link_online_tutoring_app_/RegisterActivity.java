@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (checkMyThings == true) {
 
             new RequestHandler(getApplicationContext(), "register").execute(UserName, Password, Email, FirstName, LastName, StudentNumber);
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
         } else {
             Log.d("InElseForT", "InElseForT");
             Toast toast = Toast.makeText(getApplicationContext(), "Please fill in all required fields", Toast.LENGTH_SHORT);

@@ -5,6 +5,7 @@ import android.app.Instrumentation;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.test.espresso.Espresso;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
@@ -74,6 +75,7 @@ public class LoginActivityTest {
     public void CanLogin(){
         onView(withId(R.id.StudentNoEditText)).perform(typeText("12345678"),closeSoftKeyboard());
         onView(withId(R.id.PassEditText)).perform(typeText("justtest"),closeSoftKeyboard());
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.loginBtn)).perform(click());
         Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,9000);
         assertNotNull(secondActivity);

@@ -129,15 +129,17 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
         switch (s){
             case "data matched":
                 //in case login successful
+                context.startActivity(new Intent(context, HomeActivity.class));
                 Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
                 //TODO go to users home menu
-                context.startActivity(new Intent(context, HomeActivity.class));
+
                 break;
             case "try again":
                 Toast.makeText(context,"login attempt failed",Toast.LENGTH_SHORT).show();
                 //TODO handle failed login request like not registered and wrong password
                 break;
             case "Registered Successfully":
+                context.startActivity(new Intent(context, HomeActivity.class));
                 Toast.makeText(context,"registration successful",Toast.LENGTH_SHORT).show();
                 break;
             case "Something went wrong":
