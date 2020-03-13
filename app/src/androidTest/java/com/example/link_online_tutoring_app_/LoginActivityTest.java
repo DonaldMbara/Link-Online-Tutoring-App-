@@ -8,6 +8,7 @@ import android.widget.EditText;
 import androidx.test.espresso.Espresso;
 import androidx.test.rule.ActivityTestRule;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -28,9 +29,17 @@ public class LoginActivityTest {
 
     Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
+    @Before
+    public void setUp() throws Exception {
+        //runs before the test
+        loginActivity=activityTestRule.getActivity();
+    }
+
     @Test
     public void onCreate() {
     }
+
+
 
     @Test
     public void onClickRegisterHere() {
@@ -73,10 +82,14 @@ public class LoginActivityTest {
 
     @Test
     public void CanLogin(){
-        onView(withId(R.id.StudentNoEditText)).perform(typeText("12345678"),closeSoftKeyboard());
-        onView(withId(R.id.PassEditText)).perform(typeText("justtest"),closeSoftKeyboard());
-        Espresso.closeSoftKeyboard();
-        onView(withId(R.id.loginBtn)).perform(click());
+        //test if given correct details will i be able to login and go to home screen
+        //this test allows connecting to the internet so it is a way of testing request handler
+        //onView(withId(R.id.StudentNoEditText)).perform(typeText("12345678"),closeSoftKeyboard());
+       // onView(withId(R.id.PassEditText)).perform(typeText("justtest"),closeSoftKeyboard());
+
+        //Espresso.closeSoftKeyboard();
+        new RequestHandler(loginActivity.getApplicationContext(),"login").execute("12345678","justtest");
+        //onView(withId(R.id.loginBtn)).perform(click());
         Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,9000);
         assertNotNull(secondActivity);
     }
