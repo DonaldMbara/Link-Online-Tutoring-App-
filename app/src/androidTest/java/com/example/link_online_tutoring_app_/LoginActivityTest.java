@@ -21,6 +21,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class LoginActivityTest {
     @Rule
@@ -82,7 +83,7 @@ public class LoginActivityTest {
     }
 
     @Test
-    public void canLogin() {
+    public void canLogin() {    //given correct credentials
         try {
             runOnUiThread(new Runnable() {
                 @Override
@@ -95,6 +96,27 @@ public class LoginActivityTest {
                     login.performClick();
                     Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,5000);
                     assertNotNull(secondActivity);
+
+                }
+            });
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+    @Test
+    public void canLogin2() {    //given incorrect credentials
+        try {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    EditText s_num=activityTestRule.getActivity().findViewById(R.id.StudentNoEditText);
+                    s_num.setText("100000");
+                    EditText s_pass=activityTestRule.getActivity().findViewById(R.id.PassEditText);
+                    s_pass.setText("0000");
+                    Button login = activityTestRule.getActivity().findViewById(R.id.loginBtn);
+                    login.performClick();
+                    Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,5000);
+                    assertNull(secondActivity);
 
                 }
             });
