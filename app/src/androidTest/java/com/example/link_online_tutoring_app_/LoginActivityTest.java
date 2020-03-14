@@ -2,6 +2,7 @@ package com.example.link_online_tutoring_app_;
 
 import android.app.Activity;
 import android.app.Instrumentation;
+import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -72,6 +73,28 @@ public class LoginActivityTest {
                     Button login = activityTestRule.getActivity().findViewById(R.id.loginBtn);
                     login.performClick();
 
+
+                }
+            });
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
+    @Test
+    public void canLogin() {
+        try {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    EditText s_num=activityTestRule.getActivity().findViewById(R.id.StudentNoEditText);
+                    s_num.setText("12345678");
+                    EditText s_pass=activityTestRule.getActivity().findViewById(R.id.PassEditText);
+                    s_pass.setText("justtest");
+                    Button login = activityTestRule.getActivity().findViewById(R.id.loginBtn);
+                    login.performClick();
+                    Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,5000);
+                    assertNotNull(secondActivity);
 
                 }
             });
