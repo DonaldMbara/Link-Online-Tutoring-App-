@@ -138,7 +138,9 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
 
                Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
 
-                context.startActivity(new Intent(context, HomeActivity.class)); //go to home menu login success
+                Intent intent=new Intent(context, HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent); //go to home menu login success
                 break;
             case "try again":
                 Toast.makeText(context,"login attempt failed",Toast.LENGTH_SHORT).show();
