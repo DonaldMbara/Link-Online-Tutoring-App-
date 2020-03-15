@@ -12,6 +12,12 @@
         android:title="Chat"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:showAsAction="ifRoom"
+        />
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/settings_icon"
         android:title="Settings"
