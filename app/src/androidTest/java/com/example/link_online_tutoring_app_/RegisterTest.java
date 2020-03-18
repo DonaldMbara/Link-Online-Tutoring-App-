@@ -41,6 +41,7 @@ public class RegisterTest {
 
     @Test
     public  void register(){
+        rule.launchActivity(new Intent());
 
         onView(withId(R.id.userNameTxt)).perform(typeText("Username"));
         onView(withId(R.id.fNameTxt)).perform(typeText("firstName"));
