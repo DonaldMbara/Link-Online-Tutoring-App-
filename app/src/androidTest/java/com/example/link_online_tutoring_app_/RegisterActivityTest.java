@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.test.rule.ActivityTestRule;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
@@ -15,6 +16,9 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.junit.Assert.*;
 
 public class RegisterActivityTest {
+
+    @Rule
+    public ActivityTestRule rule=new ActivityTestRule(RegisterActivity.class,true,false);
 
     public ActivityTestRule<RegisterActivity> activityActivtyTestRule = new ActivityTestRule<>(RegisterActivity.class);
     Instrumentation.ActivityMonitor activityMonitor =getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
