@@ -74,14 +74,7 @@ public class HomeActivityTest {
        // onView(withId(R.id.listView)).perform(closeSoftKeyboard());
 
     }
-    @Test
-    public void onCreate5() {
-    }
-    @Test
-    public void navigation(){
-        rule.launchActivity(new Intent());
-        onData(withId(R.id.bottom_navigation)).onChildView(withId(R.id.private_chat)).perform(click());
-    }
+    
 
 
 }
