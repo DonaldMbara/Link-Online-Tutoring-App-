@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
@@ -49,7 +50,7 @@ public class RegisterTest {
         onView(withId(R.id.emailTxt)).perform(typeText("email@gmail.com"));
         onView(withId(R.id.stdNumTxt)).perform(typeText("studentNum"));
         onView(withId(R.id.passTxt)).perform(typeText("password"));
-        onView(withId(R.id.comfirmBtn)).perform(click());
+        onView(withId(R.id.comfirmBtn)).perform(scrollTo()).perform(click());
     }
 
 }
