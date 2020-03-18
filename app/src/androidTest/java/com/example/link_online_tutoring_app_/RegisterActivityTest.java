@@ -21,6 +21,10 @@ public class RegisterActivityTest {
     public ActivityTestRule<RegisterActivity> activityActivtyTestRule = new ActivityTestRule<>(RegisterActivity.class);
     Instrumentation.ActivityMonitor activityMonitor =getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
+    @Test
+    public void onCreate() {
+    }
+
 
     @Test
     public void onClickRegister() {
