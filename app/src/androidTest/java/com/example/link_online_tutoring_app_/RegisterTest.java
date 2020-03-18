@@ -46,7 +46,7 @@ public class RegisterTest {
         onView(withId(R.id.userNameTxt)).perform(typeText("Username"));
         onView(withId(R.id.fNameTxt)).perform(typeText("firstName"));
         onView(withId(R.id.lNameTxt)).perform(typeText("lastname"));
-        onView(withId(R.id.emailTxt)).perform(typeText("email"));
+        onView(withId(R.id.emailTxt)).perform(typeText("email@gmail.com"));
         onView(withId(R.id.stdNumTxt)).perform(typeText("studentNum"));
         onView(withId(R.id.passTxt)).perform(typeText("password"));
         onView(withId(R.id.comfirmBtn)).perform(click());
