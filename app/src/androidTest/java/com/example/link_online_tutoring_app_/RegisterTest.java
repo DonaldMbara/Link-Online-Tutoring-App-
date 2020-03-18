@@ -1,13 +1,14 @@
 package com.example.link_online_tutoring_app_;
 
 
+import android.content.Intent;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -23,7 +24,7 @@ public class RegisterTest {
 
     @Test
     public void shouldRenderView() throws Exception {
-        //  rule.launchActivity(new Intent());
+         rule.launchActivity(new Intent());
         onView(withId(R.id.userNameTxt)).check(matches(withText("Username")));
         onView(withId(R.id.fNameTxt)).check(matches(withText("First Name")));
         onView(withId(R.id.lNameTxt)).check(matches(withText("Last Name")));
@@ -33,5 +34,6 @@ public class RegisterTest {
         onView(withId(R.id.comfirmBtn)).check(matches(withText("REGISTER")));
 
     }
+
 
 }
