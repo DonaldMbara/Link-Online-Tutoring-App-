@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.isPlatformPopup;
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -24,15 +25,16 @@ public class RegisterTest {
     public ActivityTestRule rule = new ActivityTestRule(RegisterActivity.class, true, false);
 
     @Test
-    public void shouldRenderView(){
+    public void shouldRenderView() throws Exception{
          rule.launchActivity(new Intent());
-        onView(withId(R.id.userNameTxt)).check(matches(withHint("Username")));
-        onView(withId(R.id.fNameTxt)).check(matches(withHint("First Name")));
-        onView(withId(R.id.lNameTxt)).check(matches(withHint("Last Name")));
-        onView(withId(R.id.emailTxt)).check(matches(withHint("Email")));
-        onView(withId(R.id.stdNumTxt)).check(matches(withHint("Student Number")));
-        onView(withId(R.id.passTxt)).check(matches(withHint("Password")));
-        onView(withId(R.id.comfirmBtn)).check(matches(withText("REGISTER")));
+       // rule.sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
+        onView(withId(R.id.userNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Username")));
+        onView(withId(R.id.fNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("First Name")));
+        onView(withId(R.id.lNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Last Name")));
+        onView(withId(R.id.emailTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Email")));
+        onView(withId(R.id.stdNumTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Student Number")));
+        onView(withId(R.id.passTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Password")));
+        onView(withId(R.id.comfirmBtn)).inRoot(isPlatformPopup()).check(matches(withText("REGISTER")));
 
     }
 
