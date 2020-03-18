@@ -48,6 +48,14 @@ public class HomeActivityTest {
         rule.launchActivity(new Intent());
         // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(3).perform(click());
-
     }
+
+    @Test
+    public void navigation(){
+        rule.launchActivity(new Intent());
+        // onView(withId(R.id.listView)).atPosition(0).perform(click());
+        onData(withId(R.id.bottom_navigation)).onChildView(withId(R.id.private_chat)).perform(click());
+    }
+
+
 }
