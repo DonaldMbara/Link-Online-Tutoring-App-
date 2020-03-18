@@ -10,7 +10,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onData;
+import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.anything;
 
@@ -22,15 +24,15 @@ public class HomeActivityTest {
     @Test
     public void clickOne(){
         rule.launchActivity(new Intent());
-       // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
+        onView(withId(R.id.listView)).perform(closeSoftKeyboard());
+
 
     }
 
     @Test
     public void clickTwo(){
         rule.launchActivity(new Intent());
-        // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(1).perform(click());
 
     }
@@ -38,22 +40,22 @@ public class HomeActivityTest {
     @Test
     public void clickThree(){
         rule.launchActivity(new Intent());
-        // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(2).perform(click());
+        onView(withId(R.id.listView)).perform(closeSoftKeyboard());
 
     }
 
     @Test
     public void clickFour(){
         rule.launchActivity(new Intent());
-        // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(3).perform(click());
+        onView(withId(R.id.listView)).perform(closeSoftKeyboard());
+
     }
 
     @Test
     public void navigation(){
         rule.launchActivity(new Intent());
-        // onView(withId(R.id.listView)).atPosition(0).perform(click());
         onData(withId(R.id.bottom_navigation)).onChildView(withId(R.id.private_chat)).perform(click());
     }
 
