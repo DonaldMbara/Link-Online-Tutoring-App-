@@ -59,4 +59,23 @@ public class RegisterTest {
         onView(withId(R.id.comfirmBtn)).perform(click());
     }
 
+    @Test
+    public  void noInputs(){
+        rule.launchActivity(new Intent());
+
+        onView(withId(R.id.userNameTxt)).perform(typeText(" "));
+        onView(withId(R.id.userNameTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.fNameTxt)).perform(typeText(" "));
+        onView(withId(R.id.fNameTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.lNameTxt)).perform(typeText(" "));
+        onView(withId(R.id.lNameTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.emailTxt)).perform(typeText(" "));
+        onView(withId(R.id.emailTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.stdNumTxt)).perform(typeText(" "));
+        onView(withId(R.id.stdNumTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.passTxt)).perform(typeText(" "));
+        onView(withId(R.id.passTxt)).perform(closeSoftKeyboard());
+        onView(withId(R.id.comfirmBtn)).perform(click());
+    }
+
 }
