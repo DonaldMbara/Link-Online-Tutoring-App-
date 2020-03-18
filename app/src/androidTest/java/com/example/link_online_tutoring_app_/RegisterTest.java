@@ -24,7 +24,7 @@ public class RegisterTest {
     public ActivityTestRule rule = new ActivityTestRule(RegisterActivity.class, true, false);
 
     @Test
-    public void shouldRenderView() throws Exception {
+    public void shouldRenderView(){
          rule.launchActivity(new Intent());
         onView(withId(R.id.userNameTxt)).check(matches(withHint("Username")));
         onView(withId(R.id.fNameTxt)).check(matches(withHint("First Name")));
