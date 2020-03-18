@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
@@ -25,12 +26,12 @@ public class RegisterTest {
     @Test
     public void shouldRenderView() throws Exception {
          rule.launchActivity(new Intent());
-        onView(withId(R.id.userNameTxt)).check(matches(withText("Username")));
-        onView(withId(R.id.fNameTxt)).check(matches(withText("First Name")));
-        onView(withId(R.id.lNameTxt)).check(matches(withText("Last Name")));
-        onView(withId(R.id.emailTxt)).check(matches(withText("Email")));
-        onView(withId(R.id.stdNumTxt)).check(matches(withText("Student Number")));
-        onView(withId(R.id.passTxt)).check(matches(withText("Password")));
+        onView(withId(R.id.userNameTxt)).check(matches(withHint("Username")));
+        onView(withId(R.id.fNameTxt)).check(matches(withHint("First Name")));
+        onView(withId(R.id.lNameTxt)).check(matches(withHint("Last Name")));
+        onView(withId(R.id.emailTxt)).check(matches(withHint("Email")));
+        onView(withId(R.id.stdNumTxt)).check(matches(withHint("Student Number")));
+        onView(withId(R.id.passTxt)).check(matches(withHint("Password")));
         onView(withId(R.id.comfirmBtn)).check(matches(withText("REGISTER")));
 
     }
