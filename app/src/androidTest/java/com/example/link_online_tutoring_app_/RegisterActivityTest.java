@@ -1,10 +1,10 @@
 package com.example.link_online_tutoring_app_;
 
+
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.test.rule.ActivityTestRule;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 public class RegisterActivityTest {
 
@@ -74,5 +74,7 @@ public class RegisterActivityTest {
         }
 
     }
+
+
 }
 
