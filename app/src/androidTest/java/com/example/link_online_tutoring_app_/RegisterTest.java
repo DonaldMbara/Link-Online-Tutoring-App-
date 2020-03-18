@@ -27,7 +27,6 @@ public class RegisterTest {
     @Test
     public void shouldRenderView() throws Exception{
          rule.launchActivity(new Intent());
-       // rule.sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
         onView(withId(R.id.userNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Username")));
         onView(withId(R.id.fNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("First Name")));
         onView(withId(R.id.lNameTxt)).inRoot(isPlatformPopup()).check(matches(withHint("Last Name")));

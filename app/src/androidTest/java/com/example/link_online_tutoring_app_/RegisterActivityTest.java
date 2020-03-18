@@ -18,8 +18,6 @@ import static org.junit.Assert.assertNull;
 public class RegisterActivityTest {
 
     @Rule
-    public ActivityTestRule rule=new ActivityTestRule(RegisterActivity.class,true,false);
-
     public ActivityTestRule<RegisterActivity> activityActivtyTestRule = new ActivityTestRule<>(RegisterActivity.class);
     Instrumentation.ActivityMonitor activityMonitor =getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
