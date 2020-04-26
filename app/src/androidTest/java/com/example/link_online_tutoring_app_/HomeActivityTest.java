@@ -25,16 +25,15 @@ public class HomeActivityTest {
         //runs before the test
 
     }
-
     @Test
     public void onCreate() {
     }
+
 
     @Test
     public void clickOne(){
         rule.launchActivity(new Intent());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
-        //onView(withId(R.id.listView)).perform(closeSoftKeyboard());
 
 
     }
