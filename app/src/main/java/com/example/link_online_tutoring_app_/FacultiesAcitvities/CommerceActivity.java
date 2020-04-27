@@ -44,7 +44,6 @@ public class CommerceActivity extends AppCompatActivity {
             @Override
             public void onNavigationItemReselected(@NonNull MenuItem item) {
 
-
                 switch (item.getItemId()){
                     case R.id.private_chat:
                         startActivity(new Intent(CommerceActivity.this, ChatActivity.class));
