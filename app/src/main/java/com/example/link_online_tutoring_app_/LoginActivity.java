@@ -23,7 +23,8 @@ public class LoginActivity extends AppCompatActivity {
     static Context context;
     public static String SHARED_PREF_LOGIN="shared_prefs_login";
     public static String LOGIN_STATUS="login status";
-
+    public static String UN;
+    public static String Pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +60,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onClickLogin(View view) {
         final String stdNumber = std_number.getText().toString().trim();
+        UN = std_number.getText().toString().trim();
         final String PassWord = password.getText().toString().trim();
+        Pass = password.getText().toString().trim();
         boolean Alltrue = true;
         if (TextUtils.isEmpty(stdNumber)) {
             Alltrue = false;

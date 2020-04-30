@@ -12,9 +12,9 @@
         android:title="Chat"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search"
-        android:title="Search"
+        android:id="@+id/posting"
+        android:icon="@drawable/poster"
+        android:title="Post"
         app:showAsAction="ifRoom"
         />
     <item

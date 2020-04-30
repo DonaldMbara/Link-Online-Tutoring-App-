@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/SortOfwhite"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/PostYourQ"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AIblue"
+        android:gravity="center"
+        android:text="Write and post your questions"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <EditText
+        android:id="@+id/Add_post"
+        android:layout_width="305dp"
+        android:layout_height="171dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="Write your question..."
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <Button
+        android:id="@+id/Post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_borders"
+        android:text="Post"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Add_post"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/CourseChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course"
+
+        android:background="@drawable/button_borders"
+        app:layout_constraintBottom_toTopOf="@+id/Post_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Add_post"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <TextView
+        android:id="@+id/Viewer"
+        android:layout_width="93dp"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/Post_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toEndOf="@+id/CourseChoice"
+        app:layout_constraintTop_toBottomOf="@+id/Add_post"
+        app:layout_constraintVertical_bias="0.158" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

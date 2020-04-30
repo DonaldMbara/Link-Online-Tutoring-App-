@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.example.link_online_tutoring_app_.ChatActivity;
 import com.example.link_online_tutoring_app_.HomeActivity;
+import com.example.link_online_tutoring_app_.PostsActivity;
 import com.example.link_online_tutoring_app_.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -54,6 +55,9 @@ public class HealthScienceActivity extends AppCompatActivity {
                     case R.id.action_faculties:
                         startActivity(new Intent(HealthScienceActivity.this,HomeActivity.class));
                         finish();
+                        break;
+                    case R.id.posting:
+                        startActivity(new Intent(HealthScienceActivity.this, PostsActivity.class));
                         break;
                 }
 
