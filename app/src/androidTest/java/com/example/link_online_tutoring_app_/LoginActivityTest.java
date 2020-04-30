@@ -125,6 +125,29 @@ public class LoginActivityTest {
         }
     }
 
+    @Test
+    public void canLogin3(){ // no input given
+        try {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    EditText s_num=activityTestRule.getActivity().findViewById(R.id.StudentNoEditText);
+                    s_num.setText("");
+                    EditText s_pass=activityTestRule.getActivity().findViewById(R.id.PassEditText);
+                    s_pass.setText("");
+                    Button login = activityTestRule.getActivity().findViewById(R.id.loginBtn);
+                    login.performClick();
+                    Activity secondActivity=getInstrumentation().waitForMonitorWithTimeout(activityMonitor,5000);
+                    assertNull(secondActivity);
+
+                }
+            });
+        }catch (Throwable thr){
+            thr.printStackTrace();
+        }
+    }
+
+
 
 
 

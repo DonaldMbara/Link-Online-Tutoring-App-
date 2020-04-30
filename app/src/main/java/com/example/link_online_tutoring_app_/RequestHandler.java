@@ -24,6 +24,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     Context context;
     String task;
     String result;
+    static String Unkey = "Key";
 
     public RequestHandler(Context context, String task) {
         this.context = context;
@@ -150,7 +151,9 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 SharedPreferences sharedPreferences1=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor1=sharedPreferences1.edit();
                 editor1.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
+                editor1.putString(Unkey, LoginActivity.UN);
                 editor1.apply();
+                editor1.commit();
 
 
                 Toast.makeText(context,"registration successful",Toast.LENGTH_SHORT).show();
