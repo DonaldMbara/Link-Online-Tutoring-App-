@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FacultiesAcitvities.HealthScienceActivity"></activity>
+        <activity android:name=".ViewPosts">
+
+        </activity>
+        <activity android:name=".FacultiesAcitvities.HealthScienceActivity" />
         <activity android:name=".FacultiesAcitvities.HumanitiesActivity" />
         <activity android:name=".FacultiesAcitvities.CommerceActivity" />
         <activity android:name=".HomeActivity$PostActivity" />
-
         <activity android:name=".ChatActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
@@ -27,7 +29,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".PostsActivity"/>
+        <activity android:name=".PostsActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
