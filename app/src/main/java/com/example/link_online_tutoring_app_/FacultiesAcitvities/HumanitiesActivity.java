@@ -7,13 +7,17 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.link_online_tutoring_app_.ChatActivity;
 import com.example.link_online_tutoring_app_.HomeActivity;
 import com.example.link_online_tutoring_app_.PostsActivity;
 import com.example.link_online_tutoring_app_.R;
+import com.example.link_online_tutoring_app_.ViewPosts;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
@@ -41,6 +45,26 @@ public class HumanitiesActivity extends AppCompatActivity {
         getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=4");
         listView.setAdapter(arrayAdapter);
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String clickedItem=(String) listView.getItemAtPosition(position);
+                Toast.makeText(HumanitiesActivity.this,clickedItem, Toast.LENGTH_LONG).show();
+
+                //perform item selected in the list view
+                if(position ==0  ){ //Digital Arts
+                    Intent intent = new Intent(HumanitiesActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 0);
+                    startActivity(intent);                 }
+                if(position ==1  ){ //Education
+                    Intent intent = new Intent(HumanitiesActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 1);
+                    startActivity(intent);                 }
+
+
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         //perform item selected

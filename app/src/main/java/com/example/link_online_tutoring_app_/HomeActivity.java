@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this,clickedItem, Toast.LENGTH_LONG).show();
 
                 //perform item selected in the list view
-                if(position ==0){
+                if(position ==0){ // 0 represents number of position
                     startActivity(new Intent(HomeActivity.this, PostActivity.class));
                     finish();
                 }

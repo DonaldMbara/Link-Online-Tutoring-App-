@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,10 +35,12 @@ import managers.AsyncHTTP;
 
 public class PostsActivity extends AppCompatActivity {
     public static String[] Hold = new String[1];
+    Button uploadImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posting_activity);
+        uploadImage = findViewById(R.id.uploadbtn);
         final Button Post_Button = findViewById(R.id.Post_button);
         final EditText Question = findViewById(R.id.Add_post);
         final Button Selector = findViewById(R.id.CourseChoice);
@@ -49,6 +52,12 @@ public class PostsActivity extends AppCompatActivity {
         final ContentValues cv3 = new ContentValues();
         String Selected_Course;
 
+        uploadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //startActivity(new Intent(PostsActivity.this,ImageUploadActivity.class));
+            }
+        });
         Selector.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -102,28 +111,6 @@ public class PostsActivity extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()){
-                    case R.id.private_chat:
-                        startActivity(new Intent( PostsActivity.this, ChatActivity.class));
-                        break;
-
-                    case R.id.action_faculties:
-                        startActivity(new Intent(PostsActivity.this,HomeActivity.class));
-                        finish();
-                        break;
-
-                    case R.id.posting:
-                        break;
-
-                }
-
-
-            }
-        });
 
 
 
@@ -200,4 +187,6 @@ public class PostsActivity extends AppCompatActivity {
             }
             }.execute();
         }
-    }
+
+
+}

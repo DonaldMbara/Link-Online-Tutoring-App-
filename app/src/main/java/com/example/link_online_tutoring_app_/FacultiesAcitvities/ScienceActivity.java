@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.link_online_tutoring_app_.ChatActivity;
 import com.example.link_online_tutoring_app_.HomeActivity;
 import com.example.link_online_tutoring_app_.R;
+import com.example.link_online_tutoring_app_.ViewPosts;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
@@ -35,9 +39,42 @@ public class ScienceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_science);
 
+
         listView = findViewById(R.id.listView);
         getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
+
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String clickedItem=(String) listView.getItemAtPosition(position);
+                Toast.makeText(ScienceActivity.this,clickedItem, Toast.LENGTH_LONG).show();
+
+                //perform item selected in the list view
+                if(position ==0  ){ //Coms
+                    Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 0);
+                    startActivity(intent);
+                }
+                if(position ==1  ){ //APPM
+                    Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 1);
+                    startActivity(intent);
+                }
+                if(position ==2  ){ //math
+                    Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 2);
+                    startActivity(intent);
+                }
+                if(position ==3  ){ //physics
+                    Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
+                    intent.putExtra("CoursId", 3);
+                    startActivity(intent);
+                }
+
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         //perform item selected
