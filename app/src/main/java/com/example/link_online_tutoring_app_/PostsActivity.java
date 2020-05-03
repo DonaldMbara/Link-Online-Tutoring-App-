@@ -1,5 +1,6 @@
 package com.example.link_online_tutoring_app_;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -52,6 +53,8 @@ public class PostsActivity extends AppCompatActivity {
         final ContentValues cv3 = new ContentValues();
         String Selected_Course;
 
+
+
         uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,7 +105,7 @@ public class PostsActivity extends AppCompatActivity {
                     Log.d("Safe", Dummy_Selection);
                     String dum ="DummyURL";
                  cv.put("status", Q);
-                 cv.put("postlikes", 12);
+                 cv.put("postlikes", 0);
                  cv.put("courseid", Holding);
                     cv.put("author", HoldName);
                  cv.put("photoURL", dum);
@@ -179,6 +182,8 @@ public class PostsActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(act,"Uploaded Successfully" , Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
                     toast.show();
+                    act.startActivity(new Intent(act,HomeActivity.class));
+                    ((Activity)act).finish();
                 }else{
                     Toast toast = Toast.makeText(act,output , Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
@@ -188,5 +193,12 @@ public class PostsActivity extends AppCompatActivity {
             }.execute();
         }
 
-
+    @Override
+    public void onBackPressed(){
+        finish();
+        super.onBackPressed();
+        PostsActivity.this.startActivity(new Intent(PostsActivity.this,HomeActivity.class));
+        finish();
+    }
 }
+
