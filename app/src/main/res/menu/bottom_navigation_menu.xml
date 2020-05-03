@@ -4,7 +4,7 @@
     <item
         android:id="@+id/action_faculties"
         android:icon="@drawable/dlist"
-        android:title="Faculties"
+        android:title="Post Feed"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/private_chat"
