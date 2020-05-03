@@ -18,11 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-<<<<<<< Updated upstream
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
-=======
-                                      <entry key="url" value="jar:file:/D:/New%20folder/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_camera_alt_black_24dp.xml" />
->>>>>>> Stashed changes
+                                      <entry key="url" value="jar:file:/D:/New%20folder/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_thumb_up_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -32,13 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-<<<<<<< Updated upstream
-                            <entry key="outputName" value="ic_search_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\Kaone" />
-=======
-                            <entry key="outputName" value="ic_camera_alt_black_24dp" />
+                            <entry key="outputName" value="ic_thumb_up_black_24dp" />
                             <entry key="sourceFile" value="C:\Users\Wits user" />
->>>>>>> Stashed changes
                           </map>
                         </option>
                       </PersistentState>
