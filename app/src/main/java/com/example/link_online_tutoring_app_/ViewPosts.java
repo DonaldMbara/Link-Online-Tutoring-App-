@@ -72,9 +72,6 @@ public class ViewPosts extends AppCompatActivity {
 
         new FetchPosts(course_id,recyclerView,this).execute();
 
-
-
-
     }
 
     @Override
