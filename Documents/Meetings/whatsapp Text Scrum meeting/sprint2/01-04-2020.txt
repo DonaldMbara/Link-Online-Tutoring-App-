@@ -1,0 +1,33 @@
+[10:18, 2/27/2020] Sikhanyiso: Gents can the meeting with Ryland be at 13:00
+[12:25, 2/27/2020] Donnie: Hey let's meet at MSB outside @12:45  before we meet Rylan at 13:00
+[12:32, 2/27/2020] MJ: Please guys, we ALL need to be present for meetings
+[12:32, 2/27/2020] Emmanuel_: I have a meeting scheduled at 13:15
+[12:33, 2/27/2020] Emmanuel_: But I'll be there by 12:45
+[12:46, 2/27/2020] Sikhanyiso: Im walking from bree to school now
+[13:16, 2/27/2020] Anastacia: Did u guys say you are coming back at what time?
+[13:18, 2/27/2020] MJ: Sometime 13:20, because rylan is at msl
+[13:25, 2/27/2020] MJ: Guys where you at can we regroup to go see Rylan, we think he may be back
+[13:26, 2/27/2020] Anastacia: I'm still at UG
+[13:27, 2/27/2020] MJ: @Sikhanyiso  where you at now
+[13:27, 2/27/2020] Sikhanyiso: I been at msb
+[13:28, 2/27/2020] MJ: Cool we’ll meet you at UG when we get the others
+[13:28, 2/27/2020] Sikhanyiso: Cool
+[13:36, 2/27/2020] Anastacia: Where are you?
+[13:36, 2/27/2020] MJ: Guys we met rylan outside msb he said it’s okay we don’t have to meet and discuss anything more
+[13:37, 2/27/2020] MJ: So I guess we can just leave 
+[14:09, 2/27/2020] Anastacia: How about eating the tutor service at the end?
+[14:09, 2/27/2020] Anastacia: When are we doing the Product Backlog?
+[14:09, 2/27/2020] Anastacia: Are we going to have these daily sprints?
+[14:16, 2/27/2020] MJ: We will have the daily sprints here on WhatsApp
+[14:17, 2/27/2020] MJ: We will have to fake them from Tuesday coz we haven’t had our first sprint yet
+[14:17, 2/27/2020] MJ: They are on taiga, if you’ve accepted the invitation the scrum master @Mongezi sent you, you can view them from there
+[14:18, 2/27/2020] MJ: What’s its name?
+[14:22, 2/27/2020] Emmanuel_: I didn't capture it
+He said we should talk with rylan about it
+[14:24, 2/27/2020] MJ: Eish
+[14:26, 2/27/2020] Emmanuel_: We can use the local one in the meantime
+[14:26, 2/27/2020] MJ: What do you mean by local
+[14:27, 2/27/2020] Emmanuel_: The one that comes with Android (mysqlite
+[14:27, 2/27/2020] MJ: Does it connect to the internet, coz we actually need a login screen by Monday
+[14:28, 2/27/2020] Mulisa: Hey guys there's one thing u forgetting to do, ur Daily Scrums, u need to do them everyday
+[14:30, 2/27/2020] MJ: Eish exactly

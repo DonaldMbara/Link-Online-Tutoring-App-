@@ -1,0 +1,21 @@
+[10:30, 2/12/2020] Tebogo: When do you think we should start planning
+[10:31, 2/12/2020] Mongezi: 
+[10:32, 2/12/2020] Mongezi: So we still need to go see him?
+[10:34, 2/12/2020] MJ: That’s what I’m asking my self now 
+[10:34, 2/12/2020] Sikhanyiso: Mean time we should prepare fr the first sprint, set up github, add badges and travis
+[10:35, 2/12/2020] Donnie: reply to that message and ask him if we need to meet
+[10:36, 2/12/2020] Donnie: does that need us to meet or we can do everything here ?
+[10:36, 2/12/2020] Tebogo: We can do that hear
+[10:36, 2/12/2020] Donnie: okay
+[10:37, 2/12/2020] Tebogo: Maybe he’d need us to meet him if the project description wasn’t clear
+[10:37, 2/12/2020] Tebogo: As long as he’s happy with it
+[10:37, 2/12/2020] Donnie: good
+[10:38, 2/12/2020] Mongezi: Okay cool
+[10:39, 2/12/2020] Tebogo: And that stuff he was talking about in class sounded important as part of our project, especially that UML thing
+[10:50, 2/12/2020] Sikhanyiso: Nah we dont meet fr thar
+[10:51, 2/12/2020] Sikhanyiso: The umls will b part of the app documentation
+[11:00, 2/12/2020] Donnie: Has anyone submitted the group members and name yet?
+[11:03, 2/12/2020] Tebogo: Nah I don’t think so
+[11:05, 2/12/2020] Donnie: okay..you can drop your student numbers and names I'll email to Rylan
+[11:27, 2/12/2020] Donnie: I am sending ...the group name idk suggest  .is it fine?
+[11:33, 2/12/2020] MJ: How is Boolean Autocrats

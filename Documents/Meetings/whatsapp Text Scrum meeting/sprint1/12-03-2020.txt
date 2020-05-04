@@ -1,0 +1,19 @@
+[21:03, 3/12/2020] Donnie: Daily Scrum
+
+
+Today I went through Software Architecture Design, then I specifically focused on the Model View Controller. 
+
+
+I wouldn't mind doing it.
+[21:06, 3/12/2020] Sikhanyiso: Today 
+I wrote a couple of unit test.
+[21:12, 3/12/2020] Mongezi: Didn’t get around to doing the task I set out to do, per yesterday.
+
+Will try to get on those task today and tomorrow.
+[21:20, 3/12/2020] Emmanuel_: Daily scrum 
+I wrote general PHP files that can be modified to fetch any data we want
+[06:13, 3/13/2020] MJ2: 12 March daily scrum 
+Created the list view on the welcome page
+
+-problem encountered is that I need to show a list of items fetched from the database
+[06:14, 3/13/2020] MJ2: My phone was dead + load shedding

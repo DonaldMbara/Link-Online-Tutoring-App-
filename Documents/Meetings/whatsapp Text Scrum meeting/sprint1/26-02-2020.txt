@@ -1,0 +1,37 @@
+Mongezi added Anastacia
+[12:19, 2/26/2020] Sikhanyiso: Ahhh
+[16:28, 2/26/2020] MJ: Guys, we need to do some task assignments
+[16:28, 2/26/2020] MJ: It’s prolly good if we all know who is comfortable and Good at what so that we group ourselves
+[16:29, 2/26/2020] MJ: @Mongezi don’t forget to show us what you’ve put on taiga for our meeting with Rylan tomorrow lunch time
+[16:30, 2/26/2020] MJ: And may we have our first daily scrum today since our first sprint is starting next week
+[16:53, 2/26/2020] Mongezi: We have to agree upon a time at which everyone will be available on WhatsApp so we can do our Daily Scrums, any suggestions?
+[16:54, 2/26/2020] MJ: EVERYONE ?
+[16:59, 2/26/2020] Donnie: Firstly, there's someone who's new here...has someone managed to give them an idea of what's happening?
+[17:01, 2/26/2020] Donnie: or should I?
+[17:01, 2/26/2020] Mongezi: Yeah you can
+[17:02, 2/26/2020] MJ: Use you can
+[17:09, 2/26/2020] MJ: You *
+[17:09, 2/26/2020] Donnie: sure
+[17:10, 2/26/2020] MJ: Awe
+[17:24, 2/26/2020] Donnie: User stories
+
+-As a new user, I can signup to Link so that my details can be stored in the database
+-As an authenticated user, I can log in to use Link so that I can have access to the Link
+-As an authenticated user, I can request for a tutor so that I can get help
+-As an authenticated user, I can talk to my tutor in private for meet ups 
+-As an authenticated user, I can be able to filter my course and post questions so that I can find them easily
+- As an authenticated user, I can be able to vote for answers offered by tutors so that the best answers remain on  top of the list
+
+ -As an authenticated tutor, I can be able to setup meetings so that I can discuss with the student face to face
+- As an authenticated tutor, I can be able to answer questions which a…
+[17:25, 2/26/2020] Donnie: some of the user stories I sent...remove and add some so that we can be able to add some on Taiga
+[17:27, 2/26/2020] Donnie: meanwhile we can continue .when he/she is online they'll read through our texts
+[17:27, 2/26/2020] Donnie: I mean the new member
+
+[17:37, 2/26/2020] Mongezi: And then in the description I lay it all out?
+[18:00, 2/26/2020] Mongezi: Awe
+[19:55, 2/26/2020] Mongezi: Can y’all check whether the user stories are cool
+[21:54, 2/26/2020] Mongezi: They’re cool?
+[21:55, 2/26/2020] Donnie: yep..why do they start at 5..is it because of the  ones which were removed?
+[22:48, 2/26/2020] Mongezi: Yeah
+[23:42, 2/26/2020] MJ: Yae

@@ -1,0 +1,18 @@
+[21:58, 3/11/2020] Donnie: Daily Scrum
+
+I documented the meeting for sprint 1 still to add Tasks
+[21:58, 3/11/2020] Donnie: sprint 2
+[21:59, 3/11/2020] Anastacia: Daily Scrum 
+
+Researched effective database design patterns(normalization->3NF) and gathered the syllabus outlines for different modules that'll be used in the tables
+[21:59, 3/11/2020] Mongezi: DAILY SCRUM 
+
+No individual things done today just finalizing tasks for sprint 2 and delegating them amongst each other. 
+
+Tomorrow research about shared preferences and architectural designs and various documentation.
+[22:00, 3/11/2020] MJ: Daily Scrum 
+
+Practiced shared preferences 
+
+Tomorrow I will research on architectural designs
+[22:01, 3/11/2020] Emmanuel_: Daily scrum did a research on PHP on how to bind parameters and avoid sql injections

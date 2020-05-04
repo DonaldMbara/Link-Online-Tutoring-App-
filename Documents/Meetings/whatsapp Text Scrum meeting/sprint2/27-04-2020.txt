@@ -1,0 +1,80 @@
+[20:49, 2/28/2020] Donnie: Hey guys, let's vote for the best one or add some ideas if not interested in those ones. handshake logo and name (credit @MJ) 
+
+what do u think?
+
+I'll forward the zip folder once you've picked any of those for Android.
+[20:50, 2/28/2020] MJ: Did you find them as PNG?
+[20:50, 2/28/2020] Donnie: no man
+[20:51, 2/28/2020] MJ: Eish, coz they won’t look neat on android if they are not PNGs
+[20:51, 2/28/2020] MJ: Unless if we match the color ??
+[20:51, 2/28/2020] MJ: Wait lemme show you something
+[20:51, 2/28/2020] Donnie: they are png man
+[20:52, 2/28/2020] Donnie: my bad
+[20:52, 2/28/2020] MJ: Ohh yae but they have to be the transparent pngs
+[20:53, 2/28/2020] MJ: Like this one which can be pasted on any color background
+[20:53, 2/28/2020] MJ: Daily scrum at 21:00 guys
+[20:54, 2/28/2020] Donnie: this is the only one which is transparent
+[20:55, 2/28/2020] MJ: Really? Okay then cool send it to me on 0646287098
+[20:55, 2/28/2020] MJ: Transparent ones allow us to do this
+[20:55, 2/28/2020] Mongezi: Guys can we break our first sprint into tasks
+[20:57, 2/28/2020] Donnie: Ya...let's do this
+[20:57, 2/28/2020] Donnie: sure sure
+[21:08, 2/28/2020] MJ: Eish, what’s app sent it as a jpeg
+[21:08, 2/28/2020] MJ: @Donnie
+[21:10, 2/28/2020] Donnie: Daily Scum.
+
+
+I drafted some logos.
+Researched about Junit testing and Espresso
+[21:11, 2/28/2020] Donnie: it's like this one Android studio
+[21:11, 2/28/2020] Donnie: on*
+[21:12, 2/28/2020] MJ: Daily Scrum
+
+Today I continued my research on Robolectric unit testing for android
+[21:15, 2/28/2020] Mongezi: Daily Scrum
+
+Started looking up about android testing.
+First two tasks added on the 1st sprint, yet to be assigned.
+[21:16, 2/28/2020] MJ: Yah send me this one, coz it looks like I received a picture
+[21:19, 2/28/2020] Sikhanyiso: I didn't do anything much today.
+[21:19, 2/28/2020] MJ: What database did we agree to use again?
+[21:20, 2/28/2020] Emmanuel_: Same here
+[21:20, 2/28/2020] Emmanuel_: MySQL
+[21:21, 2/28/2020] MJ: This is what we used last year if it may be of any help
+[21:23, 2/28/2020] Mongezi: Can you guys check on taiga on sprint 1 and see if you can come up with any more tasks
+[21:23, 2/28/2020] Emmanuel_: Yah it can be of great help xamp server is giving me hard time at the moment
+[21:26, 2/28/2020] MJ: Don’t we put the php scrips under storyless task?
+[21:31, 2/28/2020] Donnie: Creating splash,  registration Activity
+[21:31, 2/28/2020] MJ: And login
+[21:31, 2/28/2020] MJ: But do we have to register if we are going to ask pravesh for that LSP what what
+[21:32, 2/28/2020] Donnie: I thought about user story #6
+[21:32, 2/28/2020] MJ: What do you mean ?
+[21:32, 2/28/2020] Donnie: check taiga
+[21:33, 2/28/2020] MJ: Also add the testing of the splash and the registration, separate
+[21:33, 2/28/2020] Mongezi: I’ll put there then
+[21:34, 2/28/2020] MJ: Ohh okay cool we can do that for the next sprint I guess
+[21:35, 2/28/2020] Mongezi: We don’t need to put testing it’s already there
+[21:35, 2/28/2020] MJ: Let me chow, be back in 20 mins guys
+[21:35, 2/28/2020] MJ: Does that mean we have to test the phpS?
+[21:36, 2/28/2020] Sikhanyiso: What, no
+[21:36, 2/28/2020] Donnie: only android??
+[21:38, 2/28/2020] Mongezi: No we’ll just mark that as complete when it gets there
+[21:44, 2/28/2020] Donnie: Do we have to break down the things that we broke down???
+[21:45, 2/28/2020] Donnie: when it comes to assigning task
+[21:49, 2/28/2020] Mongezi: Idk hey
+[21:49, 2/28/2020] Donnie: alright
+[21:51, 2/28/2020] MJ: Ayt
+[21:55, 2/28/2020] Donnie: So what's the way forward?
+[21:57, 2/28/2020] MJ: I don’t think we have to break them down even further
+[21:57, 2/28/2020] Donnie: ya I notice that on Taiga
+[21:57, 2/28/2020] Donnie: *d
+[21:58, 2/28/2020] Emmanuel_: Aren't we supposed to design first using UML then translate to code
+[21:58, 2/28/2020] Donnie: yaa
+[22:03, 2/28/2020] Anastacia: Daily Scrum
+
+Github travis-CI and coveralls integration. Downloaded and doing UML
+[22:18, 2/28/2020] MJ: That’s how it came out guys
+[22:32, 2/28/2020] Mongezi: It’s cool
+[22:32, 2/28/2020] Mongezi: I remember Mulisa saying something about having to also test our animations
+[23:00, 2/28/2020] Donnie: damn??????
+[23:00, 2/28/2020] Donnie: ????
