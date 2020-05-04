@@ -53,22 +53,22 @@ public class ScienceActivity extends AppCompatActivity {
                 //perform item selected in the list view
                 if(position ==0  ){ //Coms
                     Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 0);
+                    intent.putExtra("course_id", 1);
                     startActivity(intent);
                 }
                 if(position ==1  ){ //APPM
                     Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 1);
+                    intent.putExtra("course_id", 2);
                     startActivity(intent);
                 }
                 if(position ==2  ){ //math
                     Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 2);
+                    intent.putExtra("course_id", 3);
                     startActivity(intent);
                 }
                 if(position ==3  ){ //physics
                     Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 3);
+                    intent.putExtra("course_id", 4);
                     startActivity(intent);
                 }
 

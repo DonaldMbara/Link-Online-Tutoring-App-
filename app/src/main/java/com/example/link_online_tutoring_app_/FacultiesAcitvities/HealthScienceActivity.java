@@ -54,16 +54,16 @@ public class HealthScienceActivity extends AppCompatActivity {
                 //perform item selected in the list view
                 if(position ==0  ){ //Phisiotherapy
                     Intent intent = new Intent(HealthScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 0);
+                    intent.putExtra("course_id", 8);
                     startActivity(intent);                }
                 if(position ==1  ){ //Dental Science
                     Intent intent = new Intent(HealthScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 1);
+                    intent.putExtra("course_id", 9);
                     startActivity(intent);
                 }
                 if(position ==2  ){ //Medicine
                     Intent intent = new Intent(HealthScienceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 2);
+                    intent.putExtra("course_id", 10);
                     startActivity(intent);                 }
 
             }

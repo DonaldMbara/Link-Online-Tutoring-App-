@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.LinearLayout;
@@ -254,7 +255,7 @@ class Reply{
                  outputStream = httpURLConnection.getOutputStream(); //used to write to url
                  bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8")); //used to load text  in buffer and formatting it before being sent
 
-                 data = URLEncoder.encode(" post_id", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(post_id), "UTF-8");
+                 data = URLEncoder.encode("post_id", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(post_id), "UTF-8");
 
                  bufferedWriter.write(data); //send data to the php file
                  bufferedWriter.flush();
@@ -327,28 +328,37 @@ class Reply{
         TextView post_caption = constraintLayout.findViewById(R.id.post_caption);
         TextView post_author = constraintLayout.findViewById(R.id.post_author);
         TextView post_likes=constraintLayout.findViewById(R.id.post_likes);
+        Button like=constraintLayout.findViewById(R.id.post_like_btn);
+        Button goToComments=constraintLayout.findViewById(R.id.post_comments);
+        /*
         TextView answer_author=constraintLayout.findViewById(R.id.post_a_author);
         TextView answer=constraintLayout.findViewById(R.id.post_answer);
         TextView answer_likes=constraintLayout.findViewById(R.id.post_a_likes);
-
+        */
 
 
         post_caption.setText(posts.get(i).getCaption());
         post_author.setText(posts.get(i).getPoster());
         post_likes.setText("number of likes " +posts.get(i).getLikes());
-        //answer_author.setText(ViewPosts.replies.get(post_search.get(i).getId()).get(0).getAuthor());
-        answer.setText(ViewPosts.replies.get(post_search.get(i).getId()).get(0).getMessage());
-        answer_likes.setText("number of likes"+ViewPosts.replies.get(post_search.get(i).getId()).get(0).getLikes());
 
-        constraintLayout.setOnClickListener(new View.OnClickListener() {
+        like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO someone clicks on a post
-
+                Toast.makeText(context,"this is like post button",Toast.LENGTH_SHORT).show();
+                //TODO erase the above toast and implement likes logic
+            }
+        });
+        goToComments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"this is go to comments button",Toast.LENGTH_SHORT).show();
+                //TODO erase the above toast and implement go to comments activity
             }
         });
 
-    //TODO similarly for other buttons
+
+
+
 
     }
 

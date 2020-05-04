@@ -54,16 +54,16 @@ public class CommerceActivity extends AppCompatActivity {
                 if(position ==0  ){ //Accounting science
 
                     Intent intent = new Intent(CommerceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 0);
+                    intent.putExtra("course_id", 5);
                     startActivity(intent);
                 }
                 if(position ==1  ){ //Economics
                     Intent intent = new Intent(CommerceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 1);
+                    intent.putExtra("course_id", 6);
                     startActivity(intent);                 }
                 if(position ==2  ){ //finance
                     Intent intent = new Intent(CommerceActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 2);
+                    intent.putExtra("course_id", 7);
                     startActivity(intent);                }
 
             }

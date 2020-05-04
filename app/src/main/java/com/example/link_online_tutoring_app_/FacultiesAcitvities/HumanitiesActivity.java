@@ -55,11 +55,11 @@ public class HumanitiesActivity extends AppCompatActivity {
                 //perform item selected in the list view
                 if(position ==0  ){ //Digital Arts
                     Intent intent = new Intent(HumanitiesActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 0);
+                    intent.putExtra("course_id", 11);
                     startActivity(intent);                 }
                 if(position ==1  ){ //Education
                     Intent intent = new Intent(HumanitiesActivity.this, ViewPosts.class);
-                    intent.putExtra("CoursId", 1);
+                    intent.putExtra("course_id", 12);
                     startActivity(intent);                 }
 
 
