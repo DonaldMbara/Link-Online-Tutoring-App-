@@ -328,6 +328,8 @@ class Reply{
         TextView post_caption = constraintLayout.findViewById(R.id.post_caption);
         TextView post_author = constraintLayout.findViewById(R.id.post_author);
         TextView post_likes=constraintLayout.findViewById(R.id.post_likes);
+        TextView post_time=constraintLayout.findViewById(R.id.post_time);
+        TextView post_date=constraintLayout.findViewById(R.id.post_date);
         Button like=constraintLayout.findViewById(R.id.post_like_btn);
         Button goToComments=constraintLayout.findViewById(R.id.post_comments);
         /*
@@ -340,6 +342,8 @@ class Reply{
         post_caption.setText(posts.get(i).getCaption());
         post_author.setText(posts.get(i).getPoster());
         post_likes.setText("number of likes " +posts.get(i).getLikes());
+        post_date.setText(posts.get(i).getDate());
+        post_time.setText(posts.get(i).getTime());
 
         like.setOnClickListener(new View.OnClickListener() {
             @Override

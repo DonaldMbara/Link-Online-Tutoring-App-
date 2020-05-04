@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
-    <TextView
-        android:id="@+id/post_author"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -15,59 +14,61 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="author of question"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/custom_border">
 
-    <TextView
-        android:id="@+id/post_caption"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="question"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_author" />
 
-    <TextView
-        android:id="@+id/post_likes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="num likes"
-        app:layout_constraintStart_toEndOf="@+id/post_like_btn"
-        app:layout_constraintTop_toBottomOf="@+id/post_caption" />
+        <TextView
+            android:id="@+id/post_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
 
-    <Button
-        android:id="@+id/post_like_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Like"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_caption" />
+        <TextView
+            android:id="@+id/post_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="Author"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/post_comments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="comments"
-        app:layout_constraintStart_toEndOf="@+id/post_likes"
-        app:layout_constraintTop_toBottomOf="@+id/post_caption" />
+        <TextView
+            android:id="@+id/post_date"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/post_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="top"
+            android:text="Time" />
+
+        <Button
+            android:id="@+id/post_like_btn"
+            android:layout_width="56dp"
+            android:layout_height="37dp"
+            android:text="Like" />
+
+        <TextView
+            android:id="@+id/post_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text="number of likes" />
+
+        <Button
+            android:id="@+id/post_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="comment" />
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
