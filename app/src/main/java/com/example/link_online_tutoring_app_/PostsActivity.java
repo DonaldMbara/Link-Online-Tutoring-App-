@@ -37,6 +37,8 @@ import managers.AsyncHTTP;
 public class PostsActivity extends AppCompatActivity {
     public static String[] Hold = new String[1];
     Button uploadImage;
+    static String Holding;
+    static String HoldName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,12 +81,15 @@ public class PostsActivity extends AppCompatActivity {
             }
         });
 
+
         Post_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String Dummy_Selection = viewer.getText().toString().trim();
-                String Safe_checker = "Safe";
                 String Q = Question.getText().toString().trim();
+
+                String Safe_checker = "Safe";
 
                 if(TextUtils.isEmpty(Q)){
                     Question.setError("Cannot post an empty field");
@@ -95,22 +100,36 @@ public class PostsActivity extends AppCompatActivity {
                    Safe_checker = "Unsafe";
                 }
 
-                if(Safe_checker.equals("Safe")){
-                    SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
+                if(Safe_checker.equals("Safe")) {
+
+                    SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
                     String StudentNumber = (Prefs.getString(RequestHandler.Unkey, ""));
                     cv2.put("course_name", Dummy_Selection);
                     cv3.put("studentNo", StudentNumber);
                     Get_Course_ID(cv2);
                     Get_Username(cv3);
+
                     Log.d("Safe", Dummy_Selection);
-                    String dum ="DummyURL";
-                 cv.put("status", Q);
-                 cv.put("postlikes", 0);
-                 cv.put("courseid", Holding);
-                    cv.put("author", HoldName);
-                 cv.put("photoURL", dum);
-                 Do_Post(cv, PostsActivity.this);
+                    String dum = "DummyURL";
+
+                    if (TextUtils.isEmpty(Holding) || TextUtils.isEmpty(HoldName)) {
+
+                        Get_Course_ID(cv2);
+                        Get_Username(cv3);
+                        Toast toast = Toast.makeText(PostsActivity.this, "Network Error", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                        toast.show();
+                    } else {
+                        cv.put("status", Q);
+                        cv.put("postlikes", 0);
+                        cv.put("courseid", Holding);
+                        cv.put("author", HoldName);
+                        cv.put("photoURL", dum);
+                        Do_Post(cv, PostsActivity.this);
+
+                    }
                 }
+
             }
         });
 
@@ -118,7 +137,7 @@ public class PostsActivity extends AppCompatActivity {
 
 
     }
-    static String Holding;
+
     private static String Get_Course_ID(ContentValues cv2){
 
         new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/getid.php", cv2){
@@ -143,7 +162,7 @@ public class PostsActivity extends AppCompatActivity {
         return Holding;
     }
 
-    static String HoldName;
+
     private static String Get_Username(ContentValues cv3){
         new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/getName.php", cv3){
 
@@ -168,30 +187,35 @@ public class PostsActivity extends AppCompatActivity {
     }
 
 
-    private static void Do_Post(ContentValues cv,final Context act ){
-        new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/post.php",cv){
 
-            @Override
-            protected void onPreExecute() {
+    private static void Do_Post(ContentValues cv,final Context act ) {
 
-            }
+            new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/post.php", cv) {
 
-            @Override
-            protected void onPostExecute(String output) {
-                if(output!=null && output.equals("Uploaded Successfully")){
-                    Toast toast = Toast.makeText(act,"Uploaded Successfully" , Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                    toast.show();
-                    act.startActivity(new Intent(act,HomeActivity.class));
-                    ((Activity)act).finish();
-                }else{
-                    Toast toast = Toast.makeText(act,output , Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                    toast.show();
+                @Override
+                protected void onPreExecute() {
+
                 }
-            }
+
+                @Override
+                protected void onPostExecute(String output) {
+                    if (output != null && output.equals("Uploaded Successfully")) {
+                        Toast toast = Toast.makeText(act, "Uploaded Successfully", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                        toast.show();
+                        Holding = "";
+                        HoldName = "";
+                        act.startActivity(new Intent(act, HomeActivity.class));
+                        ((Activity) act).finish();
+                    } else {
+                        Toast toast = Toast.makeText(act, output, Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                        toast.show();
+                    }
+                }
             }.execute();
         }
+
 
     @Override
     public void onBackPressed(){
@@ -201,4 +225,5 @@ public class PostsActivity extends AppCompatActivity {
         finish();
     }
 }
+
 
