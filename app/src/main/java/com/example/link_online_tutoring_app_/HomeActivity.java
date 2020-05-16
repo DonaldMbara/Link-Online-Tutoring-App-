@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         listView = findViewById(R.id.listView);
-        getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
+        getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
 
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -167,7 +167,7 @@ public class HomeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_science);
 
             listView = findViewById(R.id.listView);
-            getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
+            getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
             listView.setAdapter(arrayAdapter);
 
             bottomNavigationView = findViewById(R.id.bottom_navigation);

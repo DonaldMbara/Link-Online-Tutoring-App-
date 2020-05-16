@@ -42,7 +42,7 @@ public class HumanitiesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_humanities);
 
         listView = findViewById(R.id.listView);
-        getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=4");
+        getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=4");
         listView.setAdapter(arrayAdapter);
 
 

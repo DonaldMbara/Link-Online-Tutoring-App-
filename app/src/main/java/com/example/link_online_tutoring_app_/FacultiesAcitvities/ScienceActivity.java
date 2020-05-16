@@ -41,7 +41,7 @@ public class ScienceActivity extends AppCompatActivity {
 
 
         listView = findViewById(R.id.listView);
-        getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
+        getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
 
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

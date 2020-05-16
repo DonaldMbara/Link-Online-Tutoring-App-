@@ -42,7 +42,7 @@ public class HealthScienceActivity extends AppCompatActivity {
 
 
         listView = findViewById(R.id.listView);
-        getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=3");
+        getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=3");
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

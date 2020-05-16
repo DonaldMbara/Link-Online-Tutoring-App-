@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -37,7 +38,8 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
         switch (task){
             case "login":
                 try {
-                    URL url=new URL("http://lamp.ms.wits.ac.za/~s1819369/login.php");
+                    Log.d("moving", "Still Good");
+                    URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/login.php");
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String name=strings[0];
                     String password=strings[1];
@@ -75,7 +77,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 //TODO
 
                 try {
-                    URL url=new URL("http://lamp.ms.wits.ac.za/~s1819369/registration.php");
+                    URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/registration.php");
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String uname=strings[0];
                     String password=strings[1];
@@ -136,7 +138,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                SharedPreferences.Editor editor=sharedPreferences.edit();
                editor.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
                editor.apply();
-
+                Log.d("Good", "login successful");
                Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
 
                 Intent intent=new Intent(context, HomeActivity.class);
@@ -144,6 +146,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 context.startActivity(intent); //go to home menu login success
                 break;
             case "try again":
+                Log.d("Bad", "login Failed");
                 Toast.makeText(context,"login attempt failed",Toast.LENGTH_SHORT).show();
                 break;
             case "Registered Successfully":
@@ -160,6 +163,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 context.startActivity(new Intent(context, HomeActivity.class)); //registration success go to home menu
                 break;
             case "Something went wrong":
+
                 Toast.makeText(context,"registration not successful",Toast.LENGTH_SHORT).show();
                 break;
         }

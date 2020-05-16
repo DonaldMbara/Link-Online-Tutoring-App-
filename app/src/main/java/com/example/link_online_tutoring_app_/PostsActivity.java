@@ -140,7 +140,7 @@ public class PostsActivity extends AppCompatActivity {
 
     private static String Get_Course_ID(ContentValues cv2){
 
-        new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/getid.php", cv2){
+        new AsyncHTTP("https://lamp.ms.wits.ac.za/~s1819369/getid.php", cv2){
 
             @Override
             protected void onPreExecute() {
@@ -164,7 +164,7 @@ public class PostsActivity extends AppCompatActivity {
 
 
     private static String Get_Username(ContentValues cv3){
-        new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/getName.php", cv3){
+        new AsyncHTTP("https://lamp.ms.wits.ac.za/~s1819369/getName.php", cv3){
 
             @Override
             protected void onPreExecute() {
@@ -190,7 +190,7 @@ public class PostsActivity extends AppCompatActivity {
 
     private static void Do_Post(ContentValues cv,final Context act ) {
 
-            new AsyncHTTP("http://lamp.ms.wits.ac.za/~s1819369/post.php", cv) {
+            new AsyncHTTP("https://lamp.ms.wits.ac.za/~s1819369/post.php", cv) {
 
                 @Override
                 protected void onPreExecute() {

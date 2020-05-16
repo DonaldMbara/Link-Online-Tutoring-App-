@@ -40,7 +40,7 @@ public class CommerceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_commerce);
 
         listView = findViewById(R.id.listView);
-        getJSON("http://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=2");
+        getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=2");
         listView.setAdapter(arrayAdapter);
 
 

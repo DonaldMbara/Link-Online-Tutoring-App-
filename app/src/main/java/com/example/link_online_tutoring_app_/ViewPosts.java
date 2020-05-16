@@ -207,7 +207,7 @@ class Reply{
      @Override
      protected String doInBackground(Void... voids) {
          try{
-         URL url=new URL("http://lamp.ms.wits.ac.za/~s1819369/trial_fetch_posts.php");
+         URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/trial_fetch_posts.php");
          HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
          httpURLConnection.setRequestMethod("POST");
          httpURLConnection.setDoInput(true);     //allows us to use input stream
@@ -246,7 +246,7 @@ class Reply{
 
              for (int post_id:ids) {
                  result = "";
-                 url = new URL("http://lamp.ms.wits.ac.za/~s1819369/Sort.php");
+                 url = new URL("https://lamp.ms.wits.ac.za/~s1819369/Sort.php");
                  httpURLConnection = (HttpURLConnection) url.openConnection();
                  httpURLConnection.setRequestMethod("POST");
                  httpURLConnection.setDoInput(true);     //allows us to use input stream
