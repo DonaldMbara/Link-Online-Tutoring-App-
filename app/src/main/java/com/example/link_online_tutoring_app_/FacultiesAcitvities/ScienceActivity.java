@@ -91,7 +91,7 @@ public class ScienceActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_faculties:
-                        startActivity(new Intent(ScienceActivity.this,HomeActivity.class));
+                        startActivity(new Intent(ScienceActivity.this, HomeActivity.class));
                         finish();
                         break;
                     case R.id.posting:

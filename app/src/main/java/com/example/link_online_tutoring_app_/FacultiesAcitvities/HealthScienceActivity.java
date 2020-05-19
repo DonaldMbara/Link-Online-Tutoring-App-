@@ -81,7 +81,7 @@ public class HealthScienceActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_faculties:
-                        startActivity(new Intent(HealthScienceActivity.this,HomeActivity.class));
+                        startActivity(new Intent(HealthScienceActivity.this, HomeActivity.class));
                         finish();
                         break;
                     case R.id.posting:

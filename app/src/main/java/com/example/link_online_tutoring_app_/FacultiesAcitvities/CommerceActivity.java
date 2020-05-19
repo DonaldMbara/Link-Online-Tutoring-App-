@@ -81,7 +81,7 @@ public class CommerceActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_faculties:
-                        startActivity(new Intent(CommerceActivity.this,HomeActivity.class));
+                        startActivity(new Intent(CommerceActivity.this, HomeActivity.class));
                         finish();
                         break;
 

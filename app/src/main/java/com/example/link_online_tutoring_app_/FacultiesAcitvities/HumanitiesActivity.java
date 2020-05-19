@@ -78,7 +78,7 @@ public class HumanitiesActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_faculties:
-                        startActivity(new Intent(HumanitiesActivity.this,HomeActivity.class));
+                        startActivity(new Intent(HumanitiesActivity.this, HomeActivity.class));
                         finish();
                         break;
                     case R.id.posting:
