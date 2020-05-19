@@ -17,7 +17,7 @@
         <activity android:name=".FacultiesAcitvities.HealthScienceActivity" />
         <activity android:name=".FacultiesAcitvities.HumanitiesActivity" />
         <activity android:name=".FacultiesAcitvities.CommerceActivity" />
-        <activity android:name=".HomeActivity$PostActivity" />
+        <activity android:name=".FacultiesAcitvities.ScienceActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

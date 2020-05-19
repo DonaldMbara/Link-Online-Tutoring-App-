@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.link_online_tutoring_app_.ChatActivity;
 import com.example.link_online_tutoring_app_.HomeActivity;
+import com.example.link_online_tutoring_app_.PostsActivity;
 import com.example.link_online_tutoring_app_.R;
 import com.example.link_online_tutoring_app_.ViewPosts;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,29 +31,31 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ScienceActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
+
     ArrayAdapter<String> arrayAdapter;
-    //BottomNavigationView bottomNavigationView;
     ListView listView;
 
+
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_science);
 
-
         listView = findViewById(R.id.listView);
         getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_courses.php?id=1");
-
         listView.setAdapter(arrayAdapter);
+
+        Log.d("Leo", "Entering");
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String clickedItem=(String) listView.getItemAtPosition(position);
                 Toast.makeText(ScienceActivity.this,clickedItem, Toast.LENGTH_LONG).show();
-
+                Log.d("Leo", "Entering");
                 //perform item selected in the list view
-                if(position ==0  ){ //Coms
+                if(position == 0  ){ //Coms
+                    Log.d("inif", "Within");
                     Intent intent = new Intent(ScienceActivity.this, ViewPosts.class);
                     intent.putExtra("course_id", 1);
                     startActivity(intent);
@@ -72,7 +76,6 @@ public class ScienceActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-
             }
         });
 
@@ -90,6 +93,9 @@ public class ScienceActivity extends AppCompatActivity {
                     case R.id.action_faculties:
                         startActivity(new Intent(ScienceActivity.this,HomeActivity.class));
                         finish();
+                        break;
+                    case R.id.posting:
+                        startActivity(new Intent(ScienceActivity.this, PostsActivity.class));
                         break;
                 }
 
@@ -152,4 +158,10 @@ public class ScienceActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, courses);
         listView.setAdapter(arrayAdapter);
     }
+
 }
+
+
+
+
+
