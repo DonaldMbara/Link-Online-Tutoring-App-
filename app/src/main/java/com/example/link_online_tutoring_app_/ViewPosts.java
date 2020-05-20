@@ -341,12 +341,12 @@ class Reply{
         Button like=constraintLayout.findViewById(R.id.post_like_btn);
         Button goToComments=constraintLayout.findViewById(R.id.post_comments);
 
-        post_caption.setText(posts.get(i).getCaption());
-        post_author.setText(posts.get(i).getPoster());
-        post_likes.setText("number of likes " +posts.get(i).getLikes());
-        post_date.setText(posts.get(i).getDate());
-        post_time.setText(posts.get(i).getTime());
-        final int Theid = posts.get(i).getId();
+        post_caption.setText(post_search.get(i).getCaption());
+        post_author.setText(post_search.get(i).getPoster());
+        post_likes.setText("number of likes " +post_search.get(i).getLikes());
+        post_date.setText(post_search.get(i).getDate());
+        post_time.setText(post_search.get(i).getTime());
+        final int Theid = post_search.get(i).getId();
 
         like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -364,10 +364,6 @@ class Reply{
                 intent.putExtra("post_id", id);
 //                Log.d("TheID", );
                 context.startActivity(intent);
-
-
-
-
 
             }
         });
