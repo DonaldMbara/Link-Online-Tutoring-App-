@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    android:background="@color/SortOfwhite"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="407dp"
+        android:layout_height="129dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="match_parent"
+            android:textSize="12dp"
+            android:layout_below="@id/answer"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/num_of_likes"
+            android:layout_width="match_parent"
+            android:layout_below="@id/author"
+            android:textSize="12dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/Like_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="LIKE" />
+</androidx.cardview.widget.CardView>

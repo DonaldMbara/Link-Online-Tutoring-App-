@@ -14,8 +14,8 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
+        android:layout_width="390dp"
+        android:layout_height="411dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="15dp"
@@ -24,8 +24,8 @@
 
 
         <LinearLayout
-            android:layout_width="368dp"
-            android:layout_height="match_parent"
+            android:layout_width="369dp"
+            android:layout_height="402dp"
             android:orientation="vertical">
 
 
@@ -75,7 +75,15 @@
                 android:layout_height="35dp"
                 android:text="replies" />
 
+
         </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progres_dialog_status"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center" />
 
 
     </androidx.cardview.widget.CardView>

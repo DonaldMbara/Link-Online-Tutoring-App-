@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,6 +27,9 @@ import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.link_online_tutoring_app_.FacultiesAcitvities.CommerceActivity;
+import com.example.link_online_tutoring_app_.FacultiesAcitvities.HealthScienceActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +51,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ViewPosts extends AppCompatActivity {
+import static androidx.core.content.ContextCompat.startActivity;
+
+public  class ViewPosts extends AppCompatActivity {
 
     static ArrayList<Post>posts;
     RecyclerView recyclerView;
@@ -102,6 +108,8 @@ public class ViewPosts extends AppCompatActivity {
     }
 
 }
+
+
 
 
 
@@ -187,7 +195,7 @@ class Reply{
     public int getLikes() {
         return likes;
     }
-}
+ }
 
  class FetchPosts extends AsyncTask<Void,Void,String> {
     private int course_id;
@@ -332,18 +340,13 @@ class Reply{
         TextView post_date=constraintLayout.findViewById(R.id.post_date);
         Button like=constraintLayout.findViewById(R.id.post_like_btn);
         Button goToComments=constraintLayout.findViewById(R.id.post_comments);
-        /*
-        TextView answer_author=constraintLayout.findViewById(R.id.post_a_author);
-        TextView answer=constraintLayout.findViewById(R.id.post_answer);
-        TextView answer_likes=constraintLayout.findViewById(R.id.post_a_likes);
-        */
-
 
         post_caption.setText(posts.get(i).getCaption());
         post_author.setText(posts.get(i).getPoster());
         post_likes.setText("number of likes " +posts.get(i).getLikes());
         post_date.setText(posts.get(i).getDate());
         post_time.setText(posts.get(i).getTime());
+        final int Theid = posts.get(i).getId();
 
         like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -355,15 +358,19 @@ class Reply{
         goToComments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"this is go to comments button",Toast.LENGTH_SHORT).show();
                 //TODO erase the above toast and implement go to comments activity
+                String id = Integer.toString(Theid);
+                Intent intent = new Intent(context, ViewAnswers.class);
+                intent.putExtra("post_id", id);
+//                Log.d("TheID", );
+                context.startActivity(intent);
+
+
+
+
+
             }
         });
-
-
-
-
-
     }
 
 
@@ -419,3 +426,5 @@ class Reply{
         }
     }
 }
+
+
