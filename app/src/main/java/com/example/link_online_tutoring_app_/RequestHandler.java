@@ -19,13 +19,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
 public class RequestHandler extends AsyncTask<String,Void,String> {
     Context context;
     String task;
     String result;
     static String Unkey = "Key";
+    String StudNum;
 
     public RequestHandler(Context context, String task) {
         this.context = context;
@@ -42,6 +41,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/login.php");
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String name=strings[0];
+                    StudNum = strings[0];
                     String password=strings[1];
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoInput(true);     //allows us to use input stream
@@ -80,11 +80,14 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/registration.php");
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String uname=strings[0];
+
                     String password=strings[1];
                     String email=strings[2];
                     String firstname=strings[3];
                     String lastname=strings[4];
                     String studentnum=strings[5];
+                    StudNum = strings[5];
+
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoInput(true);     //allows us to use input stream
                     httpURLConnection.setDoOutput(true);    //allows us to use output stream
@@ -137,8 +140,11 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 SharedPreferences sharedPreferences=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
                SharedPreferences.Editor editor=sharedPreferences.edit();
                editor.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
+                editor.putString("Key2", StudNum);
                editor.apply();
+
                 Log.d("Good", "login successful");
+                Log.d("QuickCheck", StudNum);
                Toast.makeText(context,"login successful",Toast.LENGTH_LONG).show();
 
                 Intent intent=new Intent(context, HomeActivity.class);

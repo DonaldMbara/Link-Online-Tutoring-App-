@@ -362,7 +362,6 @@ class Reply{
                 String id = Integer.toString(Theid);
                 Intent intent = new Intent(context, ViewAnswers.class);
                 intent.putExtra("post_id", id);
-//                Log.d("TheID", );
                 context.startActivity(intent);
 
             }

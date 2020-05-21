@@ -31,6 +31,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PostsActivity" />
         <activity android:name=".ViewAnswers"/>
+        <activity android:name=".AnswerActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

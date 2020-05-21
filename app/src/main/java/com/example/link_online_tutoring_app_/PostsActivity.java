@@ -103,23 +103,25 @@ public class PostsActivity extends AppCompatActivity {
                 if(Safe_checker.equals("Safe")) {
 
                     SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-                    String StudentNumber = (Prefs.getString(RequestHandler.Unkey, ""));
+                    String StudentNumber = (Prefs.getString("Key2", ""));
                     cv2.put("course_name", Dummy_Selection);
                     cv3.put("studentNo", StudentNumber);
                     Get_Course_ID(cv2);
                     Get_Username(cv3);
 
-                    Log.d("Safe", Dummy_Selection);
+                    Log.d("Dummy_S", Dummy_Selection);
+                    Log.d("Student_N", StudentNumber);
                     String dum = "DummyURL";
 
                     if (TextUtils.isEmpty(Holding) || TextUtils.isEmpty(HoldName)) {
-
                         Get_Course_ID(cv2);
                         Get_Username(cv3);
-                        Toast toast = Toast.makeText(PostsActivity.this, "Network Error", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(PostsActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
                         toast.show();
                     } else {
+
+                        Log.d("Wtf", HoldName);
                         cv.put("status", Q);
                         cv.put("postlikes", 0);
                         cv.put("courseid", Holding);
@@ -163,7 +165,8 @@ public class PostsActivity extends AppCompatActivity {
     }
 
 
-    private static String Get_Username(ContentValues cv3){
+    public static String Get_Username(ContentValues cv3){
+         String SomeString;
         new AsyncHTTP("https://lamp.ms.wits.ac.za/~s1819369/getName.php", cv3){
 
             @Override
@@ -176,17 +179,16 @@ public class PostsActivity extends AppCompatActivity {
                 try {
                     JSONArray arr = new JSONArray(output);
                     JSONObject op = (JSONObject) arr.get(0);
-                    HoldName = op.getString("StudentNo");
+                    HoldName = op.getString("FirstName");
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
 
             }
         }.execute();
+
         return HoldName;
     }
-
-
 
     private static void Do_Post(ContentValues cv,final Context act ) {
 
@@ -203,6 +205,7 @@ public class PostsActivity extends AppCompatActivity {
                         Toast toast = Toast.makeText(act, "Uploaded Successfully", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
                         toast.show();
+                        Log.d("Username", HoldName);
                         Holding = "";
                         HoldName = "";
                         act.startActivity(new Intent(act, HomeActivity.class));

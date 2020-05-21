@@ -8,11 +8,16 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +37,7 @@ import managers.AsyncHTTP;
 public class ViewAnswers extends AppCompatActivity {
     RecyclerView Rv;
     Adapter myAd;
+    String Post_id;
     ArrayList<Answer_Model> modelsVR6 = new ArrayList<>();
 
     @Override
@@ -39,7 +45,9 @@ public class ViewAnswers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewanswers);
 
-       String Post_id = getIntent().getStringExtra("post_id");
+        Toolbar tl = findViewById(R.id.Secondtoolbar);
+        setSupportActionBar(tl);
+       Post_id = getIntent().getStringExtra("post_id");
 
         Log.d("TheID", Post_id);
         ContentValues cv = new ContentValues();
@@ -47,7 +55,48 @@ public class ViewAnswers extends AppCompatActivity {
         getMyList(cv);
 
 
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.answer_menu,menu);
+
+        final MenuItem item=menu.findItem(R.id.reply_post);
+        if (item != null) {
+            final Button answer_button = (Button) item.getActionView();
+            answer_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ViewAnswers.super.onOptionsItemSelected(item);
+                }
+            });
+
+            //Set a ClickListener, the text,
+            //the background color or something like that
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.reply_post:
+                Intent intent = new Intent(ViewAnswers.this, AnswerActivity.class);
+                intent.putExtra("Post_Id_Key", Post_id);
+                startActivity(intent);
+                finish();
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
+
+
+    }
+
+
     String Answer;
     String Name;
     int LikesNum;
@@ -67,34 +116,46 @@ public class ViewAnswers extends AppCompatActivity {
 
                     @Override
                     protected void onPostExecute(String output) {
-                        try {
-                            JSONArray arr = new JSONArray(output);
-                            ArrayList<Answer_Model> models = new ArrayList<>();
-                            Answer_Model am;
-                            for (int i = 0; i < arr.length(); i++) {
-                                final JSONObject ob = (JSONObject) arr.get(i);
-                                am = new Answer_Model();
-                                Log.d("Repley", "Getting reply");
-                                Answer = ob.getString("REPLY");
-                                Name = ob.getString("AUTHOR");
-                                LikesNum = Integer.parseInt(ob.getString("REPLY_LIKES"));
-                                am.setAnswer(Answer);
-                                am.setAuthor(Name);
-                                am.setLikes(LikesNum);
 
-                                models.add(am);
-                                modelsVR6 = models;
-                                Log.d("ClassAnswer", modelsVR6.size() + "");
+
+                            try {
+                                JSONArray arr = new JSONArray(output);
+                                ArrayList<Answer_Model> models = new ArrayList<>();
+                                Answer_Model am;
+                                for (int i = 0; i < arr.length(); i++) {
+                                    final JSONObject ob = (JSONObject) arr.get(i);
+                                    am = new Answer_Model();
+                                    Log.d("Repley", "Getting reply");
+                                    Answer = ob.getString("REPLY");
+                                    Name = ob.getString("AUTHOR");
+                                    LikesNum = Integer.parseInt(ob.getString("REPLY_LIKES"));
+                                    am.setAnswer(Answer);
+                                    am.setAuthor(Name);
+                                    am.setLikes(LikesNum);
+
+                                    models.add(am);
+                                    modelsVR6 = models;
+                                    Log.d("ClassAnswer", modelsVR6.size() + "");
+                                }
+
+                                if(models.size()==0){
+                                    Toast toast = Toast.makeText(ViewAnswers.this, "This question does not have answders yet...", Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                                    toast.show();
+
+                                }
+                                else {
+
+                                    myAd = new Adapter(ViewAnswers.this, models);
+                                    Rv.setAdapter(myAd);
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-
-                            myAd = new Adapter(ViewAnswers.this, models);
-                            Rv.setAdapter(myAd);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
 
-                    }
+
 
 
                 }.execute();

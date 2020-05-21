@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/SortOfwhite"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/PostYourA"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AIblue"
+        android:gravity="center"
+        android:text="Write and post your answer"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/Add_Ans"
+        android:layout_width="305dp"
+        android:layout_height="171dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Write your Answer..."
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/Answer_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PostYourA"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <Button
+        android:id="@+id/Answer_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        android:background="@drawable/button_borders"
+        android:text="Post"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PostYourA"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
