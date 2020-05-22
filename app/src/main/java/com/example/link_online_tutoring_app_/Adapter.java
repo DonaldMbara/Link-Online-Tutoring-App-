@@ -55,7 +55,6 @@ public class Adapter extends RecyclerView.Adapter<Holder> {
             @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View view) {
-                Toast.makeText(c,"this is like btn",Toast.LENGTH_SHORT).show();
                 new AsyncTask<Void, Void, String>() {
                     @SuppressLint("StaticFieldLeak")
                     @Override
