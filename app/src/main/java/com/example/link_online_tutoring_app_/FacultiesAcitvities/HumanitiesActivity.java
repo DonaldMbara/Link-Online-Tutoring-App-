@@ -1,8 +1,5 @@
 package com.example.link_online_tutoring_app_.FacultiesAcitvities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,8 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.link_online_tutoring_app_.ChatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.link_online_tutoring_app_.HomeActivity;
+import com.example.link_online_tutoring_app_.ListAllUsers;
 import com.example.link_online_tutoring_app_.PostsActivity;
 import com.example.link_online_tutoring_app_.R;
 import com.example.link_online_tutoring_app_.ViewPosts;
@@ -74,7 +74,7 @@ public class HumanitiesActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.private_chat:
-                        startActivity(new Intent(HumanitiesActivity.this, ChatActivity.class));
+                        startActivity(new Intent(HumanitiesActivity.this, ListAllUsers.class));
                         break;
 
                     case R.id.action_faculties:

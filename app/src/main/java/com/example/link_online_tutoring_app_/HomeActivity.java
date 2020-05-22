@@ -82,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.private_chat:
-                        startActivity(new Intent(HomeActivity.this,ChatActivity.class));
+                        startActivity(new Intent(HomeActivity.this,ListAllUsers.class));
                         break;
 
                     case R.id.action_faculties:
