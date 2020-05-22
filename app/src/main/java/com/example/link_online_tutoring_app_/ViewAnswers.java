@@ -1,5 +1,6 @@
 package com.example.link_online_tutoring_app_;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
@@ -100,6 +101,7 @@ public class ViewAnswers extends AppCompatActivity {
     String Answer;
     String Name;
     int LikesNum;
+    @SuppressLint("StaticFieldLeak")
     private void getMyList(final ContentValues cv) {
         Rv = findViewById(R.id.recycleView);
         Rv.setLayoutManager(new LinearLayoutManager(this));
@@ -129,9 +131,11 @@ public class ViewAnswers extends AppCompatActivity {
                                     Answer = ob.getString("REPLY");
                                     Name = ob.getString("AUTHOR");
                                     LikesNum = Integer.parseInt(ob.getString("REPLY_LIKES"));
+                                    int Id=ob.getInt("REPLY_ID");
                                     am.setAnswer(Answer);
                                     am.setAuthor(Name);
                                     am.setLikes(LikesNum);
+                                    am.setId(Id);
 
                                     models.add(am);
                                     modelsVR6 = models;

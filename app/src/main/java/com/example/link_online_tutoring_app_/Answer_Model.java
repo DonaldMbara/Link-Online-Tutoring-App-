@@ -4,6 +4,15 @@ public class Answer_Model {
     private String answer;
     private String author;
     private int likes;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAnswer() {
         return answer;
