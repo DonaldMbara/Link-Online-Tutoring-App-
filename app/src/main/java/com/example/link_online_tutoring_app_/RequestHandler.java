@@ -25,7 +25,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     String result;
     static String Unkey = "Key";
     String StudNum;
-
+    String username;
     public RequestHandler(Context context, String task) {
         this.context = context;
         this.task = task;
@@ -42,6 +42,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
                     String name=strings[0];
                     StudNum = strings[0];
+                    username=StudNum;
                     String password=strings[1];
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoInput(true);     //allows us to use input stream
@@ -86,6 +87,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     String firstname=strings[3];
                     String lastname=strings[4];
                     String studentnum=strings[5];
+                    username=studentnum;
                     StudNum = strings[5];
 
                     httpURLConnection.setRequestMethod("POST");
@@ -140,7 +142,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 SharedPreferences sharedPreferences=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
                SharedPreferences.Editor editor=sharedPreferences.edit();
                editor.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
-                editor.putString("Key2", StudNum);
+                editor.putString(Unkey, username);
                editor.apply();
 
                 Log.d("Good", "login successful");
@@ -160,7 +162,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 SharedPreferences sharedPreferences1=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor1=sharedPreferences1.edit();
                 editor1.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
-                editor1.putString(Unkey, LoginActivity.UN);
+                editor1.putString(Unkey, username);
                 editor1.apply();
                 editor1.commit();
 

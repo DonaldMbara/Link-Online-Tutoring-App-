@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -130,6 +131,10 @@ class Post{
         this.time = time;
         this.likes = likes;
         this.photo_url = photo_url;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public int getId() {
@@ -349,10 +354,75 @@ class Reply{
         final int Theid = post_search.get(i).getId();
 
         like.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"this is like post button",Toast.LENGTH_SHORT).show();
                 //TODO erase the above toast and implement likes logic
+                new AsyncTask<Void, Void, String>() {
+                    @Override
+                    protected String doInBackground(Void... voids) {
+                        ArrayList<String> result=new ArrayList<>();
+                        JSONObject jsonObject = null;
+
+                        try {
+                            Log.d("moving", "Still Good");
+                            URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/Testing.php");
+                            HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
+                            String post_id=String.valueOf(Theid);
+                            SharedPreferences sharedPreferences1=LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN,Context.MODE_PRIVATE);
+                            String user_id= sharedPreferences1.getString(RequestHandler.Unkey,null);
+
+                            httpURLConnection.setRequestMethod("POST");
+                            httpURLConnection.setDoInput(true);     //allows us to use input stream
+                            httpURLConnection.setDoOutput(true);    //allows us to use output stream
+
+                            OutputStream outputStream=httpURLConnection.getOutputStream(); //used to write to url
+                            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8")); //used to load text  in buffer and formatting it before being sent
+
+                            String data= URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(post_id,"UTF-8")+"&&"+URLEncoder.encode("userid","UTF-8")+"="
+                                    +URLEncoder.encode(user_id,"UTF-8");   //note I did not encode '=' and '&&'
+
+                            bufferedWriter.write(data); //send data to the php file
+                            bufferedWriter.flush();
+                            bufferedWriter.close();
+
+                            InputStream inputStream=httpURLConnection.getInputStream(); //used to get read data from the url
+                            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
+                            String line="";
+                            while ((line=bufferedReader.readLine())!=null){
+                                //reading the response we got from the php file
+                                result.add(line);
+                            }
+                            jsonObject=new JSONObject(result.get(result.size()-1));
+                            int a=0;
+                            //the response is stored in result
+                            //note that in the case that the response is in jason format you will have to JSON objects
+
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        try {
+                            post_search.get(i).setLikes(jsonObject.getInt("likes"));
+                            //post_likes.setText("number of likes " +post_search.get(i).getLikes());
+                            return jsonObject.getString("response");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        return null;
+                    }
+
+
+                    @Override
+                    protected void onPostExecute(String s) {
+                        super.onPostExecute(s);
+                        notifyDataSetChanged();
+                    }
+                }.execute();
             }
         });
         goToComments.setOnClickListener(new View.OnClickListener() {
