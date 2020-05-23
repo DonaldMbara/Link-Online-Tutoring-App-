@@ -26,6 +26,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     static String Unkey = "Key";
     String StudNum;
     String username;
+    String UN;
     public RequestHandler(Context context, String task) {
         this.context = context;
         this.task = task;
@@ -87,6 +88,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                     String firstname=strings[3];
                     String lastname=strings[4];
                     String studentnum=strings[5];
+                    UN=uname;
                     username=studentnum;
                     StudNum = strings[5];
 
@@ -187,7 +189,8 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String s) {
         //s is equal to result returned in do in the background method
-        switch (s){
+        String[] ss=s.split(",");
+        switch (ss[0]){
             case "data matched":
                 //in case login successful
 
@@ -195,6 +198,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                SharedPreferences.Editor editor=sharedPreferences.edit();
                editor.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
                 editor.putString(Unkey, username);
+                editor.putString("my_username",ss[1]);
                editor.apply();
 
                 Log.d("Good", "login successful");
@@ -215,6 +219,7 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
                 SharedPreferences.Editor editor1=sharedPreferences1.edit();
                 editor1.putBoolean(LoginActivity.LOGIN_STATUS,true); //saves login status
                 editor1.putString(Unkey, username);
+                editor1.putString("my_username",UN);
                 editor1.apply();
                 editor1.commit();
 
