@@ -126,6 +126,58 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
 
                 break;
 
+            case "send message":
+
+                try{
+                URL url=new URL("https://lamp.ms.wits.ac.za/~s1819369/insertMessage.php");
+                HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
+
+
+
+                String message=strings[0];
+                String sender=strings[1];
+                String receiver=strings[2];
+                String receiverStudNum = strings[3];
+                String senderStudNum= strings[4];
+
+
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);     //allows us to use input stream
+                httpURLConnection.setDoOutput(true);    //allows us to use output stream
+
+                OutputStream outputStream=httpURLConnection.getOutputStream(); //used to write to url
+                BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8")); //used to load text  in buffer and formatting it before being sent
+
+                String data= URLEncoder.encode("message","UTF-8")+"="+URLEncoder.encode(message,"UTF-8")
+                        +"&&" +URLEncoder.encode("sender","UTF-8")+"=" +URLEncoder.encode(sender,"UTF-8")
+                        +"&&" +URLEncoder.encode("receiver","UTF-8")+"=" +URLEncoder.encode(receiver,"UTF-8")
+                        +"&&" +URLEncoder.encode("rStudNum","UTF-8")+"=" +URLEncoder.encode(receiverStudNum,"UTF-8")
+                        +"&&" +URLEncoder.encode("sStudNum","UTF-8")+"=" +URLEncoder.encode(senderStudNum,"UTF-8");
+
+                bufferedWriter.write(data); //send data to the php file
+                bufferedWriter.flush();
+                bufferedWriter.close();
+
+                InputStream inputStream=httpURLConnection.getInputStream(); //used to get read data from the url
+                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
+                String line="";
+                while ((line=bufferedReader.readLine())!=null){
+                    //reading the response we got from the php file
+                    result+=line;
+                }
+                //the response is stored in result
+                //note that in the case that the response is in jason format you will have to JSON objects
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+        break;
+
+
+
         }
         //the result that is returned here is the one in onPostExecute signature
         return result;
@@ -174,6 +226,16 @@ public class RequestHandler extends AsyncTask<String,Void,String> {
 
                 Toast.makeText(context,"registration not successful",Toast.LENGTH_SHORT).show();
                 break;
+
+
+            case "The message is sent":
+                Toast.makeText(context,"The message is sent",Toast.LENGTH_SHORT).show();
+                break;
+
+            case "message not sent":
+                Toast.makeText(context,"message not sent",Toast.LENGTH_SHORT).show();
+                break;
+
         }
     }
 }

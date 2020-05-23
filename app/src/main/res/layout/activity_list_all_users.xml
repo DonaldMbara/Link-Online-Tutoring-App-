@@ -7,19 +7,28 @@
     tools:context=".ListAllUsers">
 
 
-    <include
-        android:id="@+id/users"
-        layout="@layout/secondtoolbar"
-        app:layout_constraintBottom_toTopOf="@+id/listUsers"
+
+
+    <TextView
+        android:id="@+id/WelcomeHomeTv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AIblue"
+        android:gravity="center"
+        android:text="Link Users"
+        android:textSize="24sp"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/listUsers"
-        android:layout_width="match_parent"
-        android:layout_height="602dp"
+        android:layout_width="402dp"
+        android:layout_height="670dp"
         android:layout_marginTop="60dp"
         android:background="@color/SortOfwhite"
         android:orientation="vertical"
