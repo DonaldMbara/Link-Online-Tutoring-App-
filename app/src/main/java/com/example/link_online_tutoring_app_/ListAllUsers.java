@@ -24,7 +24,6 @@ import java.net.URL;
 
 public class ListAllUsers extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
     ArrayAdapter<String> arrayAdapter;
     String[] Name;
 
@@ -48,7 +47,7 @@ public class ListAllUsers extends AppCompatActivity {
 
 
                 for(int i = 0; i < Name.length; i++){
-                    if(position == i){ // 0 represents number of position
+                    if(position == i){ // i represents number of position
                         listView.setEnabled(false);
                         Intent intent = new Intent(ListAllUsers.this, ChatActivity.class);
                         intent.putExtra("receiver", Name[i]);
