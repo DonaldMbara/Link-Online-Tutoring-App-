@@ -46,16 +46,13 @@ public class PostingTest {
     private Activity mA;
     private PopupMenu Popmenu;
     @Rule
-    public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
+    public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class);
     Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(PostsActivity.class.getName(),null,false);
-    //   Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
 
 
     @Test
     public void ClickPostFail() {
-        ATR.launchActivity(new Intent());
-
         try{
             runOnUiThread(new Runnable() {
                 @Override
@@ -80,7 +77,6 @@ public class PostingTest {
 
     @Test
     public void DoPostPass(){
-        ATR.launchActivity(new Intent());
 
         try{
             Button Post = ATR.getActivity().findViewById(R.id.Post_button);
@@ -91,23 +87,20 @@ public class PostingTest {
         }
     }
 
-    @Test
-    public void Can_post() { //testing if you can post
-        try {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    EditText post=ATR.getActivity().findViewById(R.id.Add_post);
-                    post.setText("100000?");
-                    Button selector = ATR.getActivity().findViewById(R.id.CourseChoice);
-                    selector.performClick();
-                    onView(withText("COMS")).perform(click());
-                    Button post_button = ATR.getActivity().findViewById(R.id.Post_button);
-                    post_button.performClick();
 
-                }
-            });
-        } catch (Throwable throwable) {
+    @Test
+    public void Can_post1() { //testing if you can post
+        ATR.launchActivity(new Intent());
+
+        try {
+            onView(withId(R.id.Add_post)).perform(typeText("this is a question"));
+            onView(withId(R.id.CourseChoice)).perform(click());
+            onView(withText("COMS")).perform(click());
+            onView(withId(R.id.Post_button)).perform(click());
+
+        }
+
+        catch (Throwable throwable) {
             throwable.printStackTrace();
         }
     }
