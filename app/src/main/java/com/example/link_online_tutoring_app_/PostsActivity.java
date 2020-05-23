@@ -103,7 +103,7 @@ public class PostsActivity extends AppCompatActivity {
                 if(Safe_checker.equals("Safe")) {
 
                     SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-                    String StudentNumber = (Prefs.getString("Key2", ""));
+                    String StudentNumber = (Prefs.getString("Key", ""));
                     cv2.put("course_name", Dummy_Selection);
                     cv3.put("studentNo", StudentNumber);
                     Get_Course_ID(cv2);
