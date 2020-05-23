@@ -67,6 +67,8 @@ public class ChatActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+   public Thread thread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,14 +100,36 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         chats=new ArrayList<>();
         new FetchChat(my_id,other_user_id,recyclerView,this).execute();
+
+        thread=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    //every 7 seconds check for new message
+                    Thread.sleep(5000);
+                    new FetchChat(my_id,other_user_id,recyclerView,getApplicationContext()).execute();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        thread.interrupt();
+    }
 
     public void sendMessage(View view) {
+
         message = messageET.getText().toString().trim();
 
         SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-        senderStudNum = (Prefs.getString("Key2", ""));
+        senderStudNum = String.valueOf(my_id);
         receiverStudNum = String.valueOf(other_user_id);
         //sender = "Donald";
         /* check sender on onCreate method*/
@@ -127,11 +151,15 @@ public class ChatActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(ChatActivity.this, "Please type something...", Toast.LENGTH_SHORT);
             toast.show();
         }
-
+        thread.interrupt();
+        thread.start();
 
     }
 
+
 }
+
+
 
 class Chat{
     private int id;
@@ -325,6 +353,7 @@ class FetchChat extends AsyncTask<Void,Void,String> {
             JSONArray jsonArray=new JSONArray(result);
             ArrayList<Integer>ids=new ArrayList<>();   //stores post ids ->used to fetch best comment
 
+            ChatActivity.chats=new ArrayList<>();
             for (int i=0;i<jsonArray.length();i++){
                 JSONObject jsonObject= (JSONObject) jsonArray.get(i);
                 Chat chat=new Chat(jsonObject.getInt("id"),jsonObject.getString("message"),jsonObject.getString("date"),jsonObject.getString("time"),

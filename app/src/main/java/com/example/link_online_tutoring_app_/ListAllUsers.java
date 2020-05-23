@@ -26,7 +26,7 @@ public class ListAllUsers extends AppCompatActivity {
 
     ArrayAdapter<String> arrayAdapter;
     String[] Name;
-
+    int []studentNum;
 
     ListView listView;
 
@@ -51,6 +51,7 @@ public class ListAllUsers extends AppCompatActivity {
                         listView.setEnabled(false);
                         Intent intent = new Intent(ListAllUsers.this, ChatActivity.class);
                         intent.putExtra("receiver", Name[i]);
+                        intent.putExtra("receiver_id",studentNum[i]);
                         startActivity(intent);
                         listView.setEnabled(true);
                     }
@@ -114,9 +115,11 @@ public class ListAllUsers extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         JSONArray jsonArray = new JSONArray(json);
         Name= new String[jsonArray.length()];
+        studentNum= new int[jsonArray.length()];
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
             Name[i] = obj.getString("Username");
+            studentNum[i]=obj.getInt("StudentNo");
         }
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Name);
         listView.setAdapter(arrayAdapter);
