@@ -28,7 +28,7 @@ public class AnsweringTest {
 
     @Test
     public void onClickAnswerFail(){
-        ActRule.launchActivity(new Intent());
+
         try{
             runOnUiThread(new Runnable() {
                 @Override
@@ -49,7 +49,7 @@ public class AnsweringTest {
 
     @Test
     public void onClickAnswerPass(){
-        ActRule.launchActivity(new Intent());
+
         try{
             runOnUiThread(new Runnable() {
                 @Override

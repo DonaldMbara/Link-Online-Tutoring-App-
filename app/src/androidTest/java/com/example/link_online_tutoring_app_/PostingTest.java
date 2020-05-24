@@ -41,10 +41,6 @@ import static org.junit.Assert.assertNull;
 
 
 public class PostingTest {
-    SharedPreferences.Editor preferenceEditor;
-    private Instrumentation mI;
-    private Activity mA;
-    private PopupMenu Popmenu;
     @Rule
     public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
     Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(ViewPosts.class.getName(),null,false);
@@ -53,7 +49,6 @@ public class PostingTest {
 
     @Test
     public void ClickPostFail() {
-        ATR.launchActivity(new Intent());
 
         try{
             runOnUiThread(new Runnable() {
@@ -79,7 +74,7 @@ public class PostingTest {
 
     @Test
     public void Can_post() { //testing if you can post
-        ATR.launchActivity(new Intent());
+
         try {
             runOnUiThread(new Runnable() {
                 @Override
