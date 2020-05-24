@@ -7,15 +7,18 @@ import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNull;
 
+@RunWith(AndroidJUnit4.class)
 public class AnsweringTest {
 
 

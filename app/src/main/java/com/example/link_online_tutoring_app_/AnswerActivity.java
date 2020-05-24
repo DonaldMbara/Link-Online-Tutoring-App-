@@ -56,7 +56,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         }
 
-        private void DoClickAns(){
+        public void DoClickAns(){
             SharedPreferences Prefers = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
             String StudentNumber = (Prefers.getString("Key", ""));
             getTheirName.put("studentNo",StudentNumber);
