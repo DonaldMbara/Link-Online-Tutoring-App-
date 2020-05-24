@@ -27,8 +27,8 @@
 
     <LinearLayout
         android:id="@+id/listUsers"
-        android:layout_width="402dp"
-        android:layout_height="670dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="60dp"
         android:background="@color/SortOfwhite"
         android:orientation="vertical"

@@ -119,6 +119,20 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        thread.interrupt();
+        thread.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        thread.interrupt();
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         thread.interrupt();
