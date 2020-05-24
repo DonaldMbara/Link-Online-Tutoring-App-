@@ -92,51 +92,56 @@ public class PostsActivity extends AppCompatActivity {
 
         public void onClickPost(View view) {
 
-                String Dummy_Selection = viewer.getText().toString().trim();
-                String Q = Question.getText().toString().trim();
+            DoClickPost();
+    }
 
-                String Safe_checker = "Safe";
+    private void DoClickPost(){
+        String Dummy_Selection = viewer.getText().toString().trim();
+        String Q = Question.getText().toString().trim();
 
-                if (TextUtils.isEmpty(Q)) {
-                    Question.setError("Cannot post an empty field");
-                    Safe_checker = "Unsafe";
-                }
-                if (TextUtils.isEmpty(Dummy_Selection)) {
-                    Selector.setError("");
-                    Safe_checker = "Unsafe";
-                }
+        String Safe_checker = "Safe";
 
-                if (Safe_checker.equals("Safe")) {
+        if (TextUtils.isEmpty(Q)) {
+            Question.setError("Cannot post an empty field");
+            Safe_checker = "Unsafe";
+        }
+        if (TextUtils.isEmpty(Dummy_Selection)) {
+            Selector.setError("");
+            Safe_checker = "Unsafe";
+        }
 
-                    SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-                    String StudentNumber = (Prefs.getString("Key", ""));
-                    cv2.put("course_name", Dummy_Selection);
-                    cv3.put("studentNo", StudentNumber);
-                    Get_Course_ID(cv2);
-                    Get_Username(cv3);
+        if (Safe_checker.equals("Safe")) {
 
-                    Log.d("Dummy_S", Dummy_Selection);
-                    Log.d("Student_N", StudentNumber);
-                    String dum = "DummyURL";
+            SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
+            String StudentNumber = (Prefs.getString("Key", ""));
+            cv2.put("course_name", Dummy_Selection);
+            cv3.put("studentNo", StudentNumber);
+            Get_Course_ID(cv2);
+            Get_Username(cv3);
 
-                    if (TextUtils.isEmpty(Holding) || TextUtils.isEmpty(HoldName)) {
-                        Get_Course_ID(cv2);
-                        Get_Username(cv3);
-                        Toast toast = Toast.makeText(PostsActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                        toast.show();
-                    } else {
+            Log.d("Dummy_S", Dummy_Selection);
+            Log.d("Student_N", StudentNumber);
+            String dum = "DummyURL";
 
-                        Log.d("Wtf", HoldName);
-                        cv.put("status", Q);
-                        cv.put("postlikes", 0);
-                        cv.put("courseid", Holding);
-                        cv.put("author", HoldName);
-                        cv.put("photoURL", dum);
-                        Do_Post(cv, PostsActivity.this);
+            if (TextUtils.isEmpty(Holding) || TextUtils.isEmpty(HoldName)) {
+                Get_Course_ID(cv2);
+                Get_Username(cv3);
+                Toast toast = Toast.makeText(PostsActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                toast.show();
+            } else {
 
-                    }
-                }
+                Log.d("Wtf", HoldName);
+                cv.put("status", Q);
+                cv.put("postlikes", 0);
+                cv.put("courseid", Holding);
+                cv.put("author", HoldName);
+                cv.put("photoURL", dum);
+                Do_Post(cv, PostsActivity.this);
+
+            }
+        }
+
     }
 
     private static String Get_Course_ID(ContentValues cv2){

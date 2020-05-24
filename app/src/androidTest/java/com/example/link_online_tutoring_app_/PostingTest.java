@@ -39,20 +39,23 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.hamcrest.Matchers.anything;
 import static org.junit.Assert.assertNull;
 
-@RunWith(AndroidJUnit4.class)
+
 public class PostingTest {
     SharedPreferences.Editor preferenceEditor;
     private Instrumentation mI;
     private Activity mA;
     private PopupMenu Popmenu;
     @Rule
-    public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class);
+    public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
     Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(PostsActivity.class.getName(),null,false);
+    //   Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
 
 
 
     @Test
     public void ClickPostFail() {
+        ATR.launchActivity(new Intent());
+
         try{
             runOnUiThread(new Runnable() {
                 @Override
@@ -77,34 +80,39 @@ public class PostingTest {
 
     @Test
     public void DoPostPass(){
+        ATR.launchActivity(new Intent());
 
         try{
             Button Post = ATR.getActivity().findViewById(R.id.Post_button);
             Post.performClick();
+
 
         }catch (Throwable tr){
             tr.printStackTrace();
         }
     }
 
-
     @Test
-    public void Can_post1() { //testing if you can post
-        ATR.launchActivity(new Intent());
-
+    public void Can_post() { //testing if you can post
         try {
-            onView(withId(R.id.Add_post)).perform(typeText("this is a question"));
-            onView(withId(R.id.CourseChoice)).perform(click());
-            onView(withText("COMS")).perform(click());
-            onView(withId(R.id.Post_button)).perform(click());
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    EditText post=ATR.getActivity().findViewById(R.id.Add_post);
+                    post.setText("100000?");
+                    Button selector = ATR.getActivity().findViewById(R.id.CourseChoice);
+                    selector.performClick();
+                    onView(withText("COMS")).perform(click());
+                    Button post_button = ATR.getActivity().findViewById(R.id.Post_button);
+                    post_button.performClick();
+                    Activity AnotherActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,3000);
+                    assertNull(AnotherActivity);
 
-        }
-
-        catch (Throwable throwable) {
+                }
+            });
+        } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
     }
-
-
 
 }

@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-
+        android:onClick="onClickAnswer"
         android:background="@drawable/button_borders"
         android:text="Post"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -27,58 +27,77 @@ import managers.AsyncHTTP;
 
 public class AnswerActivity extends AppCompatActivity {
     String The_Post_Id;
-   static String Author;
+     static String Author;
+     EditText TheAnswer;
+    Button TheAns_btn;
     String Status;
+    ContentValues getTheirName = new ContentValues();
+    ContentValues sendAns = new ContentValues();
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
+
         setContentView(R.layout.answer_ctivity);
-        SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-        String StudentNumber = (Prefs.getString("Key2", ""));
-        final EditText TheAnswer = findViewById(R.id.Add_Ans);
-        final Button TheAns_btn = findViewById(R.id.Answer_button);
-        The_Post_Id = getIntent().getStringExtra("Post_Id_Key");
-        Log.d("the_id", The_Post_Id);
-        final ContentValues getname = new ContentValues();
-        final ContentValues sendAns = new ContentValues();
-        getname.put("studentNo",StudentNumber);
-        Get_TheName(getname);
 
-
-        TheAns_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Status = TheAnswer.getText().toString().trim();
-                String Safe_checker = "Safe";
-
-                if(TextUtils.isEmpty(Status)){
-                    TheAnswer.setError("Cannot post an empty field");
-                    Safe_checker = "Unsafe";
-                }
-
-                if(Safe_checker.equals("Safe")) {
-
-                    if (TextUtils.isEmpty(Author) || TextUtils.isEmpty(The_Post_Id)) {
-                        Get_TheName(getname);
-                        Toast toast = Toast.makeText(AnswerActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
-                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                        toast.show();
-                    } else {
-
-
-                        sendAns.put("post_id", The_Post_Id);
-                        sendAns.put("author", Author);
-                        sendAns.put("answer", Status);
-
-                        AddAnswer(sendAns);
-
-                    }
-                }
-            }
-        });
-
+        TheAnswer = findViewById(R.id.Add_Ans);
+        TheAns_btn = findViewById(R.id.Answer_button);
 
     }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            finish();
+        }
+
+
+       public void onClickAnswer(View view){
+                DoClickAns();
+
+        }
+
+        private void DoClickAns(){
+            SharedPreferences Prefers = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
+            String StudentNumber = (Prefers.getString("Key", ""));
+            getTheirName.put("studentNo",StudentNumber);
+            The_Post_Id = getIntent().getStringExtra("Post_Id_Key");
+            Log.d("the_id", The_Post_Id);
+
+            Get_TheName(getTheirName);
+
+            Status = TheAnswer.getText().toString().trim();
+            String Safe_checker = "Safe";
+
+            if (TextUtils.isEmpty(Status)) {
+                TheAnswer.setError("Cannot post an empty field");
+                Safe_checker = "Unsafe";
+            }
+
+            if (Safe_checker.equals("Safe")) {
+
+                if (TextUtils.isEmpty(Author) || TextUtils.isEmpty(The_Post_Id)) {
+                    Get_TheName(getTheirName);
+                    Toast toast = Toast.makeText(AnswerActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                    toast.show();
+                } else {
+
+
+                    sendAns.put("post_id", The_Post_Id);
+                    sendAns.put("author", Author);
+                    sendAns.put("answer", Status);
+
+                    AddAnswer(sendAns);
+
+                }
+            }
+
+        }
+
+
+
+
+
 
 
     public static String Get_TheName(ContentValues cv3){
