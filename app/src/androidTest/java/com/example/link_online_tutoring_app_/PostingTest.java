@@ -79,6 +79,7 @@ public class PostingTest {
 
     @Test
     public void Can_post() { //testing if you can post
+        ATR.launchActivity(new Intent());
         try {
             runOnUiThread(new Runnable() {
                 @Override
