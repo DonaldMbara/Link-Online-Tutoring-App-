@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ListAllUsers"></activity>
         <activity android:name=".ViewPosts"></activity>
+        <activity android:name=".CalendarActvity"/>
+        <activity android:name=".EventActivity"/>
         <activity android:name=".FacultiesAcitvities.HealthScienceActivity" />
         <activity android:name=".FacultiesAcitvities.HumanitiesActivity" />
         <activity android:name=".FacultiesAcitvities.CommerceActivity" />

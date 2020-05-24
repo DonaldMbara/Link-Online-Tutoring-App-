@@ -22,4 +22,9 @@
         android:icon="@drawable/settings_icon"
         android:title="Settings"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/calen"
+        android:title="Calendar"
+        app:showAsAction="ifRoom"/>
 </menu>

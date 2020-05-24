@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -69,6 +70,11 @@ public class HomeActivity extends AppCompatActivity {
                     finish();
 
                 }
+                if(position == 4){
+                    startActivity(new Intent(HomeActivity.this, CalendarView.class));
+                    finish();
+                }
+
             }
         });
 
@@ -82,17 +88,20 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.private_chat:
-                        startActivity(new Intent(HomeActivity.this,ListAllUsers.class));
+                        startActivity(new Intent(HomeActivity.this, ListAllUsers.class));
                         break;
 
                     case R.id.action_faculties:
                         break;
 
                     case R.id.posting:
-                        startActivity(new Intent(HomeActivity.this,PostsActivity.class));
+                        startActivity(new Intent(HomeActivity.this, PostsActivity.class));
                         finish();
                         break;
-
+                    case R.id.calendar:
+                        startActivity(new Intent(HomeActivity.this, CalendarActvity.class));
+                        finish();
+                        break;
                 }
 
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/SortOfwhite">
+
+    <EditText
+        android:id="@+id/events_id"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/white"
+        android:hint="EVENT NAME"
+        android:layout_margin="28dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/timeicon"
+            android:layout_margin="10dp"
+            android:id="@+id/selectiveTime"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0:00 AM"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/SortOfwhite"
+            android:textStyle="bold"
+            android:id="@+id/eventTime"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD NEW EVENT"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/AIblue"
+        android:background="@color/SortOfwhite"
+        android:id="@+id/addEvent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW EXISTING EVENTS"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/AIblue"
+        android:background="@color/SortOfwhite"
+        android:id="@+id/viewEvent"/>
+</LinearLayout>
