@@ -91,11 +91,10 @@ public class PostsActivity extends AppCompatActivity {
         }
 
         public void onClickPost(View view) {
-
             DoClickPost();
     }
 
-    private void DoClickPost(){
+    public void DoClickPost(){
         String Dummy_Selection = viewer.getText().toString().trim();
         String Q = Question.getText().toString().trim();
 
@@ -144,7 +143,7 @@ public class PostsActivity extends AppCompatActivity {
 
     }
 
-    private static String Get_Course_ID(ContentValues cv2){
+    public static String Get_Course_ID(ContentValues cv2){
 
         new AsyncHTTP("https://lamp.ms.wits.ac.za/~s1819369/getid.php", cv2){
 

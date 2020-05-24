@@ -47,9 +47,8 @@ public class PostingTest {
     private PopupMenu Popmenu;
     @Rule
     public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
-    Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(PostsActivity.class.getName(),null,false);
+    Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(ViewPosts.class.getName(),null,false);
     //   Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
-
 
 
     @Test
@@ -64,10 +63,9 @@ public class PostingTest {
                     EditText PlaceHolder = ATR.getActivity().findViewById(R.id.Viewer);
                     Q.setText("");
                     PlaceHolder.setText("");
-
                     Button Post = ATR.getActivity().findViewById(R.id.Post_button);
                     Post.performClick();
-                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,3000);
+                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,7000);
                     assertNull(NextActivity);
                 }
             });
@@ -78,19 +76,6 @@ public class PostingTest {
     }
 
 
-    @Test
-    public void DoPostPass(){
-        ATR.launchActivity(new Intent());
-
-        try{
-            Button Post = ATR.getActivity().findViewById(R.id.Post_button);
-            Post.performClick();
-
-
-        }catch (Throwable tr){
-            tr.printStackTrace();
-        }
-    }
 
     @Test
     public void Can_post() { //testing if you can post
@@ -99,13 +84,13 @@ public class PostingTest {
                 @Override
                 public void run() {
                     EditText post=ATR.getActivity().findViewById(R.id.Add_post);
-                    post.setText("100000?");
+                    post.setText("Testing Question?");
                     Button selector = ATR.getActivity().findViewById(R.id.CourseChoice);
                     selector.performClick();
                     onView(withText("COMS")).perform(click());
                     Button post_button = ATR.getActivity().findViewById(R.id.Post_button);
                     post_button.performClick();
-                    Activity AnotherActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,3000);
+                    Activity AnotherActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,7000);
                     assertNull(AnotherActivity);
 
                 }

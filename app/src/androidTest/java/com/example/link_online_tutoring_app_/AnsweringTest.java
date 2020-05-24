@@ -18,13 +18,12 @@ import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.r
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNull;
 
-
 public class AnsweringTest {
 
 
     @Rule
     public ActivityTestRule<AnswerActivity> ActRule = new ActivityTestRule<>(AnswerActivity.class, true,false);
-    Instrumentation.ActivityMonitor ActMonitor =getInstrumentation().addMonitor(AnswerActivity.class.getName(),null,false);
+    Instrumentation.ActivityMonitor ActMonitor =getInstrumentation().addMonitor(ViewAnswers.class.getName(),null,false);
 
 
     @Test
@@ -38,7 +37,7 @@ public class AnsweringTest {
                     Button SendAnswer = ActRule.getActivity().findViewById(R.id.Answer_button);
                     Answer.setText("");
                     SendAnswer.performClick();
-                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,3000);
+                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,7000);
                     assertNull(NextActivity);
                 }
             });
@@ -59,7 +58,7 @@ public class AnsweringTest {
                     Button SendAnswer = ActRule.getActivity().findViewById(R.id.Answer_button);
                     Answer.setText("Some Testing Answer");
                     SendAnswer.performClick();
-                    Activity GotoActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,3000);
+                    Activity GotoActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,7000);
                     assertNull(GotoActivity);
                 }
             });
