@@ -37,24 +37,28 @@ import managers.AsyncHTTP;
 public class PostsActivity extends AppCompatActivity {
     public static String[] Hold = new String[1];
     Button uploadImage;
+    Button Post_Button;
+    EditText Question;
+    Button Selector;
+    TextView viewer;
     static String Holding;
     static String HoldName;
+    ContentValues cv = new ContentValues();
+    ContentValues cv2 = new ContentValues();
+    ContentValues cv3 = new ContentValues();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posting_activity);
         uploadImage = findViewById(R.id.uploadbtn);
-        final Button Post_Button = findViewById(R.id.Post_button);
-        final EditText Question = findViewById(R.id.Add_post);
-        final Button Selector = findViewById(R.id.CourseChoice);
-        final TextView viewer = findViewById(R.id.Viewer);
+        Post_Button = findViewById(R.id.Post_button);
+        Question = findViewById(R.id.Add_post);
+        Selector = findViewById(R.id.CourseChoice);
+        viewer = findViewById(R.id.Viewer);
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        final ContentValues cv = new ContentValues();
-       final ContentValues cv2 = new ContentValues();
-        final ContentValues cv3 = new ContentValues();
-        String Selected_Course;
 
+        String Selected_Course;
 
 
         uploadImage.setOnClickListener(new View.OnClickListener() {
@@ -63,44 +67,46 @@ public class PostsActivity extends AppCompatActivity {
                 //startActivity(new Intent(PostsActivity.this,ImageUploadActivity.class));
             }
         });
-        Selector.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                PopupMenu pop = new PopupMenu(PostsActivity.this, Selector);
-                pop.getMenuInflater().inflate(R.menu.popup_menu,pop.getMenu());
-                pop.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        viewer.setText(menuItem.getTitle().toString());
-                        return true;
-                    }
-                });
-                pop.show();
-            }
-        });
 
 
-        Post_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
+        @Override
+        protected void onPause() {
+            super.onPause();
+            finish();
+        }
+
+        public void onClickChoose(View view){
+            PopupMenu pop = new PopupMenu(PostsActivity.this, Selector);
+            pop.getMenuInflater().inflate(R.menu.popup_menu, pop.getMenu());
+            pop.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    viewer.setText(menuItem.getTitle().toString());
+                    return true;
+                }
+            });
+            pop.show();
+
+        }
+
+        public void onClickPost(View view) {
 
                 String Dummy_Selection = viewer.getText().toString().trim();
                 String Q = Question.getText().toString().trim();
 
                 String Safe_checker = "Safe";
 
-                if(TextUtils.isEmpty(Q)){
+                if (TextUtils.isEmpty(Q)) {
                     Question.setError("Cannot post an empty field");
                     Safe_checker = "Unsafe";
                 }
-                if(TextUtils.isEmpty(Dummy_Selection)){
-                   Selector.setError("");
-                   Safe_checker = "Unsafe";
+                if (TextUtils.isEmpty(Dummy_Selection)) {
+                    Selector.setError("");
+                    Safe_checker = "Unsafe";
                 }
 
-                if(Safe_checker.equals("Safe")) {
+                if (Safe_checker.equals("Safe")) {
 
                     SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
                     String StudentNumber = (Prefs.getString("Key", ""));
@@ -131,13 +137,6 @@ public class PostsActivity extends AppCompatActivity {
 
                     }
                 }
-
-            }
-        });
-
-
-
-
     }
 
     private static String Get_Course_ID(ContentValues cv2){

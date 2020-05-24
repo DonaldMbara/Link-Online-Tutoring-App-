@@ -15,6 +15,7 @@
         android:gravity="center"
         android:text="Write and post your questions"
         android:textSize="18sp"
+
         app:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-
+        android:onClick="onClickPost"
         android:background="@drawable/button_borders"
         android:text="Post"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@drawable/button_borders"
-
+        android:onClick="onClickChoose"
         android:text="Course"
         app:layout_constraintBottom_toTopOf="@+id/Post_button"
         app:layout_constraintEnd_toEndOf="parent"
