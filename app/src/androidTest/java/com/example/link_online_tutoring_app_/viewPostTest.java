@@ -61,7 +61,7 @@ public class viewPostTest {
         onView(withId(R.id.search_post)).perform(ViewActions.closeSoftKeyboard());
 
 
-    }*/
+    }
 
     @Test
     public void viewPost(){
@@ -113,6 +113,6 @@ public class viewPostTest {
 
 
 
-
+*/
 
 }
