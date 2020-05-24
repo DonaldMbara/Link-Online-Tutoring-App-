@@ -25,7 +25,8 @@
             android:id="@+id/messageID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/senderID"
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="Sender"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/message_dateID"

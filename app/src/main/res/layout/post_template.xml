@@ -25,7 +25,8 @@
             android:id="@+id/post_caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/post_author"
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="Author"
-            android:textStyle="bold" />
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/post_date"

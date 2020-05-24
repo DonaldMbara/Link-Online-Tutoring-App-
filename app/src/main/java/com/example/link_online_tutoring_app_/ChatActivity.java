@@ -114,29 +114,14 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        thread.start();
+
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        thread.interrupt();
-        thread.start();
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        thread.interrupt();
-        finish();
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        thread.interrupt();
-    }
+
+
 
     public void sendMessage(View view) {
 
@@ -165,8 +150,7 @@ public class ChatActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(ChatActivity.this, "Please type something...", Toast.LENGTH_SHORT);
             toast.show();
         }
-        thread.interrupt();
-        thread.start();
+
 
     }
 
