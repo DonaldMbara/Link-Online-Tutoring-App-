@@ -50,7 +50,7 @@ public class viewPostTest {
     @Rule
     public ActivityTestRule rule = new ActivityTestRule(ViewPosts.class, true, false);
 
-
+/*
     @Test
     public  void search(){
         Intent id = new Intent();
@@ -113,6 +113,6 @@ public class viewPostTest {
 
 
 
-
+*/
 
 }
