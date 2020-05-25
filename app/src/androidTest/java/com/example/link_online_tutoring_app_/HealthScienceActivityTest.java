@@ -10,9 +10,11 @@ import com.example.link_online_tutoring_app_.FacultiesAcitvities.HealthScienceAc
 import org.junit.Rule;
 import org.junit.Test;
 
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.Matchers.anything;
 
 public class HealthScienceActivityTest {
 
@@ -55,6 +57,51 @@ public class HealthScienceActivityTest {
         onView(withId(R.id.action_faculties)).perform(click());
 
     }
+
+
+    @Test
+    public void onCreate10() {
+    }
+
+
+    @Test
+    public  void click1(){
+        rule.launchActivity(new Intent());
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
+
+
+    }
+
+
+    @Test
+    public void onCreate11() {
+    }
+
+
+    @Test
+    public  void click2(){
+        rule.launchActivity(new Intent());
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(1).perform(click());
+
+
+    }
+
+
+
+
+    @Test
+    public void onCreate12() {
+    }
+
+
+    @Test
+    public  void click3(){
+        rule.launchActivity(new Intent());
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(2).perform(click());
+
+
+    }
+
 
 
 }

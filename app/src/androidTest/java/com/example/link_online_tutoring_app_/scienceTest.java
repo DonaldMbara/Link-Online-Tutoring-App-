@@ -5,6 +5,7 @@ import android.content.Intent;
 import androidx.test.rule.ActivityTestRule;
 
 import com.example.link_online_tutoring_app_.FacultiesAcitvities.CommerceActivity;
+import com.example.link_online_tutoring_app_.FacultiesAcitvities.ScienceActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,10 +16,10 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.anything;
 
-public class CommercefacultyActivityTest {
+public class scienceTest {
 
     @Rule
-    public ActivityTestRule rule = new ActivityTestRule(CommerceActivity.class, true, false);
+    public ActivityTestRule rule = new ActivityTestRule(ScienceActivity.class, true, false);
 
 
     @Test
@@ -100,6 +101,22 @@ public class CommercefacultyActivityTest {
 
 
     }
+
+
+    @Test
+    public void onCreate13() {
+    }
+
+
+    @Test
+    public  void click4(){
+        rule.launchActivity(new Intent());
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(3).perform(click());
+
+
+    }
+
+
 
 }
 
