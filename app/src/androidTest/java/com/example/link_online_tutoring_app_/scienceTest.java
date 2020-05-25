@@ -63,15 +63,15 @@ public class scienceTest {
     public void onCreate10() {
     }
 
-/*
+
     @Test
     public  void click1(){
         rule.launchActivity(new Intent());
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
 
 
-    }*/
-/*
+    }
+
 
     @Test
     public void onCreate11() {
@@ -84,7 +84,7 @@ public class scienceTest {
         onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(1).perform(click());
 
 
-    }  */
+    }
 
 
 
