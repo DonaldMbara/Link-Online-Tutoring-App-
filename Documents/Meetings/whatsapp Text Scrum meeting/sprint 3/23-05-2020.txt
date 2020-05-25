@@ -1,0 +1,91 @@
+[23/05, 10:57] Mongezi: Can somebody, in the mean time create a table that stores day,month, year, time and event
+[23/05, 11:52] Kaone: go to some activity that show those
+[23/05, 11:56] MJ: Ya this is an easy way to do it
+[23/05, 11:56] Mongezi: Okay
+[23/05, 12:13] Mongezi: So the person using the app should be able to access some else’s calendar?
+[23/05, 12:15] MJ: I think it’s best we make the calendar thing and viewing events thing, well deal with who has rights to view what later 
+[23/05, 12:19] Mongezi: Okay
+[23/05, 12:19] Mongezi: Give me an existing user
+[23/05, 12:22] Kaone: Student num 112358
+Password Just
+[23/05, 12:31] Mongezi: ok
+[23/05, 13:08] Mongezi: Did I miss something???
+[23/05, 13:09] MJ: Nah
+[23/05, 13:09] MJ: Wait, we do we need the calendar there 
+[23/05, 13:09] MJ: Aren’t we viewing the calendar of a specific user
+[23/05, 13:10] Mongezi: That’s what I was asking here
+[23/05, 13:11] MJ: Oh I was thinking of their events in the calendar but I think yes, they should be able to access it
+[23/05, 13:12] Mongezi: Yoh okay how do we go around that though?
+[23/05, 13:13] Mongezi: Does that mean we should have a profile for each user?
+[23/05, 13:20] MJ: Eish yah
+[23/05, 13:21] MJ: Coz the way it is now makes it difficult somehow, like who’s events do I view
+[23/05, 13:21] Mongezi: You see
+[23/05, 14:58] Donald: Does Get_username function in post activity get username of a person who posted right?
+[23/05, 14:58] Donald: gets
+[23/05, 14:59] Kaone: I'm not sure about that part
+[23/05, 14:59] Kaone: I only did ViewPosts
+[23/05, 15:15] MJ: I think so, it did when I tested it
+[23/05, 15:16] MJ: What’s happening
+[23/05, 15:27] Donald: Nothing .i wanted it to help me with getting username of message sender
+[23/05, 15:28] MJ: Ohh okay , give me 30 minutes I can see it’s doing something weird
+[23/05, 15:28] Donald: It's not working properly?
+[23/05, 15:29] MJ: Welp not anymore
+[23/05, 15:32] MJ: But if your doing what I think you’re doing
+
+That thing of PostsActivity.Get_Username(c)
+
+It didn’t work for me coz the asycnhttp thing is kinda slow
+[23/05, 15:32] Donald: I am answering to this
+[23/05, 15:33] Donald: Okay
+[23/05, 15:33] MJ: Well it’s sending the wrong name for some reason , like a is the default name
+[23/05, 15:34] MJ: Yesterday when I had MJ as my name it worked
+[23/05, 15:35] Donald: Hooh eish
+[23/05, 15:36] Donald: Try checking code of the time you committed and it worked
+[23/05, 15:41] MJ: Ayt
+[23/05, 15:47] MJ: Donald
+[23/05, 15:50] MJ: @Donald  I need you to check something for me
+[23/05, 16:24] MJ: Eish nvm
+[23/05, 16:25] MJ: The problem was somebody changed a shared preference key that’s why it was getting the wrong name but I fixed it you can pull, it’s just one line
+[23/05, 16:26] MJ: Guys please if you don’t understand someone code let’s not change it coz it’ll break other parts of the app 
+[23/05, 16:33] Donald:   who changed it? Harde
+[23/05, 16:33] MJ: ahh no it’s not you
+[23/05, 16:33] MJ: Looking as the commit it has to Emmanuel but I understand why he changed it
+[23/05, 16:52] Kaone:  you guys can add username instantly at register activity 
+And also do fetch it at login
+[23/05, 16:52] Kaone: To sharedprefs
+[23/05, 16:52] MJ: Ya that’s what I thought
+[23/05, 16:53] Kaone: Cool
+[23/05, 18:01] Mongezi: Guys what about this?
+[23/05, 18:02] MJ: Eish 
+[23/05, 18:09] Kaone: I'm working with Donald on create the chat thing
+[23/05, 18:09] Kaone: @Sikhanyiso can you assist
+[23/05, 18:11] MJ: @Sikhanyiso  what’s happening on postingTest you committed , that’s the exact same code and variables I wrote weeks ago
+[23/05, 18:21] Sikhanyiso: No thats not working
+[23/05, 18:22] MJ: That’s because it’s not finished, I’m just asking why you committed it as it was before
+[23/05, 18:26] Sikhanyiso: I had problems commitinf yesterday, then started the folder then I was testing if I can commit
+[23/05, 18:27] MJ: Ohh alright , my bad
+[23/05, 18:28] MJ: the easy way u can think of to get away with this is to like put all the available users on a list and then click on who you want to vie their calendar, I can’t think of any other doable way 
+[23/05, 18:34] Mongezi: So when one clicks on a user what should pop up?
+[23/05, 18:34] Mongezi: What is going to pop up? The calendar?
+[23/05, 18:36] MJ: Ya , the calendar and their details maybe if that’s possible
+[23/05, 18:36] Sikhanyiso: Is the sharedPrefences in  posting work fine now
+[23/05, 18:36] Sikhanyiso: Does*
+[23/05, 18:36] MJ: Yae
+[23/05, 18:38] Mongezi: Okay who’s going to do the displaying of the users?
+[23/05, 18:38] Mongezi: @Sikhanyiso
+[23/05, 18:38] Sikhanyiso: The profile thing.
+[23/05, 18:39] Donald: You can do it the same way i did on chats, check it out
+[23/05, 18:39] Mongezi: Okay I’ll check it out
+[23/05, 18:39] Donald: @Sikhanyiso
+[23/05, 18:43] Sikhanyiso: Which part are we suppose to display the users!
+[23/05, 18:45] MJ: Idk maybe we can add an item on the bar that’s let’s the user see the users
+[23/05, 18:45] MJ: It’s not agreed tho I’m still throwing ideas
+[23/05, 18:46] MJ: @Mongezidoes the calendar work at the moment, wherever it’s situated in the app?
+[23/05, 18:46] Mongezi: No not yet
+[23/05, 18:46] MJ: What are you dealing with now, maybe I can help out
+[23/05, 18:49] Sikhanyiso: Then Ill do the profile instead,... whats suppose to be in there
+[23/05, 18:49] Mongezi: I’ll tell you tomorrow if I have a problem
+[23/05, 18:49] MJ: Cool
+[23/05, 18:51] MJ: No I don’t think we need a profile profile, 
+
+The profile activity will have the user details and maybe the calendar @Mongeziis working on, I think the main thing is the calendar, what we need now is the list with all users

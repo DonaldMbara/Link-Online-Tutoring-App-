@@ -1,0 +1,71 @@
+[21/05, 09:48] MJ: Who coded the shared preferences thing?
+[21/05, 09:49] Donald: Emmanuel
+[21/05, 09:51] MJ: Oh okay, coz it seem like they only contain Booleans and not the actual student number and password and that makes some problem since I fetched the author from them
+[21/05, 09:51] MJ: Or maybe he did I just don’t see them
+[21/05, 09:55] MJ: Never mind I went around it
+[21/05, 10:08] Kaone: Pls save student number in them
+[21/05, 10:08] MJ: 
+[21/05, 10:09] Kaone: I'll need to make use of it 
+When I do the like thing
+[21/05, 10:09] MJ: Alright I’ll do that
+[21/05, 10:10] MJ: The key will be “Key2” if you happen to not find it on the code
+[21/05, 10:10] Kaone: Sure 
+[21/05, 13:56] MJ: I’ll push the add answer as soon as I sort some php
+[21/05, 14:42] MJ: All good
+[21/05, 16:06] MJ: I’m not sureI’ll get back to it if you still having the error
+[21/05, 16:38] Kaone: 
+[21/05, 16:38] Kaone: You may check the PHP file
+[21/05, 17:28] MJ: Eish it’s kicking me 
+[21/05, 17:28] Kaone: Eish man
+[21/05, 17:31] Kaone: I'll try doing it solving one problem at the time
+[21/05, 17:31] Kaone: Rather than try to do all at once.
+[21/05, 17:32] MJ: Yah that’s effective
+[21/05, 17:38] MJ: I think it’s new, for a new task we’re doing rn
+[21/05, 17:38] Mulisa: check the permissions of the file, check if it's 755
+[21/05, 17:39] Kaone: Nope I wrote in notepad first
+Copy really messed it up on terminal
+[21/05, 17:40] Kaone: Sure
+[21/05,18:33] Donald:Layout for chat messages. Added refresh btn so that one can fetch messages by clicking there. 
+[21/05, 18:32] MJ: I like it
+[21/05, 19:27] MJ: Did you also send it to the public_html folder via the terminal ?
+[21/05, 19:27] Kaone: No just create on lamp
+[21/05, 19:30] Donald: is it happening on that script only?
+[21/05, 19:30] MJ: I checked the other ones earlier and they seemed to be fine, I don’t know about now
+[21/05, 19:31] Kaone: Yah on my recent scripts
+[21/05, 19:31] Kaone: Are you scripts working fine?
+[21/05, 19:32] Kaone: Try creating a new one
+[21/05, 19:35] MJ: Alright
+[21/05, 19:37] Donald: I am also getting the same
+[21/05, 19:38] Donald: Yea, others are fine
+[21/05, 19:38] Kaone: Just saw it in the evening
+[21/05, 19:38] Kaone:  we have ML quiz due tomorrow
+[21/05, 19:39] MJ: Isn’t it due Saturday 
+[21/05, 19:39] MJ: Mine works
+[21/05, 19:40] Kaone: what do u think could be the reason why ours don't work?
+[21/05, 19:40] Donald:  yooh.. these lecturers are attacking us now yooh
+[21/05, 19:41] MJ: That’s what I did
+[21/05, 19:41] Kaone:  I thought today is Friday
+[21/05, 19:42] MJ: Yooooh , I was gonna die man ahh
+[21/05, 19:43] Donald:  Saturday indeed, I was overwhelmed
+[21/05, 19:44] MJ: When I call this one it doesn’t work, it only works when I create a new one
+[21/05, 19:45] Kaone: 
+[21/05, 19:45] Kaone: Can u copy the post_like.php and paste in a different file to check if it will work?
+[21/05, 19:45] MJ: Why are you reading my mind 
+[21/05, 19:50] MJ: Awesome, it’s responding now
+[21/05, 19:50] MJ: It’s under Testing.php
+[21/05, 20:15] Kaone: 
+[21/05, 20:15] Kaone: Why do u have all the privileges by way?
+[21/05, 20:19] MJ:  I really have no idea
+[21/05, 20:20] MJ: Maybe it has to do with come we copy the files to the public html
+[21/05, 20:21] Kaone: Yah maybe
+At least we have remedy
+[21/05, 20:21] Kaone: Did you do the preferences thing for students number?
+[21/05, 20:22] MJ: Yah
+[21/05, 20:23] MJ: I just write the file then copy it using sftp what what , if it still doesn’t work then something more serious is happening
+[21/05, 21:06] Kaone: Does it store student number from registration too?
+[21/05, 21:07] MJ: I don’t think so , I think it’s only from login
+[21/05, 21:10] MJ: But I guess we can make them login right after they register so that . But either way works
+[21/05, 21:10] MJ: Ya it’s from login only
+[21/05, 21:10] Kaone: Lemme quickly fix that
+[21/05, 21:11] MJ: xo
+[21/05, 21:11] Kaone: For register

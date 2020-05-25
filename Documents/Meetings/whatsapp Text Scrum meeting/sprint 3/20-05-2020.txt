@@ -1,0 +1,15 @@
+[20/05, 10:54] MJ: I just found a bug, the php freaks out when posts happens to have have equal number of likes, I’ll look into it
+[20/05, 14:20] Kaone: So guys which user stories are currently not attended?
+[20/05, 14:26] Mongezi: I don’t know, I’m doing the calendar
+[20/05, 15:15] MJ: ill do the add answer
+[20/05, 15:34] MJ: The undone ones are:
+
+Chat
+Add picture (if we are still doing it)
+Liking an answer (if you are comfortable working on top of my view answers code )
+[20/05, 15:36] Mongezi: You mean unassigned?
+[20/05, 15:44] MJ: Yae
+[20/05, 16:00] Kaone: I'll get back to you soon.
+[20/05, 21:11] Kaone: I'll work on the like thing
+[20/05, 23:37] Kaone: Install again
+[20/05, 23:37] Kaone: Worked for me.

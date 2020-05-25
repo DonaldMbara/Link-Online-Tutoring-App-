@@ -1,0 +1,183 @@
+[24/05, 07:27] Mongezi: We should create a table to store the calendar events
+[24/05, 07:27] Mongezi: Or did someone already make it?
+[24/05, 07:31] Donald: What fields does it need?
+[24/05, 07:32] Mongezi: Definitely needs date and event
+[24/05, 07:32] Donald: Okay
+[24/05, 07:32] Mongezi: Not sure what else maybe student number
+[24/05, 07:32] Mongezi: and like eventId
+[24/05, 07:33] MJ: Event I’d, student no, first name, busy/available, 
+Time and date
+[24/05, 07:34] Mongezi: Yeah
+[24/05, 07:34] MJ: So we also need functionality for a user to create an even ???
+[24/05, 07:35] Donald: busy/available stores what, yes/no?
+[24/05, 07:35] Donald: Or 1/0
+[24/05, 07:35] MJ: Yah that’s better 
+[24/05, 07:35] Mongezi: Yeah man
+[24/05, 07:36] Mongezi: The logic behind this thing is crazy
+[24/05, 07:36] MJ: This ya awesome
+[24/05, 07:37] MJ: Maybe you can be the stuff below the message a little smaller (a little) so that the message is seen first
+[24/05, 07:38] Donald: Okay
+[24/05, 07:48] Mongezi: 
+[24/05, 07:50] MJ: Sweet
+[24/05, 07:51] MJ: So for tomorrow we have to:
+[24/05, 07:52] MJ: Cook the books
+Increase code coverage
+Finish the last user story(calendar)
+[24/05, 07:54] Mongezi: Sorry Donaldcan you make, instead of a date datatype can you please make three varchars for day, month and year
+[24/05, 07:59] MJ: @Kaone please look in to the build fail when you see this
+[24/05, 08:18] Donald: Done
+[24/05, 08:19] Donald: ok
+[24/05, 09:33] MJ: @Kaone I want to commit a test
+[24/05, 09:33] Kaone: Lemme check it out
+[24/05, 09:34] Mongezi: Tell me when you’re done I also want to commit something before it starts giving me errors
+[24/05, 09:34] MJ: Ayt
+[24/05, 09:41] Kaone: I committed
+[24/05, 09:41] Kaone: Hopefully it solves the build thing
+[24/05, 09:41] MJ: 
+[24/05, 10:09] Kaone: It's passing now
+[24/05, 10:09] MJ: Cool
+[24/05, 10:14] Mongezi: Which is easier to deal with, 24 hour clock or 12 hour?
+[24/05, 10:15] MJ: Eish I don’t know
+[24/05, 10:20] MJ: This is cool man
+[24/05, 10:21] Mongezi: Akere @Sikhanyiso is gonna make the users appear?
+[24/05, 10:22] MJ: @M Akere ?
+[24/05, 10:26] Sikhanyiso: List the users yha, tell me whn you need it
+[24/05, 10:27] Mongezi: Have you done it?
+[24/05, 10:27] MJ: @Mongezi  please tell me if the build fails, I’ll be at church
+[24/05, 10:27] MJ: Today
+[24/05, 10:27] Mongezi: I can commit now?
+[24/05, 10:28] Sikhanyiso: Ill do it im still testing the postview
+[24/05, 10:28] MJ: Post view?
+[24/05, 10:28] MJ: No it’s still building mine
+[24/05, 10:29] Sikhanyiso: ViewPost
+[24/05, 10:29] Mongezi: Oh okay
+[24/05, 10:29] MJ: Oh Ayt
+[24/05, 11:58] Mongezi: Did you commit the one with this display?
+[24/05, 11:58] Sikhanyiso: So how does the post_id work, I sorta need the post_id for one of the coms questions
+[24/05, 12:04] Mongezi: ??
+[24/05, 12:10] MJ: This looks like what @Sikhanyiso was supposed to do
+[24/05, 12:10] MJ: Wait click on a user
+[24/05, 12:11] Mongezi: It’s for chats
+[24/05, 12:11] MJ: It’s the same as this
+[24/05, 12:11] Mongezi: Donald posted this one
+[24/05, 12:11] MJ: This already has chats
+[24/05, 12:12] MJ: This one is empty
+[24/05, 12:12] Mongezi: Ohh okay
+[24/05, 12:12] Mongezi: ok
+[24/05, 12:12] MJ: ok
+[24/05, 12:13] MJ: @Mulisa helped me out with the tests, they weren’t hitting the buttons, I’ll commit to see if that changes things
+[24/05, 12:22] Sikhanyiso: Which tests you wrote
+[24/05, 12:23] MJ: Still writing 
+Posting Test 
+Answering Test
+[24/05, 12:26] Sikhanyiso: Ayt, ill deal with the viewpost an test
+[24/05, 14:11] Mongezi: You can add if you think there’s something missing
+[24/05, 14:11] MJ: Do we need event name ?
+[24/05, 14:12] Mongezi: I don’t know
+[24/05, 14:12] Mongezi: I can remove
+[24/05, 14:12] Mongezi: We also need eventId in the table
+[24/05, 14:14] MJ: The table exists?
+[24/05, 14:16] MJ: Okay it does
+[24/05, 14:16] Mongezi: But you have to change it
+[24/05, 14:16] MJ: Why, it seems okay
+[24/05, 14:16] Mongezi: Can I see it
+[24/05, 14:18] Mongezi: Time. I don’t have time as actual time here on android it’s two separate strings for hours and minutes
+[24/05, 14:18] Mongezi: So the event is just going to be time with no name?
+[24/05, 14:19] MJ: You can join them by hour +”:”+ minutes
+[24/05, 14:19] MJ: I don’t think we need even name, all the user needs to know is if the tutor is busy or not
+[24/05, 14:19] Mongezi: will the type time in the database allow that
+[24/05, 14:19] Mongezi: Because I think it also has seconds
+[24/05, 14:19] Mongezi: Okay yeah
+[24/05, 14:20] MJ: You know what the time can be created via php you can remove it
+[24/05, 14:22] Mongezi: I don’t understand
+[24/05, 14:24] MJ: Ohh fuck never mind I’m talking shit
+[24/05, 14:25] Mongezi: I’m talking about the time from the app
+[24/05, 14:33] MJ: What do you mean
+[24/05, 14:33] MJ: Ya I think it will also take the seconds
+[24/05, 14:35] MJ: Maybe we can change the data type form the database
+[24/05, 14:36] Mongezi: I’m telling you
+[24/05, 14:39] MJ: Ohhh 
+[24/05, 14:39] MJ: Then we have to do this
+[24/05, 14:44] Mongezi: Yes make two separate things, hour and minutes
+[24/05, 14:44] MJ: Why should they be separate
+[24/05, 14:45] Mongezi: Because of this. Hours are in a string and minutes are in a different string, so they’ll be sent separately
+[24/05, 14:46] Mongezi: Am I making sense?
+[24/05, 14:46] MJ: Ya that’s why I said you can join them and send them as normal time
+[24/05, 14:47] Sikhanyiso: Nvm that
+[24/05, 14:47] Mongezi: But the time datatype in the database also wants seconds which I don’t have here
+[24/05, 14:47] MJ: Ya and then I said this 
+[24/05, 14:47] Mongezi: Okay change it then
+[24/05, 14:48] Mongezi: Will it take only minutes and hours?
+[24/05, 14:48] MJ: If we set it as varchar
+[24/05, 14:49] MJ: I’m still busy with the code cov tho
+[24/05, 14:50] Mongezi: Oh
+[24/05, 14:50] Mongezi: I get it now
+[24/05, 15:29] MJ: @Sikhanyiso  you’re build is failing 
+Let me revert And commit mine you’ll commit after me I want to see something
+[24/05, 15:36] MJ: Eish I can’t  @Sikhanyiso can you try sorting it out
+[24/05, 15:38] MJ: Your gradle modification seems to be the problem
+[24/05, 15:39] Sikhanyiso: Ayt
+[24/05, 15:42] MJ: Tell me if it lets you revert
+[24/05, 15:49] MJ: Wait don’t do anything, things might get complicated
+[24/05, 15:52] Sikhanyiso: Deleted the file
+[24/05, 15:53] MJ: Eish alright but I think gradle will still contain the problematic dependencies, but let’s see
+[24/05, 15:54] Sikhanyiso: I think its not the graddle
+[24/05, 15:55] MJ: What do you think it is
+[24/05, 15:57] MJ: Don’t delete anything else, let’s see how it goes
+[24/05, 16:12] Sikhanyiso: You cn commit,
+[24/05, 16:13] Sikhanyiso: Ill go after you.
+[24/05, 16:13] MJ: Alright
+[24/05, 16:37] Sikhanyiso: @Donald what where you suppose to fix in that activity diagram so I can just do it when I redo the rest
+[24/05, 16:46] Sikhanyiso: When you are done tell me, I wanna try something
+[24/05, 16:46] MJ: Cool
+[24/05, 17:03] Donald: The too headings, it should be Link  and database only since everything is happening on the app and db
+[24/05, 17:03] Donald: The headings*
+[24/05, 17:03] Sikhanyiso: Ayt
+[24/05, 17:05] MJ: My code coverage is not performing clicks, I’ve tried everything, when the build passes anyone can take over I have tried it chowed me
+[24/05, 17:05] MJ: @Sikhanyiso you seem to be getting them
+[24/05, 17:08] Sikhanyiso: Ill look at them but I maybe flamed too
+[24/05, 17:09] MJ: Eish alright, mulisa said he’ll help me look into them when hes done mining gold
+[24/05, 17:27] MJ: I see you’re using espresso
+[24/05, 17:30] Sikhanyiso: Yhup
+[24/05, 17:30] MJ: It seems to be simpler
+[24/05, 17:31] Sikhanyiso: If it runs
+[24/05, 17:34] MJ: Eish 
+[24/05, 17:35] MJ: @Donald do you have any ideas what it could be, I’ve even changed my code layout to like yours but still no luck 
+[24/05, 17:35] MJ: Has anyone cooked the daily scrums?  
+[24/05, 17:39] Mongezi: But we’ve been doing them we just didn’t specify
+[24/05, 17:39] MJ: Eish ya but we didn’t  write down 
+[24/05, 17:45] MJ: Rylan hasn’t sent us details for tomorrow neh ?
+[24/05, 18:02] Mongezi: No he hasn’t
+[24/05, 18:02] MJ: Ahh this nigga
+[24/05, 18:03] Kaone: Maybe its postpone
+[24/05, 18:03] Mongezi: Haibo @Sikhanyiso did you do the profile thingy?
+[24/05, 18:04] Mongezi: Wait weren’t we supposed to book a meeting with him? 
+[24/05, 18:04] Kaone: The profile thing might be useful 
+Think about possible extension of the system.
+[24/05, 18:05] Mongezi: Okay no
+[24/05, 18:06] MJ: Or was there any information from his emails we missed about tomorrow
+[24/05, 18:06] MJ: The coms group is very useless this year 
+[24/05, 18:07] Mongezi: Bra
+[24/05, 18:07] Mongezi: That’s what I’m trying to look for
+[24/05, 18:07] MJ: Let me do that too
+[24/05, 18:41] Sikhanyiso: Its been returning error since yr commit, 
+There is no test that fails but on the LoginTest it takes too long 
+Terminates the build with "there was no output or maybe the build has stalled..."
+[24/05, 18:44] MJ: Can you please remove all you have added since I committed so that I can fix it
+[24/05, 18:45] Sikhanyiso: Thats done
+[24/05, 18:45] MJ: Cool
+[24/05, 18:45] Sikhanyiso: I doubt its your commit, been readin on it
+[24/05, 18:46] MJ: It might be because of how I committed
+[24/05, 18:50] Sikhanyiso: Ohhh yha its the Posting Test it does not return anything
+[24/05, 18:52] MJ: Ohh okay I see now
+[24/05, 18:53] MJ: That should do the trick
+[24/05, 19:38] MJ: @Sikhanyiso it’s cool
+[24/05, 19:38] MJ: @Donald when you find time can you do that magic of committing what’sapp messages 
+[24/05, 19:39] MJ: If it’s a lot I can help
+[24/05, 19:40] Sikhanyiso: Great
+[24/05, 19:40] Sikhanyiso: So is anyone gng to commit now?
+[24/05, 19:41] MJ: i dont think so
+[24/05, 19:51] Donald: No problem
+[24/05, 19:54] Sikhanyiso: Yha ill edit it, and the activity class and try draw that class diagram we ddnt have last sprint
+[24/05, 19:54] MJ: Cool
+[24/05, 20:02] Mongezi: I’m going to commit maybe later

@@ -1,0 +1,15 @@
+[19/05, 10:51] Sikhanyiso: I was thinking that we should hve a edit profile page immediately after the register page. In that page you specify if you are a tutor or student if you are a tutor MJ then you are able to specify your the course you tutor and availability by selecting a day and a time interval then when a student/ user clicks a course and select a tutor we display that time and day in block form
+[19/05, 11:37] Kaone: We re you thinking we may take advantage of Google calendar
+[19/05, 17:02] MJ: Emmanuel your Reply java class is kicking me, again. I’m gonna try making my own
+[19/05, 17:02] MJ: Or @Mongezi did you ever finish that part?
+[19/05, 17:04] Mongezi: Nah I didn’t man
+[19/05, 17:06] MJ: Ayt
+[19/05, 17:07] Mongezi: Mulisa plugged me a way to implement the calendar
+[19/05, 17:12] MJ: Ohh cool you busy with it?
+[19/05, 17:19] Mongezi: Not yet
+[19/05, 17:20] MJ: Does it seem doable ? 
+[19/05, 17:24] Mongezi: EisH you know how it is man
+[19/05, 17:27] Kaone: What is that?
+[19/05, 17:28] Kaone: Ohh yah you may implement your own
+[19/05, 17:28] Kaone: Replies are not important  at that class
+[19/05, 17:28] MJ: Ohhh okay

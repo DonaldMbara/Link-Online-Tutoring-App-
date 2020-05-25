@@ -1,0 +1,31 @@
+[22/05, 14:34] Kaone: I have added like post and answer functionality
+[22/05, 14:34] Kaone: check it on git
+[22/05, 15:03] MJ: Rn we only left with calendar and chat to make 5 user sprints
+[22/05, 15:24] Mongezi: I have to figure out how to show hours if a day is clicked because now I got a way of adding an event to a whole day
+[22/05, 15:31] MJ: Sweet
+[22/05, 17:36] Donald: great
+[22/05, 19:45] Donald: For chat, there's nothing fancy right, it's just chatting for meet-ups then that's, right?
+[22/05, 19:46] Donald: it
+[22/05, 19:46] MJ: I don’t know if the others have other fancy ideas, but I think that’s all
+[22/05, 19:50] Donald: I mean based on what Rylan said... It doesn't require anything more than chatting right?
+[22/05, 19:52] MJ: Eish I don’t know, but as long as the chat works
+[22/05, 19:53] MJ: He was more focused on the calendar thing for booking
+[22/05, 19:53] Donald: Okay sure
+[22/05, 19:54] Donald: Okay, we'll have to help @Mongezi
+[22/05, 19:57] MJ: Alright
+[22/05, 20:01] Mongezi: Awe[22/05, 14:34] Kaone: I have added like post and answer functionality
+[22/05, 14:34] Kaone: check it on git
+[22/05, 15:03] MJ: Rn we only left with calendar and chat to make 5 user sprints
+[22/05, 15:24] Mongezi: I have to figure out how to show hours if a day is clicked because now I got a way of adding an event to a whole day
+[22/05, 15:31] MJ: Sweet
+[22/05, 17:36] Donald: great
+[22/05, 19:45] Donald: For chat, there's nothing fancy right, it's just chatting for meet-ups then that's, right?
+[22/05, 19:46] Donald: it
+[22/05, 19:46] MJ: I don’t know if the others have other fancy ideas, but I think that’s all
+[22/05, 19:50] Donald: I mean based on what Rylan said... It doesn't require anything more than chatting right?
+[22/05, 19:52] MJ: Eish I don’t know, but as long as the chat works
+[22/05, 19:53] MJ: He was more focused on the calendar thing for booking
+[22/05, 19:53] Donald: Okay sure
+[22/05, 19:54] Donald: Okay, we'll have to help @Mongezi
+[22/05, 19:57] MJ: Alright
+[22/05, 20:01] Mongezi: Awe
