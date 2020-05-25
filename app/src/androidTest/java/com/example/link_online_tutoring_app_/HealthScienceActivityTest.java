@@ -58,7 +58,7 @@ public class HealthScienceActivityTest {
 
     }
 
-
+/*
     @Test
     public void onCreate10() {
     }
@@ -72,7 +72,7 @@ public class HealthScienceActivityTest {
 
     }
 
-
+*/
     @Test
     public void onCreate11() {
     }
