@@ -85,21 +85,5 @@ public class CommercefacultyActivityTest {
 
     }
 
-
-
-
-    @Test
-    public void onCreate12() {
-    }
-
-
-    @Test
-    public  void click3(){
-        rule.launchActivity(new Intent());
-        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(2).perform(click());
-
-
-    }
-
 }
 
