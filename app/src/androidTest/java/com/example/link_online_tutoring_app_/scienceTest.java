@@ -58,7 +58,7 @@ public class scienceTest {
 
     }
 
-
+/*
     @Test
     public void onCreate10() {
     }
@@ -116,7 +116,7 @@ public class scienceTest {
 
     }
 
-
+*/
 
 }
 
