@@ -87,7 +87,7 @@ public class scienceTest {
     }
 
 
-
+/*
 
     @Test
     public void onCreate12() {
@@ -106,7 +106,7 @@ public class scienceTest {
     @Test
     public void onCreate13() {
     }
-
+*/
 
     @Test
     public  void click4(){
