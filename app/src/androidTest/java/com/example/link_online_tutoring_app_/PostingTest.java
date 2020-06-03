@@ -39,7 +39,7 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.hamcrest.Matchers.anything;
 import static org.junit.Assert.assertNull;
 
-
+@RunWith(AndroidJUnit4.class)
 public class PostingTest {
     @Rule
     public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
@@ -85,6 +85,7 @@ public class PostingTest {
                     selector.performClick();
                     onView(withText("COMS")).perform(click());
                     Button post_button = ATR.getActivity().findViewById(R.id.Post_button);
+                    post_button.performClick();
                     post_button.performClick();
                     Activity AnotherActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,7000);
                     assertNull(AnotherActivity);
