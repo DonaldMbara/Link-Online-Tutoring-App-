@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -41,6 +42,7 @@ public class PostsActivity extends AppCompatActivity {
     EditText Question;
     Button Selector;
     TextView viewer;
+    String StudentNumber = "";
     static String Holding;
     static String HoldName;
     ContentValues cv = new ContentValues();
@@ -112,7 +114,13 @@ public class PostsActivity extends AppCompatActivity {
         if (Safe_checker.equals("Safe")) {
 
             SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-            String StudentNumber = (Prefs.getString("Key", ""));
+            StudentNumber = (Prefs.getString("Key", ""));
+
+
+            if(TextUtils.isEmpty(StudentNumber)){
+                SharedPreferences PR = PreferenceManager.getDefaultSharedPreferences(this);
+                StudentNumber = PR.getString("Key", "");
+            }
             cv2.put("course_name", Dummy_Selection);
             cv3.put("studentNo", StudentNumber);
             Get_Course_ID(cv2);

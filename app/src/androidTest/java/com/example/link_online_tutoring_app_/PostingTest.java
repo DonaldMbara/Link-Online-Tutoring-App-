@@ -1,100 +1,104 @@
 package com.example.link_online_tutoring_app_;
 
-import android.app.Activity;
-import android.app.Instrumentation;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.PopupMenu;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.test.InstrumentationRegistry;
-import androidx.test.annotation.UiThreadTest;
-import androidx.test.espresso.action.ViewActions;
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
+import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.concurrent.CountDownLatch;
-
 import static android.content.Context.MODE_PRIVATE;
-import static androidx.test.espresso.Espresso.closeSoftKeyboard;
-import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.Espresso.openContextualActionModeOverflowMenu;
+import static androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.pressMenuKey;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
-import static androidx.test.espresso.matcher.ViewMatchers.isSelected;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
-import static org.hamcrest.Matchers.anything;
-import static org.junit.Assert.assertNull;
+import static org.hamcrest.core.AllOf.allOf;
 
 @RunWith(AndroidJUnit4.class)
 public class PostingTest {
-    @Rule
-    public ActivityTestRule<PostsActivity> ATR = new ActivityTestRule<>(PostsActivity.class, true,false);
-    Instrumentation.ActivityMonitor Monitor =getInstrumentation().addMonitor(ViewPosts.class.getName(),null,false);
-    //   Instrumentation.ActivityMonitor activityMonitor=getInstrumentation().addMonitor(HomeActivity.class.getName(),null,false);
-
-
+    SharedPreferences.Editor PE;
+    @Before
+    public void setUp(){
+        Context cx = getInstrumentation().getTargetContext();
+        PE = PreferenceManager.getDefaultSharedPreferences(cx).edit();
+    }
     @Test
-    public void ClickPostFail() {
+    public void PostingPass() {
+        PE.putString("Key", "90");
+        PE.commit();
+        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
+        onView(withId(R.id.cl)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).check(matches(isDisplayed()));
+        onView(withId(R.id.Viewer)).check(matches(isDisplayed()));
+        onView(withId(R.id.Post_button)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).perform(typeText("Q"), closeSoftKeyboard());
+        onView(withId(R.id.Viewer)).perform(setTextInTextView("COMS"));
 
-        try{
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run(){
-                    EditText Q = ATR.getActivity().findViewById(R.id.PostYourQ);
-                    EditText PlaceHolder = ATR.getActivity().findViewById(R.id.Viewer);
-                    Q.setText("");
-                    PlaceHolder.setText("");
-                    Button Post = ATR.getActivity().findViewById(R.id.Post_button);
-                    Post.performClick();
-                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,7000);
-                    assertNull(NextActivity);
-                }
-            });
 
-        }catch (Throwable output){
-            output.printStackTrace();
-        }
+        PostsActivity.HoldName = "TestName";
+        PostsActivity.Holding = "1";
+
+        onView(withId(R.id.Post_button)).perform(click());
+
+
+//        onView(withId(R.id.Post_button)).perform(click());
+    }
+    public static ViewAction setTextInTextView(final String value){
+        return new ViewAction() {
+            @SuppressWarnings("unchecked")
+            @Override
+            public Matcher<View> getConstraints() {
+                return allOf(isDisplayed(), isAssignableFrom(TextView.class));
+//                                            ^^^^^^^^^^^^^^^^^^^
+// To check that the found view is TextView or it's subclass like EditText
+// so it will work for TextView and it's descendants
+            }
+
+            @Override
+            public void perform(UiController uiController, View view) {
+                ((TextView) view).setText(value);
+            }
+
+            @Override
+            public String getDescription() {
+                return "replace text";
+            }
+        };
     }
 
-
-
-    @Test
-    public void Can_post() { //testing if you can post
-
-        try {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    EditText post=ATR.getActivity().findViewById(R.id.Add_post);
-                    post.setText("Testing Question?");
-                    Button selector = ATR.getActivity().findViewById(R.id.CourseChoice);
-                    selector.performClick();
-                    onView(withText("COMS")).perform(click());
-                    Button post_button = ATR.getActivity().findViewById(R.id.Post_button);
-                    post_button.performClick();
-                    post_button.performClick();
-                    Activity AnotherActivity=getInstrumentation().waitForMonitorWithTimeout(Monitor,7000);
-                    assertNull(AnotherActivity);
-
-                }
-            });
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
-    }
-
+//    @Test
+//    public void PostingFail() {
+//        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
+//        onView(withId(R.id.cl)).check(matches(isDisplayed()));
+//        onView(withId(R.id.Add_post)).check(matches(isDisplayed()));
+//        onView(withId(R.id.Viewer)).check(matches(isDisplayed()));
+//        onView(withId(R.id.Post_button)).check(matches(isDisplayed()));
+//        onView(withId(R.id.Add_post)).perform(typeText(""), closeSoftKeyboard());
+////        onView(withId(R.id.Viewer)).perform(typeText(""));
+//
+//        onView(withId(R.id.Post_button)).perform(click());
+//
+//    }
 }
