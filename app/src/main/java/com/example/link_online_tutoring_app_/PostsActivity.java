@@ -38,11 +38,13 @@ import managers.AsyncHTTP;
 public class PostsActivity extends AppCompatActivity {
     public static String[] Hold = new String[1];
     Button uploadImage;
+    Context cx;
     Button Post_Button;
     EditText Question;
     Button Selector;
     TextView viewer;
     String StudentNumber = "";
+    static String GreenLight = "OFF";
     static String Holding;
     static String HoldName;
     ContentValues cv = new ContentValues();
@@ -53,12 +55,14 @@ public class PostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posting_activity);
         uploadImage = findViewById(R.id.uploadbtn);
+
         Post_Button = findViewById(R.id.Post_button);
         Question = findViewById(R.id.Add_post);
         Selector = findViewById(R.id.CourseChoice);
         viewer = findViewById(R.id.Viewer);
         BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        cx = this;
 
         String Selected_Course;
 
@@ -113,14 +117,15 @@ public class PostsActivity extends AppCompatActivity {
 
         if (Safe_checker.equals("Safe")) {
 
-            SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-            StudentNumber = (Prefs.getString("Key", ""));
-
-
-            if(TextUtils.isEmpty(StudentNumber)){
-                SharedPreferences PR = PreferenceManager.getDefaultSharedPreferences(this);
-                StudentNumber = PR.getString("Key", "");
+            if(GreenLight == "OFF"){
+                StudentNumber = "90";
             }
+            if(GreenLight == "ON") {
+                SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
+                StudentNumber = (Prefs.getString("Key", ""));
+            }
+//            SharedPreferences PR = PreferenceManager.getDefaultSharedPreferences(this);
+
             cv2.put("course_name", Dummy_Selection);
             cv3.put("studentNo", StudentNumber);
             Get_Course_ID(cv2);
@@ -238,6 +243,7 @@ public class PostsActivity extends AppCompatActivity {
         PostsActivity.this.startActivity(new Intent(PostsActivity.this,HomeActivity.class));
         finish();
     }
+
 }
 
 

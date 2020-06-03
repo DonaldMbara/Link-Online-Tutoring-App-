@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ArrayAdapter<String> arrayAdapter;
 
+
     ListView listView;
 
     @Override
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         listView = findViewById(R.id.listView);
+        PostsActivity.GreenLight = "ON";
         getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
 
         listView.setAdapter(arrayAdapter);
