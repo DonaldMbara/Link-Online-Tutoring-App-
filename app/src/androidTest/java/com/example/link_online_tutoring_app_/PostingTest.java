@@ -26,11 +26,13 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.pressBack;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
@@ -88,17 +90,24 @@ public class PostingTest {
         };
     }
 
-//    @Test
-//    public void PostingFail() {
-//        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
-//        onView(withId(R.id.cl)).check(matches(isDisplayed()));
-//        onView(withId(R.id.Add_post)).check(matches(isDisplayed()));
-//        onView(withId(R.id.Viewer)).check(matches(isDisplayed()));
-//        onView(withId(R.id.Post_button)).check(matches(isDisplayed()));
-//        onView(withId(R.id.Add_post)).perform(typeText(""), closeSoftKeyboard());
-////        onView(withId(R.id.Viewer)).perform(typeText(""));
-//
-//        onView(withId(R.id.Post_button)).perform(click());
-//
-//    }
+    @Test
+    public void PostingFail() {
+        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
+        onView(withId(R.id.cl)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).check(matches(isDisplayed()));
+        onView(withId(R.id.Viewer)).check(matches(isDisplayed()));
+        onView(withId(R.id.Post_button)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).perform(typeText(""), closeSoftKeyboard());
+        onView(withId(R.id.Viewer)).perform(setTextInTextView(""));
+
+        onView(withId(R.id.Post_button)).perform(click());
+
+    }
+
+    @Test
+    public void ZBackPressTest(){
+        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
+        onView(isRoot()).perform(pressBack());
+        onView(withId(R.id.homeid)).check(matches(isDisplayed()));
+    }
 }
