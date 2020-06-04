@@ -60,10 +60,10 @@ public class ChatActivity extends AppCompatActivity {
     Button btnSend_, btnReload_;
     TextView receiverName;
     EditText messageET;
-    String receiver, receiverStudNum, senderStudNum;
-    String message, sender;
+    static String receiver, receiverStudNum, senderStudNum;
+    static String message, sender;
     static ArrayList<Chat>chats;
-    int my_id,other_user_id;
+    static int my_id,other_user_id;
 
     RecyclerView recyclerView;
 
@@ -79,6 +79,7 @@ public class ChatActivity extends AppCompatActivity {
             my_id = Integer.parseInt(user_id);
             sender = sharedPreferences1.getString("my_username", "null");
         }
+
         if(YellowLight == "OFF"){
             my_id = 90;
             sender = "90";
