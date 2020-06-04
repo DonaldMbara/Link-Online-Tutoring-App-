@@ -30,6 +30,8 @@ public class AnswerActivity extends AppCompatActivity {
      static String Author;
      EditText TheAnswer;
     Button TheAns_btn;
+    String StudentNumber;
+    static String RedLight = "OFF";
     String Status;
     ContentValues getTheirName = new ContentValues();
     ContentValues sendAns = new ContentValues();
@@ -57,40 +59,57 @@ public class AnswerActivity extends AppCompatActivity {
         }
 
         public void DoClickAns(){
-            SharedPreferences Prefers = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
-            String StudentNumber = (Prefers.getString("Key", ""));
-            getTheirName.put("studentNo",StudentNumber);
-            The_Post_Id = getIntent().getStringExtra("Post_Id_Key");
-            Log.d("the_id", The_Post_Id);
 
-            Get_TheName(getTheirName);
-
-            Status = TheAnswer.getText().toString().trim();
-            String Safe_checker = "Safe";
-
-            if (TextUtils.isEmpty(Status)) {
-                TheAnswer.setError("Cannot post an empty field");
-                Safe_checker = "Unsafe";
-            }
-
-            if (Safe_checker.equals("Safe")) {
-
-                if (TextUtils.isEmpty(Author) || TextUtils.isEmpty(The_Post_Id)) {
-                    Get_TheName(getTheirName);
-                    Toast toast = Toast.makeText(AnswerActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
-                    toast.show();
-                } else {
-
-
-                    sendAns.put("post_id", The_Post_Id);
-                    sendAns.put("author", Author);
-                    sendAns.put("answer", Status);
-
-                    AddAnswer(sendAns);
-
+                if(RedLight == "ON") {
+                    SharedPreferences Prefers = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
+                    StudentNumber = (Prefers.getString("Key", ""));
                 }
+                if(RedLight == "OFF"){
+                    StudentNumber = "90";
+                }
+                getTheirName.put("studentNo",StudentNumber);
+                if(RedLight == "ON") {
+                    The_Post_Id = getIntent().getStringExtra("Post_Id_Key");
+                }
+                if(RedLight == "OFF") {
+                    The_Post_Id = "1";
+                }
+
+                Log.d("the_id", The_Post_Id);
+
+            if(RedLight == "ON") {
+                Get_TheName(getTheirName);
             }
+            if(RedLight == "OFF") {
+                Author = "AndroidTestBob";
+            }
+
+                Status = TheAnswer.getText().toString().trim();
+                String Safe_checker = "Safe";
+
+                if (TextUtils.isEmpty(Status)) {
+                    TheAnswer.setError("Cannot post an empty field");
+                    Safe_checker = "Unsafe";
+                }
+
+                if (Safe_checker.equals("Safe")) {
+
+                    if (TextUtils.isEmpty(Author) || TextUtils.isEmpty(The_Post_Id)) {
+                        Get_TheName(getTheirName);
+                        Toast toast = Toast.makeText(AnswerActivity.this, "Press Again To Confirm", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.START, 240, 0);
+                        toast.show();
+                    } else {
+
+
+                        sendAns.put("post_id", The_Post_Id);
+                        sendAns.put("author", Author);
+                        sendAns.put("answer", Status);
+
+                        AddAnswer(sendAns);
+
+                    }
+                }
 
         }
 
