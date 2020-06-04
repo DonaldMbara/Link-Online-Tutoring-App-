@@ -26,7 +26,7 @@ import java.net.ConnectException;
 import managers.AsyncHTTP;
 
 public class AnswerActivity extends AppCompatActivity {
-    String The_Post_Id;
+    static String The_Post_Id;
      static String Author;
      EditText TheAnswer;
     Button TheAns_btn;

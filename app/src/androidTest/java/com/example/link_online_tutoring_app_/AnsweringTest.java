@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
@@ -14,59 +15,52 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNull;
-
+@RunWith(AndroidJUnit4.class)
 public class AnsweringTest {
+@Test
+    public void AddAnswerPass(){
+    ActivityScenario<AnswerActivity> sn = ActivityScenario.launch(AnswerActivity.class);
+    onView(withId(R.id.ac)).check(matches(isDisplayed()));
+    onView(withId(R.id.Add_Ans)).check(matches(isDisplayed()));
+    onView(withId(R.id.Answer_button)).check(matches(isDisplayed()));
+    onView(withId(R.id.Add_Ans)).perform(typeText("A"), closeSoftKeyboard());
 
-
-    @Rule
-    public ActivityTestRule<AnswerActivity> ActRule = new ActivityTestRule<>(AnswerActivity.class, true,false);
-    Instrumentation.ActivityMonitor ActMonitor =getInstrumentation().addMonitor(ViewAnswers.class.getName(),null,false);
-
-
-    @Test
-    public void onClickAnswerFail(){
-
-        try{
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    EditText Answer = ActRule.getActivity().findViewById(R.id.Add_Ans);
-                    Button SendAnswer = ActRule.getActivity().findViewById(R.id.Answer_button);
-                    Answer.setText("");
-                    SendAnswer.performClick();
-                    Activity NextActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,7000);
-                    assertNull(NextActivity);
-                }
-            });
-
-        }catch (Throwable output){
-            output.printStackTrace();
-        }
+    onView(withId(R.id.Answer_button)).perform(click());
     }
 
     @Test
-    public void onClickAnswerPass(){
+    public void AddAnswerFail(){
+        ActivityScenario<AnswerActivity> sn = ActivityScenario.launch(AnswerActivity.class);
+        onView(withId(R.id.ac)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_Ans)).check(matches(isDisplayed()));
+        onView(withId(R.id.Answer_button)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_Ans)).perform(typeText(""), closeSoftKeyboard());
 
-        try{
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    EditText Answer = ActRule.getActivity().findViewById(R.id.PostYourA);
-                    Button SendAnswer = ActRule.getActivity().findViewById(R.id.Answer_button);
-                    Answer.setText("Some Testing Answer");
-                    SendAnswer.performClick();
-                    Activity GotoActivity=getInstrumentation().waitForMonitorWithTimeout(ActMonitor,7000);
-                    assertNull(GotoActivity);
-                }
-            });
-
-        }catch (Throwable out){
-            out.printStackTrace();
-        }
+        onView(withId(R.id.Answer_button)).perform(click());
     }
 
+    @Test
+    public void AddAnswerPressAgain(){
+        ActivityScenario<AnswerActivity> sn = ActivityScenario.launch(AnswerActivity.class);
+        onView(withId(R.id.ac)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_Ans)).check(matches(isDisplayed()));
+        onView(withId(R.id.Answer_button)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_Ans)).perform(typeText("A"), closeSoftKeyboard());
+
+        AnswerActivity.RedLight = "Neutral";
+        AnswerActivity.The_Post_Id = "";
+
+        onView(withId(R.id.Answer_button)).perform(click());
+    }
 
 }
