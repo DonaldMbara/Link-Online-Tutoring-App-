@@ -26,7 +26,7 @@ import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.r
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNull;
 @RunWith(AndroidJUnit4.class)
-public class AnsweringTest {
+public class BAnsweringTest {
 @Test
     public void AddAnswerPass(){
     ActivityScenario<AnswerActivity> sn = ActivityScenario.launch(AnswerActivity.class);
@@ -46,7 +46,6 @@ public class AnsweringTest {
         onView(withId(R.id.Add_Ans)).check(matches(isDisplayed()));
         onView(withId(R.id.Answer_button)).check(matches(isDisplayed()));
         onView(withId(R.id.Add_Ans)).perform(typeText(""), closeSoftKeyboard());
-
         onView(withId(R.id.Answer_button)).perform(click());
     }
 

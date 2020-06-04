@@ -27,8 +27,8 @@ import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 public class ChatActivityTest {
     @Test
-    public void ClickMessagePass() {
-        ActivityScenario<ChatActivity> sn = ActivityScenario.launch(ChatActivity.class);
+    public void AClickMessagePass() {
+        ActivityScenario<ChatActivity> sne = ActivityScenario.launch(ChatActivity.class);
         onView(withId(R.id.chat_layout)).check(matches(isDisplayed()));
         onView(withId(R.id.receiverName)).check(matches(isDisplayed()));
         onView(withId(R.id.btnReload)).check(matches(isDisplayed()));
@@ -37,22 +37,19 @@ public class ChatActivityTest {
         onView(withId(R.id.btnSend)).check(matches(isDisplayed()));
         onView(withId(R.id.rvMessages)).check(matches(isDisplayed()));
         onView(withId(R.id.constraintLayout)).check(matches(isDisplayed()));
-
         ChatActivity.receiver = "Murphy";
         ChatActivity.receiverStudNum = "90";
         ChatActivity.senderStudNum = "90";
         ChatActivity.my_id = 90;
         ChatActivity.sender= "Murphy";
         ChatActivity.other_user_id = 90;
-        onView(withId(R.id.messageEText)).perform(typeText("To ME"), closeSoftKeyboard());
+        onView(withId(R.id.messageEText)).perform(typeText("Myself"), closeSoftKeyboard());
         onView(withId(R.id.btnSend)).perform(click());
         onView(withId(R.id.btnReload)).perform(click());
-
     }
-
     @Test
-    public void ZClickMessageFail() {
-        ActivityScenario<ChatActivity> sn = ActivityScenario.launch(ChatActivity.class);
+    public void AClickMessageFail() {
+        ActivityScenario<ChatActivity>  sne = ActivityScenario.launch(ChatActivity.class);
         onView(withId(R.id.chat_layout)).check(matches(isDisplayed()));
         onView(withId(R.id.receiverName)).check(matches(isDisplayed()));
         onView(withId(R.id.btnReload)).check(matches(isDisplayed()));
@@ -63,5 +60,4 @@ public class ChatActivityTest {
         onView(withId(R.id.constraintLayout)).check(matches(isDisplayed()));
         onView(withId(R.id.btnSend)).perform(click());
     }
-
 }
