@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         PostsActivity.GreenLight = "ON";
         AnswerActivity.RedLight = "ON";
+        ChatActivity.YellowLight = "ON";
         getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
 
         listView.setAdapter(arrayAdapter);
