@@ -37,6 +37,7 @@ public class ChatActivityTest {
         onView(withId(R.id.btnSend)).check(matches(isDisplayed()));
         onView(withId(R.id.rvMessages)).check(matches(isDisplayed()));
         onView(withId(R.id.constraintLayout)).check(matches(isDisplayed()));
+        ChatActivity.YellowLight = "OFF";
         ChatActivity.receiver = "Murphy";
         ChatActivity.receiverStudNum = "90";
         ChatActivity.senderStudNum = "90";
