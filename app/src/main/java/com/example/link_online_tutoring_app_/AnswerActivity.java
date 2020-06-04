@@ -30,7 +30,7 @@ public class AnswerActivity extends AppCompatActivity {
      static String Author;
      EditText TheAnswer;
     Button TheAns_btn;
-    String StudentNumber;
+    static String StudentNumber;
     static String RedLight = "OFF";
     String Status;
     ContentValues getTheirName = new ContentValues();

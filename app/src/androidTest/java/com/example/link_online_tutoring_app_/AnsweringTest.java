@@ -33,8 +33,9 @@ public class AnsweringTest {
     onView(withId(R.id.ac)).check(matches(isDisplayed()));
     onView(withId(R.id.Add_Ans)).check(matches(isDisplayed()));
     onView(withId(R.id.Answer_button)).check(matches(isDisplayed()));
-    onView(withId(R.id.Add_Ans)).perform(typeText("A"), closeSoftKeyboard());
-
+    onView(withId(R.id.Add_Ans)).perform(typeText("Some Answer"), closeSoftKeyboard());
+    AnswerActivity.The_Post_Id = "1";
+    AnswerActivity.Author ="90";
     onView(withId(R.id.Answer_button)).perform(click());
     }
 
