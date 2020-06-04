@@ -26,7 +26,6 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 public class ChatActivityTest {
-
     @Test
     public void ClickMessagePass() {
         ActivityScenario<ChatActivity> sn = ActivityScenario.launch(ChatActivity.class);
@@ -36,6 +35,9 @@ public class ChatActivityTest {
         onView(withId(R.id.ThirdCL)).check(matches(isDisplayed()));
         onView(withId(R.id.messageEText)).check(matches(isDisplayed()));
         onView(withId(R.id.btnSend)).check(matches(isDisplayed()));
+        onView(withId(R.id.rvMessages)).check(matches(isDisplayed()));
+        onView(withId(R.id.constraintLayout)).check(matches(isDisplayed()));
+
         ChatActivity.receiver = "Murphy";
         ChatActivity.receiverStudNum = "90";
         ChatActivity.senderStudNum = "90";
@@ -57,7 +59,8 @@ public class ChatActivityTest {
         onView(withId(R.id.ThirdCL)).check(matches(isDisplayed()));
         onView(withId(R.id.messageEText)).check(matches(isDisplayed()));
         onView(withId(R.id.btnSend)).check(matches(isDisplayed()));
-        onView(withId(R.id.messageEText)).perform(typeText(""), closeSoftKeyboard());
+        onView(withId(R.id.rvMessages)).check(matches(isDisplayed()));
+        onView(withId(R.id.constraintLayout)).check(matches(isDisplayed()));
         onView(withId(R.id.btnSend)).perform(click());
     }
 
