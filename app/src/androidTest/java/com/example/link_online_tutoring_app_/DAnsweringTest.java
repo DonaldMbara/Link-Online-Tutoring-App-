@@ -26,7 +26,7 @@ import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.r
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.assertNull;
 @RunWith(AndroidJUnit4.class)
-public class BAnsweringTest {
+public class DAnsweringTest {
 @Test
     public void AddAnswerPass(){
     ActivityScenario<AnswerActivity> sn = ActivityScenario.launch(AnswerActivity.class);
