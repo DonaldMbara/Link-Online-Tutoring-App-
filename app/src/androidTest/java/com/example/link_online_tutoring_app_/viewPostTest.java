@@ -51,22 +51,9 @@ public class viewPostTest {
     public ActivityTestRule rule = new ActivityTestRule(ViewPosts.class, true, false);
 
 
-    @Test
-    public  void search(){
-        Intent id = new Intent();
-        id.putExtra("course_id",code);
-        rule.launchActivity(id);
-        onView(withId(R.id.search_post)).perform(click());
-        onView(withId(R.id.search_post)).perform(typeText("Do you think cgv is cool"));
-        onView(withId(R.id.search_post)).perform(ViewActions.closeSoftKeyboard());
-
-
-    }
 
     @Test
     public void viewPost(){
-
-
         Intent id = new Intent();
         id.putExtra("course_id",code);
         rule.launchActivity(id);
@@ -76,16 +63,7 @@ public class viewPostTest {
     }
 
 
-    @Test
-    public void  goToReplies(){
-        Intent id = new Intent();
-        id.putExtra("course_id",code);
-        rule.launchActivity(id);
-        onView(withId(R.id.post_recycle_view)).perform(
-                RecyclerViewActions.actionOnItemAtPosition(0, dependent.clickChildViewWithId(R.id. post_comments)));
 
-
-    }
 
 
     public static class dependent {
