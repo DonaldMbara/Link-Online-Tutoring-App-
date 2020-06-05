@@ -108,6 +108,7 @@ public class ChatActivity extends AppCompatActivity {
         else{
             receiver = "Murphy";
             other_user_id= 90;
+            messageET.setText("Some Answer Modified", TextView.BufferType.EDITABLE);
         }
 //        if(YellowLight == "OFF"){
 //            receiver = "Murphy";
