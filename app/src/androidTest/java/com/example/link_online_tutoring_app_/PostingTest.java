@@ -103,6 +103,19 @@ public class PostingTest {
         onView(withId(R.id.Post_button)).perform(click());
 
     }
+    @Test
+    public void APostingPressAgain() {
+        ActivityScenario<PostsActivity> sn = ActivityScenario.launch(PostsActivity.class);
+        onView(withId(R.id.cl)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).check(matches(isDisplayed()));
+        onView(withId(R.id.Viewer)).check(matches(isDisplayed()));
+        onView(withId(R.id.Post_button)).check(matches(isDisplayed()));
+        onView(withId(R.id.Add_post)).perform(typeText("Q2"), closeSoftKeyboard());
+        onView(withId(R.id.Viewer)).perform(setTextInTextView("COMS"));
+        PostsActivity.Holding  = "";
+        onView(withId(R.id.Post_button)).perform(click());
+
+    }
 
     @Test
     public void ZBackPressTest(){

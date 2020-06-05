@@ -56,7 +56,7 @@ import managers.AsyncHTTP;
 
 
 public class ChatActivity extends AppCompatActivity {
-    static String YellowLight = "OFF";
+//    static String YellowLight = "OFF";
     Button btnSend_, btnReload_;
     TextView receiverName;
     EditText messageET;
@@ -73,17 +73,17 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        if(YellowLight == "ON") {
+//        if(YellowLight == "ON") {
             SharedPreferences sharedPreferences1 = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
             String user_id = sharedPreferences1.getString(RequestHandler.Unkey, "-1");
             my_id = Integer.parseInt(user_id);
             sender = sharedPreferences1.getString("my_username", "null");
-        }
+//        }
 
-        if(YellowLight == "OFF"){
-            my_id = 90;
-            sender = "90";
-        }
+//        if(YellowLight == "OFF"){
+//            my_id = 90;
+//            sender = "90";
+//        }
 
         receiverName = findViewById(R.id.receiverName);
         btnReload_ = findViewById(R.id.btnReload);
@@ -96,15 +96,15 @@ public class ChatActivity extends AppCompatActivity {
         btnSend_ = findViewById(R.id.btnSend);
 
         messageET = findViewById(R.id.messageEText);
-        if(YellowLight == "ON") {
+//        if(YellowLight == "ON") {
             Intent intent = getIntent();
             receiver = intent.getStringExtra("receiver");
             other_user_id = intent.getIntExtra("receiver_id", -1);
-        }
-        if(YellowLight == "OFF"){
-            receiver = "Murphy";
-            other_user_id = 90;
-        }
+//        }
+//        if(YellowLight == "OFF"){
+//            receiver = "Murphy";
+//            other_user_id = 90;
+//        }
         receiverName.setText((receiver));
 
         recyclerView = findViewById(R.id.rvMessages);
@@ -137,15 +137,15 @@ public class ChatActivity extends AppCompatActivity {
     public void sendMessage(View view) {
 
         message = messageET.getText().toString().trim();
-        if(YellowLight == "ON") {
+//        if(YellowLight == "ON") {
             SharedPreferences Prefs = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
             senderStudNum = String.valueOf(my_id);
             receiverStudNum = String.valueOf(other_user_id);
-        }
-        if(YellowLight == "OFF"){
-            senderStudNum = "90";
-            receiverStudNum = "90";
-        }
+//        }
+//        if(YellowLight == "OFF"){
+//            senderStudNum = "90";
+//            receiverStudNum = "90";
+//        }
         //sender = "Donald";
         /* check sender on onCreate method*/
 
