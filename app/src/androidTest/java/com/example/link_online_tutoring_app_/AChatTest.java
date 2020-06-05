@@ -22,10 +22,10 @@ public class AChatTest {
         Intent intent = new Intent();
          ActivityTestRule rule = new ActivityTestRule(ChatActivity.class, true, false);
          rule.launchActivity(intent);
-        ChatActivity.YellowLight = "OFF";
+         ChatActivity.YellowLight = "OFF";
 //        onView(withId(R.id.messageEText)).perform(typeText("Some Answer"), closeSoftKeyboard());
         onView(withId(R.id.btnSend)).perform(click());
-        onView(withId(R.id.btnReload)).perform(click());
+//        onView(withId(R.id.btnReload)).perform(click());
 
     }
 }
