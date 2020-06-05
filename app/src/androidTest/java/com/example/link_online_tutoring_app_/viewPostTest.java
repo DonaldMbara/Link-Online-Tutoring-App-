@@ -59,10 +59,7 @@ public class viewPostTest {
         Intent id = new Intent();
         id.putExtra("course_id",code);
         rule.launchActivity(id);
-        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
-        onView(withId(R.id.post_recycle_view)).perform(
-                RecyclerViewActions.actionOnItemAtPosition(0, dependent.clickChildViewWithId(R.id. post_like_btn)));
-
+      
     }
 
 
