@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         AnswerActivity.RedLight = "ON";
         Toolbar apttl = findViewById(R.id.apt_lid);
         setSupportActionBar(apttl);
-//        ChatActivity.YellowLight = "ON";
+        ChatActivity.YellowLight = "ON";
         getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
 
         listView.setAdapter(arrayAdapter);
