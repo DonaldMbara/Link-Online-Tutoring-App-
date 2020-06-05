@@ -3,17 +3,22 @@ package com.example.link_online_tutoring_app_;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.link_online_tutoring_app_.AptListUser.Apt_ListUsers;
 import com.example.link_online_tutoring_app_.FacultiesAcitvities.CommerceActivity;
 import com.example.link_online_tutoring_app_.FacultiesAcitvities.HealthScienceActivity;
 import com.example.link_online_tutoring_app_.FacultiesAcitvities.HumanitiesActivity;
@@ -44,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         PostsActivity.GreenLight = "ON";
         AnswerActivity.RedLight = "ON";
+        Toolbar apttl = findViewById(R.id.apt_lid);
+        setSupportActionBar(apttl);
 //        ChatActivity.YellowLight = "ON";
         getJSON("https://lamp.ms.wits.ac.za/~s1819369/get_facul.php");
 
@@ -171,6 +178,41 @@ public class HomeActivity extends AppCompatActivity {
         }
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, faculties);
         listView.setAdapter(arrayAdapter);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.appointment_menu,menu);
+
+        final MenuItem item=menu.findItem(R.id.book_apt);
+        if (item != null) {
+            final Button answer_button = (Button) item.getActionView();
+            answer_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    HomeActivity.super.onOptionsItemSelected(item);
+                }
+            });
+
+            //Set a ClickListener, the text,
+            //the background color or something like that
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.book_apt:
+                Intent intent = new Intent(HomeActivity.this, Apt_ListUsers.class);
+                startActivity(intent);
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
     
 }

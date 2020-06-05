@@ -20,6 +20,8 @@
         <activity android:name=".FacultiesAcitvities.HumanitiesActivity" />
         <activity android:name=".FacultiesAcitvities.CommerceActivity" />
         <activity android:name=".FacultiesAcitvities.ScienceActivity" />
+        <activity android:name=".AptListUser.Apt_ListUsers"/>
+        <activity android:name=".ScheduleActivity"/>
         <activity android:name=".ChatActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
