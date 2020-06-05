@@ -28,6 +28,7 @@ import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.pressMenuKey;
 import static androidx.test.espresso.action.ViewActions.typeText;
@@ -38,6 +39,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread;
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.hasItem;
@@ -57,6 +59,7 @@ public class viewPostTest {
         Intent id = new Intent();
         id.putExtra("course_id",code);
         rule.launchActivity(id);
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
         onView(withId(R.id.post_recycle_view)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(0, dependent.clickChildViewWithId(R.id. post_like_btn)));
 
