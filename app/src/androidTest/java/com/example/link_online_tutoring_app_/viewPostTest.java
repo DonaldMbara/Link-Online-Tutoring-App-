@@ -60,8 +60,8 @@ public class viewPostTest {
         id.putExtra("course_id",code);
         rule.launchActivity(id);
        // openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
-        onView(withId(R.id.search_post)).perform(click());
-        onView(withId(R.id.search_post)).perform(typeText("do you thing cgv is cool"));
+       // onView(withId(R.id.search_post)).perform(click());
+       // onView(withId(R.id.search_post)).perform(typeText("do you thing cgv is cool"));
     }
 
 
