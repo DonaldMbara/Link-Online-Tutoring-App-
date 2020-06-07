@@ -19,12 +19,8 @@
         />
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/settings_icon"
-        android:title="Settings"
+        android:icon="@drawable/png_profile"
+        android:title="Profile"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/calendar"
-        android:icon="@drawable/calen"
-        android:title="Calendar"
-        app:showAsAction="ifRoom"/>
+
 </menu>

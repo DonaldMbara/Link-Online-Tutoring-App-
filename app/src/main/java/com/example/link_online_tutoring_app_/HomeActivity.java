@@ -109,10 +109,7 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(HomeActivity.this, PostsActivity.class));
                         finish();
                         break;
-                    case R.id.calendar:
-                        startActivity(new Intent(HomeActivity.this, CalendarActvity.class));
-                        finish();
-                        break;
+
                     case R.id.settings:
                         startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         finish();

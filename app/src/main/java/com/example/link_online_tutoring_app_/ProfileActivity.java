@@ -3,6 +3,7 @@ package com.example.link_online_tutoring_app_;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -61,7 +62,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.pp_schedule:  //in case someone clicks schedule
                 //TODO view and modify calender
-                Toast.makeText(getApplicationContext(),"todo go to calender",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"This is your calendar",Toast.LENGTH_SHORT).show();
+                ProfileActivity.this.startActivity(new Intent(ProfileActivity.this,CalendarActvity.class));
+                finish();
         }
     }
 

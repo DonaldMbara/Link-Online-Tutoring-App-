@@ -34,8 +34,6 @@ public class CalendarActvity extends AppCompatActivity {
                 theYear = String.valueOf(year);
 
 
-
-
             }
         });
     }
