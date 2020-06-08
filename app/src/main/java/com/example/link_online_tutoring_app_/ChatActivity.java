@@ -59,7 +59,7 @@ public class ChatActivity extends AppCompatActivity {
     static String YellowLight = "OFF";
     Button btnSend_, btnReload_;
     TextView receiverName;
-    EditText messageET;
+    static EditText messageET;
     static String receiver, receiverStudNum, senderStudNum;
     static String message, sender;
     static ArrayList<Chat>chats;
@@ -106,9 +106,9 @@ public class ChatActivity extends AppCompatActivity {
             other_user_id = intent.getIntExtra("receiver_id", -1);
         }
         else{
-            receiver = "Murphy";
-            other_user_id= 90;
-            messageET.setText("Some Answer Modified", TextView.BufferType.EDITABLE);
+            receiver = "some letters";
+            other_user_id= 1122;
+//            messageET.setText("Sending answer to someone 2.0", TextView.BufferType.EDITABLE);
         }
 //        if(YellowLight == "OFF"){
 //            receiver = "Murphy";
@@ -153,7 +153,7 @@ public class ChatActivity extends AppCompatActivity {
         }
         else{
             senderStudNum = "90";
-            receiverStudNum = "90";
+            receiverStudNum = "1122";
         }
 //        if(YellowLight == "OFF"){
 //            senderStudNum = "90";
@@ -404,7 +404,9 @@ class FetchChat extends AsyncTask<Void,Void,String> {
 
     @Override
     protected void onPostExecute(String s) {
+
         if(s.equals("posts fetched")){
+            Log.d("Skey", s);
             //TODO do something after fetching posts
             //ViewPosts.postAdapter= new PostAdapter(context);
             recyclerView.setAdapter(new ChatsAdapter(context));
