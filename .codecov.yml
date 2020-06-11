@@ -18,7 +18,8 @@ coverage:
         threshold: 1%		# allow 1% coverage variance
 
 comment:
+layout: diff, files 
 
 ignore:
-  -"Adapter.java"
-  -"ChatActivity.java"
+  -Adapter.java
+  -ChatActivity.java
