@@ -22,4 +22,4 @@ layout: diff, files
 
 ignore:
   -Adapter.java
-  -ChatActivity.java
+  -*/ChatActivity.java
