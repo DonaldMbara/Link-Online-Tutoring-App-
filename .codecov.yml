@@ -23,3 +23,4 @@ layout: diff, files
 ignore:
   -Adapter.java
   -*/ChatActivity.java
+  -*/app/src/main/java 
