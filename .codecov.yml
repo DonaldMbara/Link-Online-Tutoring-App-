@@ -4,7 +4,7 @@ codecov:
     after_n_builds: 2		# user and kernel
 
 coverage:
-  precision: 0			# 0 decimals of precision
+  precision: 1			# 0 decimals of precision
   round: nearest        # Round to nearest precision point
   range: "50...90"		# red -> yellow -> green
 
@@ -23,4 +23,5 @@ layout: diff, files
 ignore:
   -Adapter.java
   -*/ChatActivity.java
-  -*/app/src/main/java 
+  -*/app/src/main/java
+  
