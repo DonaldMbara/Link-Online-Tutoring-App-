@@ -28,4 +28,33 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+//newly added for coveralls
 
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+gradlePlugin {
+  plugins {
+    coverallsPlugin {
+      id = 'com.github.kt3k.coveralls'
+      implementationClass = 'org.kt3k.gradle.plugin.CoverallsPlugin'
+    }
+  }
+}
+
+pluginBundle {
+  website = 'http://github.com/kt3k/coveralls-gradle-plugin/'
+  vcsUrl = 'https://github.com/kt3k/coveralls-gradle-plugin.git'
+  description = 'Send coverage data to coveralls.io'
+  tags = ['coverage', 'coveralls']
+
+  plugins {
+    coverallsPlugin {
+      displayName = 'Coveralls Gradle Plugin'
+    }
+  }
+}
