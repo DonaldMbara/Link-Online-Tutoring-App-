@@ -23,6 +23,6 @@ layout: diff, files
 ignore:
   -Adapter.java
   -*/ChatActivity.java
-  -"app/src/main/java/com/example/link_online_tutoring_app_/ChatActivity"
+  -"app/src/main/java/com/example/link_online_tutoring_app_/ChatActivity.java"
   -*/app/src/main/java
   
