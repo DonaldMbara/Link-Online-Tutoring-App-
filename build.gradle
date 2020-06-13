@@ -1,3 +1,12 @@
+plugins {
+    id "java-gradle-plugin"
+    id "com.gradle.build-scan" version "2.3"
+    id "groovy"
+    id "jacoco"
+    id "com.gradle.plugin-publish" version "0.10.1"
+    id "com.github.kt3k.coveralls" version "2.5.0"
+}
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules
 
 
@@ -28,14 +37,7 @@ allprojects {
         
     }
 }
-plugins {
-    id "java-gradle-plugin"
-    id "com.gradle.build-scan" version "2.3"
-    id "groovy"
-    id "jacoco"
-    id "com.gradle.plugin-publish" version "0.10.1"
-    id "com.github.kt3k.coveralls" version "2.5.0"
-}
+
 
 //new
 jacocoTestReport {
