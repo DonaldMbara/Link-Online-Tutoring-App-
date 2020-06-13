@@ -4,14 +4,6 @@ buildscript {
         jcenter()
         
     }
-plugins {
-    id "java-gradle-plugin"
-    id "com.gradle.build-scan" version "2.3"
-    id "groovy"
-    id "jacoco"
-    id "com.gradle.plugin-publish" version "0.10.1"
-    id "com.github.kt3k.coveralls" version "2.5.0"
-}
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules
 
@@ -41,33 +33,7 @@ allprojects {
 
 
 //new
-jacocoTestReport {
-    reports {
-        xml.enabled true
-    }
-}
-
-gradlePlugin {
-  plugins {
-    coverallsPlugin {
-      id = 'com.github.kt3k.coveralls'
-      implementationClass = 'org.kt3k.gradle.plugin.CoverallsPlugin'
-    }
-  }
-}
-
-pluginBundle {
-  website = 'http://github.com/kt3k/coveralls-gradle-plugin/'
-  vcsUrl = 'https://github.com/kt3k/coveralls-gradle-plugin.git'
-  description = 'Send coverage data to coveralls.io'
-  tags = ['coverage', 'coveralls']
-
-  plugins {
-    coverallsPlugin {
-      displayName = 'Coveralls Gradle Plugin'
-    }
-  }
-}
+    
 
 
 //old
