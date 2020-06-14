@@ -73,6 +73,15 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+//        if(YellowLight == "OFF"){
+//            my_id = 90;
+//            sender = "90";
+//        }
+
+        //here
+        receiverName = findViewById(R.id.receiverName);
+        btnReload_ = findViewById(R.id.btnReload);
+
         if(YellowLight == "ON") {
             SharedPreferences sharedPreferences1 = LoginActivity.context.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE);
             String user_id = sharedPreferences1.getString(RequestHandler.Unkey, "-1");
@@ -83,14 +92,8 @@ public class ChatActivity extends AppCompatActivity {
             my_id = 90;
             sender = "Murphy";
         }
+        //here
 
-//        if(YellowLight == "OFF"){
-//            my_id = 90;
-//            sender = "90";
-//        }
-
-        receiverName = findViewById(R.id.receiverName);
-        btnReload_ = findViewById(R.id.btnReload);
         btnReload_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
