@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
@@ -19,8 +20,8 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 
 @RunWith(AndroidJUnit4.class)
 public class ChatActivityTest {
-    @Rule
-    public ActivityTestRule rule = new ActivityTestRule(ChatActivity.class, true, false);
+    //@Rule
+  //  public ActivityTestRule rule = new ActivityTestRule(ChatActivity.class, true, false);
     SharedPreferences.Editor PE;
     public static String SHARED_PREF_LOGIN="shared_prefs_login";
 
@@ -31,10 +32,12 @@ public class ChatActivityTest {
         PE.putString("Key", "90");
         PE.apply();
         PE.commit();
-        rule.launchActivity(new Intent());
+
+        ActivityScenario<ChatActivity> sn = ActivityScenario.launch(ChatActivity.class);
         onView(withId(R.id.btnReload)).perform(click());
 
     }
+
 
 
 
