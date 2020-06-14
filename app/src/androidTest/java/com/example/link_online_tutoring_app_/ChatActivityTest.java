@@ -41,11 +41,6 @@ public class ChatActivityTest {
     public  void chats2(){
         int i = 91;
         String name = "Murphy";
-        Context cx = getInstrumentation().getTargetContext();
-        PE = cx.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE).edit();
-        PE.putString("Key", "90");
-        PE.apply();
-        PE.commit();
         Intent id = new Intent();
         id.putExtra("receiver",name);
         id.putExtra("receiver_id",i );
@@ -59,11 +54,6 @@ public class ChatActivityTest {
     public  void sendingText(){
         int i = 91;
         String name = "Murphy";
-        Context cx = getInstrumentation().getTargetContext();
-        PE = cx.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE).edit();
-        PE.putString("Key", "90");
-        PE.apply();
-        PE.commit();
         Intent id = new Intent();
         id.putExtra("receiver",name);
         id.putExtra("receiver_id",i );
