@@ -36,52 +36,6 @@ public class ChatActivityTest {
 
     }
 
-    @Test
-    public void onCreate7() {
-    }
-
-    @Test
-    public  void chats2(){
-        Context cx = getInstrumentation().getTargetContext();
-        PE = cx.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE).edit();
-        PE.putString("Key", "90");
-        PE.apply();
-        PE.commit();
-        int i = 91;
-        String name = "Murphy";
-        Intent id = new Intent();
-        id.putExtra("receiver",name);
-        id.putExtra("receiver_id",i );
-        rule.launchActivity(id);
-        onView(withId(R.id.btnReload)).perform(click());
-
-
-    }
-
-    @Test
-    public void onCreate2() {
-    }
-
-    @Test
-    public  void sendingText(){
-        Context cx = getInstrumentation().getTargetContext();
-        PE = cx.getSharedPreferences(LoginActivity.SHARED_PREF_LOGIN, Context.MODE_PRIVATE).edit();
-        PE.putString("Key", "90");
-        PE.apply();
-        PE.commit();
-        int i = 91;
-        String name = "Murphy";
-        Intent id = new Intent();
-        id.putExtra("receiver",name);
-        id.putExtra("receiver_id",i );
-        rule.launchActivity(id);
-        onView(withId(R.id.messageEText)).perform(typeText("hey budyy"));
-        onView(withId(R.id.btnSend)).perform(click());
-        onView(withId(R.id.btnReload)).perform(click());
-
-
-    }
-
 
 
 
