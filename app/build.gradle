@@ -66,23 +66,13 @@ subprojects {
 task jacocoRootReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
     dependsOn = subprojects.test
     sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories =  files(subprojects.sourceSets.main.output)
+    classDirectories =  files(subprojects.sourceSets.main.output,excludes: 'Adapter.java', 'Messages.java', 'RequestHandler.java' )
     executionData = files(subprojects.jacocoTestReport.executionData)
     reports {
         html.enabled = true
         xml.enabled = true
         csv.enabled = false
-    }
-     afterEvaluate {
-        classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it,
-                    exclude: ['Adapter.java',
-                              'Messages.java',
-                              'RequestHandler.java'])
-        })
-    }
-    
-    
+    }    
 }
 
 tasks.coveralls {
