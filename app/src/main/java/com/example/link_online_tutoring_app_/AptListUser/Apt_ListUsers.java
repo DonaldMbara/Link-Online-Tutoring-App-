@@ -27,15 +27,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import managers.AsyncHTTP;
 
 public class Apt_ListUsers extends AppCompatActivity{
     RecyclerView rv;
     ListUsers_Adapter lsa;
+    static String ss = "Default";
+    static String Blue = "OFF";
     String name;
     ArrayList<Name_Model> models = new ArrayList<>();
     Button Events_btn;
+    Map<String, String> map = new HashMap<>();
+    static  ArrayList<Map> myList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
@@ -43,10 +49,13 @@ public class Apt_ListUsers extends AppCompatActivity{
         setContentView(R.layout.apt_layout);
         Events_btn = findViewById(R.id.schedule_btn);
 
+
+
 //        lsa = new ListUsers_Adapter(this, getTheList());
         ContentValues cv = new ContentValues();
         getTheList(cv);
         rv.setAdapter(lsa);
+
 
     }
 
@@ -74,6 +83,7 @@ public class Apt_ListUsers extends AppCompatActivity{
                         md = new Name_Model();
 
                         name = ob.getString("Username");
+                        map.put(ob.getString("Username"), ob.getString("StudentNo"));
 
                         md.setName(name);
                         mds.add(md);
@@ -118,10 +128,10 @@ public class Apt_ListUsers extends AppCompatActivity{
         finish();
     }
 
-    public void OnCLickEvents(View view){
-        Intent it = new Intent();
-        Apt_ListUsers.this.startActivity(new Intent(Apt_ListUsers.this, ScheduleActivity.class));
-        finish();
-    }
-
+//    public void OnCLickEvents(View view){
+//        Intent it = new Intent(Apt_ListUsers.this, ScheduleActivity.class);
+//        Log.d("Dog", ss );
+//        Apt_ListUsers.this.startActivity(it);
+//        finish();
+//    }
 }

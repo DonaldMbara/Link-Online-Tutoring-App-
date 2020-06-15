@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.link_online_tutoring_app_.R;
 
 public class MyNameHolder extends RecyclerView.ViewHolder {
-    TextView Nameheld;
+    static TextView Nameheld;
     Button Schedule_button;
 //    onNameListener ONL;
     public MyNameHolder(@NonNull View itemView) {
@@ -18,6 +18,4 @@ public class MyNameHolder extends RecyclerView.ViewHolder {
         this.Nameheld = itemView.findViewById(R.id.ShowName);
         this.Schedule_button = itemView.findViewById(R.id.schedule_btn);
     }
-
-
 }

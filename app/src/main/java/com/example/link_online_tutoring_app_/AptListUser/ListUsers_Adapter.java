@@ -1,6 +1,8 @@
 package com.example.link_online_tutoring_app_.AptListUser;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.link_online_tutoring_app_.R;
+import com.example.link_online_tutoring_app_.ScheduleActivity;
 
 import java.util.ArrayList;
 
@@ -34,8 +37,18 @@ public class ListUsers_Adapter extends RecyclerView.Adapter<MyNameHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyNameHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyNameHolder holder, final  int position) {
             holder.Nameheld.setText(models.get(position).getName());
+            holder.Schedule_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Apt_ListUsers.ss = models.get(position).getName();
+                    Intent it = new Intent(c, ScheduleActivity.class);
+                    it.putExtra("Name",  Apt_ListUsers.ss);
+                    c.startActivity(it);
+
+                }
+            });
     }
 
     @Override
