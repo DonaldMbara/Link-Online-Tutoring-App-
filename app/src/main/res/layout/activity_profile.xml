@@ -90,7 +90,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:text="specializes in ***"
+
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 

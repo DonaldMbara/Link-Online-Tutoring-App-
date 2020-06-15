@@ -82,18 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Add_post"
         app:layout_constraintVertical_bias="0.158" />
 
-    <Button
-        android:id="@+id/uploadbtn"
-        android:layout_width="165dp"
-        android:layout_height="37dp"
-        android:text="Upload Image"
-        android:background="@drawable/button_borders"
-        app:layout_constraintBottom_toTopOf="@+id/Post_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Viewer"
-        app:layout_constraintVertical_bias="0.382" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

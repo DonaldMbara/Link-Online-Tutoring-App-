@@ -54,7 +54,7 @@ public class PostsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posting_activity);
-        uploadImage = findViewById(R.id.uploadbtn);
+
 
         Post_Button = findViewById(R.id.Post_button);
         Question = findViewById(R.id.Add_post);
@@ -67,12 +67,7 @@ public class PostsActivity extends AppCompatActivity {
         String Selected_Course;
 
 
-        uploadImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //startActivity(new Intent(PostsActivity.this,ImageUploadActivity.class));
-            }
-        });
+
 
 
     }
