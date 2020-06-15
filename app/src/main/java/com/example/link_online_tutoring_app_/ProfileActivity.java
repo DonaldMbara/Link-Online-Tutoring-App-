@@ -58,7 +58,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         switch (view.getId()){
             case R.id.pp_messages: //in case someone clicks messages button
                 //TODO go to chats
-                Toast.makeText(getApplicationContext(),"todo go to messages",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"messages",Toast.LENGTH_SHORT).show();
+                ProfileActivity.this.startActivity(new Intent(ProfileActivity.this,ListAllUsers.class));
+                finish();
                 break;
             case R.id.pp_schedule:  //in case someone clicks schedule
                 //TODO view and modify calender
