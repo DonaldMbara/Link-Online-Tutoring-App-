@@ -1,0 +1,17 @@
+[01/06, 09:24] MJ: Guys, what user stories can we do this week
+[01/06, 10:37] Donald: We can do the testing...try to figure out a way to skip some lines like that tutor mentioned. The other thing is to make the app to notify user that there's no internet connection when data is not on rather than quiting
+[01/06, 10:40] Sikhanyiso: Did we finish all sprint 2 user stories cz on the final presentation they will wanna see all the user stories from sprint 1
+[01/06, 10:41] MJ: Also user profiles
+[01/06, 10:41] MJ: I don¡¯t know, I think we did
+[01/06, 10:54] Mongezi: Which sprints have incomplete user stories/ user stories with shortcuts?
+[01/06, 11:12] MJ: I don¡¯t know maybe a tutor user separation ???¡á?
+[01/06, 11:18] Donald: That we'll require us to create another table??
+[01/06, 11:18] Donald: will
+[01/06, 11:18] MJ: Maybe a column that specifies if you¡¯re a tutor or just a normal user ??
+[01/06, 11:27] Mongezi: Yeah i feel like that would also work ?
+[01/06, 11:28] Donald: Yeah.. that's much better
+[01/06, 11:34] MJ: So that means they have to specify when they register? ?
+[01/06, 12:08] Mongezi: Yeah probably
+[01/06, 12:19] Donald: Is it gonna be like this?
+[01/06, 12:21] MJ: ??? I think so
+[01/06, 12:42] Mongezi: Yeah that¡¯s cool

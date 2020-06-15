@@ -1,0 +1,7 @@
+[13/06, 11:24] Mongezi: The list of users I’m using for the calendar are the ones on chat?
+[13/06, 14:38] Mongezi: Do we have a php that fetches events?
+[13/06, 14:48] Emmanuel_: I doubt.
+[13/06, 14:57] MJ: Moer it there
+[13/06, 15:00] Mongezi: Eish my Ubuntu is not doing the things
+[13/06, 15:04] MJ: Essan I forgot 
+[13/06, 20:17] Sikhanyiso: nah this thing is chowing me

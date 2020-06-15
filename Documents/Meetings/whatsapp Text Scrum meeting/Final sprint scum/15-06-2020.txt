@@ -1,0 +1,65 @@
+[14/06, 10:47] MJ: we need some sort of sorting of messages, I noticed the order is weird
+[14/06, 11:30] Mongezi: In the chatting functionality?
+[14/06, 11:30] MJ: Yes
+[14/06, 11:31] Mongezi: Send me a message I want to see
+[14/06, 11:32] MJ: Still churching man
+[14/06, 11:34] Mongezi: Oh sorry
+[14/06, 11:41] MJ: Which username will I text?
+[14/06, 11:42] Mongezi: Imina
+[14/06, 11:43] MJ: Ayt
+[14/06, 12:45] MJ: @Mongezi can I text you on the app now ?
+[14/06, 12:49] MJ: Oh hell no
+[14/06, 12:49] MJ: Just simple send a message to a user that’s all 
+[14/06, 14:29] Mongezi: Yoh I didn’t see this and I fell asleep
+[14/06, 14:29] MJ: Cool
+[14/06, 19:29] MJ: Did we do 5 user stories this sprint?
+[14/06, 19:38] Donald: Is it even a sprint or we are just sorting out stuff?
+[14/06, 19:39] MJ: Eish if they are going to use the same rubric as a sprint I suppose
+[14/06, 19:41] Donald: yooh..
+[14/06, 19:41] MJ: Eish yae
+[14/06, 19:42] Donald: Do wits data bundles work for you guys, even using vpn?
+[14/06, 19:43] Donald: @Mulisa , how does the final presentation work?
+[14/06, 19:48] MJ: Eish, Coverage will chow us
+[14/06, 19:48] Donald: Thank you
+[14/06, 19:48] Donald: We'll try to sort that since we have circle ci... otherwise we chowed
+[14/06, 19:48] MJ: I haven’t used it
+[14/06, 19:49] MJ: We have circl ci?? Since when
+[14/06, 19:51] MJ: Eish I’ve tried testing the chat activity It just doesn’t work for me
+[14/06, 19:52] Donald: We need a way to skip some lines using circle ci since codecov was  chowing us
+[14/06, 19:53] Donald: I am chowed
+[14/06, 19:53] MJ: And also maybe deleting some extra code that doesn’t work
+[14/06, 19:53] Donald: Yea.true
+[14/06, 19:54] MJ: Eish this is a serious Issue phela
+[14/06, 22:44] MJ: @Sikhanyiso  please revert or solve the build i want to pull
+[14/06, 22:53] Sikhanyiso: Ayt
+[14/06, 23:45] Sikhanyiso: it will pass after this build,
+[14/06, 23:46] Donald: I meant coverall
+[14/06, 23:59] Donald: https://docs.codecov.io/docs/ignoring-paths
+[15/06, 00:00] Sikhanyiso: i did have that in yml file befor i deleted it, maybe i wasnt passing the path correct you can try it
+[15/06, 00:15] Sikhanyiso: can pull
+[15/06, 07:08] MJ: @Emmanuel_ can you remove that specializes in
+[15/06, 07:46] MJ: Guys we have 2 user stories 
+[15/06, 08:00] Mongezi: Ahh but Isn’t it that they want all of them?
+[15/06, 08:00] MJ: What do you mean, like all from sprint 1?
+[15/06, 08:00] Mongezi: Yeah?
+[15/06, 08:01] MJ: I really don’t know but this is what scares me
+[15/06, 08:02] Mongezi: Are they going to use the same rubric? Because we didn’t even meet with Rylan to discuss user stories as we normally do
+[15/06, 08:02] MJ: Eish ya you’re right
+[15/06, 08:17] Emmanuel_:  sure
+[15/06, 08:18] MJ: I see that we won’t have time to add that functionality 
+[15/06, 08:22] Sikhanyiso: well rubric 6.3.6 is the same as the others except that code counts 50% and the  rest all counts 10%
+[15/06, 08:22] MJ: the code ?
+[15/06, 08:26] Sikhanyiso: each
+[15/06, 08:26] Sikhanyiso: guys did you finish your activity diagram
+[15/06, 08:28] MJ: What are you saying
+[15/06, 08:28] MJ: For which activity?
+[15/06, 08:29] Mongezi: So that means we need 5 user stories?
+[15/06, 08:31] Emmanuel_: What I thought we adhered to all user requirements!
+[15/06, 08:31] Emmanuel_: *?
+[15/06, 08:31] Emmanuel_: The sorting of answers, posting questions and etc
+[15/06, 08:44] MJ: @Sikhanyiso aiii mina you confused me, what do you mean 50% code
+[15/06, 08:45] Sikhanyiso: the apps functionalities
+[15/06, 08:45] MJ: all the way from sprint 1?
+[15/06, 08:50] Sikhanyiso: Rubric
+[15/06, 08:50] Sikhanyiso: Ill send you the rubriv
+[15/06, 09:10] Sikhanyiso: i mean the app functionality, the overall project

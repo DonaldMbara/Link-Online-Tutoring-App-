@@ -1,0 +1,6 @@
+[09/06, 08:42] MJ: well with the answers i got from the net it fails because of different emulators on travis and android studio and the way the layout for chat is 
+[09/06, 10:51] Mongezi: So that means?
+[09/06, 10:52] MJ: We need a different way of testing that activity, the way I’ve been doing works only on android studio
+[09/06, 10:53] MJ: I tested other activity which worked but that chat one doesn’t budge
+[09/06, 10:57] Mongezi: How much coverage do we need for the project?
+[09/06, 10:58] MJ: Eish I don’t know, I think 80> would be nice

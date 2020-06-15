@@ -1,0 +1,34 @@
+[04/06, 13:40] Emmanuel_: How far are you guys with loose ends?
+[04/06, 15:09] MJ: Which lose ends
+[04/06, 15:46] Emmanuel_: Things to take care before final presentation
+[04/06, 15:47] MJ: Oh I’ve tested post activity and answering activity now I’m *trying* to test chat activity, I’ll code profiles a bit later and then @Mongezi will take over from me to do the show events
+[04/06, 15:49] Emmanuel_: So for the profile activity what will be needed
+[04/06, 15:49] Emmanuel_: I want to assist
+[04/06, 15:51] MJ: oh okay i think just all the user information from registration table, after receiving student number from app
+[04/06, 15:53] Sikhanyiso: Ill do viewpost again, scienceActivity,listAll users  and look at others
+[04/06, 15:54] Emmanuel_: Cool I'll do it at nighttime
+[04/06, 15:55] Emmanuel_: Anyone to assist with php and tables
+[04/06, 15:55] MJ: cool, but leave out listAll users, ive done it i just havent commited it yet
+[04/06, 15:57] MJ: @Emmanuel_ you can do the profile if you want it, ill do the phps
+[04/06, 16:03] Emmanuel_:  cool, I'll do front and backend
+[04/06, 16:04] Emmanuel_: Of Android part
+[04/06, 16:04] MJ: okay maybe you can put if where we have the calender and then that calender can be opened from the profile activity
+[04/06, 16:07] Emmanuel_: Brilliant idea.
+[04/06, 16:08] Emmanuel_: So profile will be composed of name, calendar and what
+[04/06, 16:09] MJ: maybe the other guys can throw in some ideas
+[04/06, 16:10] MJ: eish i cant think of anything else, let me look at the registration table
+[04/06, 16:33] MJ: is there anyone about to pull?, im about to push and building takes 30 minutes and if it fails were looking at an hr
+[04/06, 21:50] MJ: Eish guys, chatActivity and Viewposts are very similar (Code Style ) and thus are so difficult to test, if anyone is having any luck with them take over 
+[04/06, 21:52] Donald: Sure. How do we do that thing of skipping some parts of the code, that tutor mentioned something about skipping some lines
+[04/06, 22:01] MJ: Mulisa said that’s not possible in android 
+[04/06, 22:49] Emmanuel_: It may actually be a dialogue we put when someone click on a user
+[04/06, 22:52] MJ: I think it looks nice
+[04/06, 22:52] MJ: Eish
+[04/06, 22:56] Mongezi: 
+[04/06, 23:26] Emmanuel_: @MJ  so which inputs should I expect before I can fetch desired information.
+[04/06, 23:27] Emmanuel_:  but I think it will make testing sophisticated.
+[04/06, 23:27] Emmanuel_: Anything to add on the layout?
+[04/06, 23:32] MJ: I think the student number will do , the php is named profile.php, you can modify it if it needs modifying
+[04/06, 23:56] Emmanuel_: So does it imply that we should make textviews depicting users clickable and pass student number to Profile activity
+[04/06, 23:58] MJ: Ohhh damn we’re not on the same page
+[04/06, 23:58] MJ: All this time I was thinking of the users own profile, not other users profiles , Eish more things to do

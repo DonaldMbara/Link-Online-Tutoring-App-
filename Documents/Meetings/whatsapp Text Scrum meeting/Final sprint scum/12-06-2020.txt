@@ -1,0 +1,5 @@
+[12/06, 19:27] MJ: so are we ditching the upload picture thing?
+[12/06, 19:39] Donald: Ya hey... Let's remove it
+[12/06, 19:39] Emmanuel_: Yah, I suppose.
+[12/06, 19:40] MJ: Alright, @Sikhanyiso  how is the codecov code skipping thing going
+[12/06, 20:07] Sikhanyiso: Im still trying it

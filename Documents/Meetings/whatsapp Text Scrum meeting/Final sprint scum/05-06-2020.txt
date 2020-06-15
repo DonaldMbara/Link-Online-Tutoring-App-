@@ -1,0 +1,63 @@
+[05/06, 00:00] Emmanuel_:  so more work
+[05/06, 00:01] MJ: Not too much though 
+[05/06, 00:01] Emmanuel_: Guys how do we discriminate between tutor and tutee
+[05/06, 00:03] MJ: For that we agreed to let users specify during registration, but we haven’t discussed what features are exclusive for tutors and stuff like that, that would be complicated
+[05/06, 09:10] Sikhanyiso: Hade I left the build on fail, I ran out of data immediately after the commit
+[05/06, 09:11] MJ: It wasn’t yours that was failing it was mine
+[05/06, 09:11] MJ: You just committed while mine was still failing
+[05/06, 09:20] MJ: What’s happing, that happens when you do what?
+[05/06, 09:22] MJ: ?
+[05/06, 09:23] Emmanuel_: When you want to enter chat
+[05/06, 09:24] Emmanuel_: Mode with another user
+[05/06, 09:24] MJ: What’s your name
+[05/06, 09:24] Emmanuel_: Pinnacle of ***
+[05/06, 09:24] MJ: Mine is toasting the right things
+[05/06, 09:25] Emmanuel_:  lemme fetch then
+[05/06, 09:25] Emmanuel_: That might be the reason
+[05/06, 09:25] MJ: Oh ayt
+[05/06, 09:31] Sikhanyiso: Ohh
+[05/06, 09:32] MJ: I removed your commit files so that I can fix the build, now it’s cool you can commit them
+[05/06, 10:33] Sikhanyiso: Ayt
+[05/06, 11:28] Donald: Remove settings or put it under settings
+[05/06, 11:28] Donald: I think
+[05/06, 11:28] MJ: I was thinking if we put calendar on the profile
+[05/06, 11:28] MJ: Wait what are those two buttons saying down there I can’t see
+[05/06, 11:29] Emmanuel_: It is messages and schedule
+[05/06, 11:29] MJ: Is that profile for me as a user or it’s for another user on the platform?
+[05/06, 11:30] Emmanuel_: Nop it's yours
+[05/06, 11:30] Emmanuel_: It's not for another user
+[05/06, 11:32] MJ: Okay okay okay , then Mina I was thinking if we put it in profile, like if I press maybe schedule, it’ll open my calendar and then I’ll add an empty slot
+[05/06, 11:35] Emmanuel_: Lemme finish the profile then I'll add interface for you to add that functionality
+[05/06, 11:36] Emmanuel_: So messages Should take you to chats ?
+[05/06, 11:36] MJ: Ayt cool
+[05/06, 11:36] MJ: ya
+[05/06, 11:36] Emmanuel_: I was thinking is it wise to list all users at chats
+[05/06, 11:37] Emmanuel_: What if there 1500 of them
+[05/06, 11:37] MJ: But that’s what happens mos ? Or am I not getting you
+[05/06, 11:38] Emmanuel_:  I am saying what if there's 1500 users
+[05/06, 11:38] Emmanuel_: Do I have to scroll or we could list users that I have made contact with
+[05/06, 11:38] MJ: Eish ya that would be chaotic
+[05/06, 11:39] MJ: Oh okay now I get you
+[05/06, 11:40] MJ: can we handle that with a Select condition ? (My sql)
+[05/06, 11:40] Emmanuel_: So the tricky thing would be making initial contact
+[05/06, 11:40] Emmanuel_: I think there might be a way
+[05/06, 11:41] MJ: Eish ya 
+[05/06, 11:44] Emmanuel_: But so far we have adhered to our client's requirements, right?
+[05/06, 11:45] Donald: How about we include search
+[05/06, 11:45] MJ: Ya I think so, I guess that’s why apps yae updates 
+[05/06, 11:46] Emmanuel_: Yah man we will handle some in next version
+[05/06, 11:46] Emmanuel_: Cool we can do that
+[05/06, 11:49] Mongezi: I’m trying to catch up I’m lost, what’s wrong?
+[05/06, 12:22] MJ: you can start here
+[05/06, 13:07] MJ: We should tell rylan we lost a member
+[05/06, 13:59] Emmanuel_: I just pushed
+[05/06, 13:59] Emmanuel_: Access the profile by clicking settings
+[05/06, 13:59] Emmanuel_: I couldn't find a way to fix that
+[05/06, 14:06] MJ: yooh  you commited when @Sikhanyisos build was still failing
+[05/06, 14:11] Sikhanyiso: Lets wait fr it I was gonna restart the build
+[05/06, 14:13] MJ: if it fails just delete the test, its the same problem i mentioned with chatActivity and ViewPosts
+[05/06, 14:46] Sikhanyiso: It passes
+[05/06, 15:53] Donald: I got them hey
+[05/06, 16:41] Donald: at least there is an extension
+[05/06, 16:43] MJ: Bra, we need to sort out CGV
+[05/06, 16:44] Donald: yea bro
