@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ShowName"
-            android:onClick="OnCLickEvents"
             android:layout_alignParentRight="true"
             android:background="@color/AIblue"
             android:text="Events" />
