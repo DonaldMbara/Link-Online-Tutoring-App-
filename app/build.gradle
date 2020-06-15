@@ -73,6 +73,16 @@ task jacocoRootReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
         xml.enabled = true
         csv.enabled = false
     }
+     afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['Adapter.java',
+                              'Messages.java',
+                              'RequestHandler.java'])
+        })
+    }
+    
+    
 }
 
 tasks.coveralls {
