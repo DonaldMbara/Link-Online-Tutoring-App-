@@ -41,16 +41,37 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0'
 
 }
+
 coveralls {
-    jacocoReportPath = "${buildDir}/reports/coverage/debug/report.xml"
-    //delete the following
-    afterEvaluate {
-        classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it,
-                    exclude: ['Adapter.java',
-                              'RequestHandler.java',
-                              'Messages.java'])
-        })
+    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        testCompile 'junit:junit:4.11'
+    }
+
+    jacocoTestReport {
+        reports {
+            html.enabled = true
+            xml.enabled = true
+            csv.enabled = false
+        }
+    }
+}
+
+
+task jacocoRootReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
+    dependsOn = subprojects.test
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories =  files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
     }
 }
 
