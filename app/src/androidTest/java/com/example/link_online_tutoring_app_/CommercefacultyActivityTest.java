@@ -21,9 +21,7 @@ public class CommercefacultyActivityTest {
     public ActivityTestRule rule = new ActivityTestRule(CommerceActivity.class, true, false);
 
 
-    @Test
-    public void onCreate7() {
-    }
+
 
     @Test
     public void clickseven(){
@@ -34,9 +32,6 @@ public class CommercefacultyActivityTest {
 
 
 
-    @Test
-    public void onCreate8() {
-    }
 
     @Test
     public void clickEight(){
@@ -46,9 +41,6 @@ public class CommercefacultyActivityTest {
     }
 
 
-    @Test
-    public void onCreate9() {
-    }
 
     @Test
     public void clickNine(){
@@ -58,9 +50,6 @@ public class CommercefacultyActivityTest {
     }
 
 
-    @Test
-    public void onCreate10() {
-    }
 
 
     @Test
@@ -72,9 +61,7 @@ public class CommercefacultyActivityTest {
     }
 
 
-    @Test
-    public void onCreate11() {
-    }
+  
 
 
     @Test
