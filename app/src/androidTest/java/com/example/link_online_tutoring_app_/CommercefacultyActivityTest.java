@@ -55,7 +55,7 @@ public class CommercefacultyActivityTest {
     @Test
     public  void click1(){
         rule.launchActivity(new Intent());
-        onView(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
+      //  onView(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
 
 
     }
@@ -67,7 +67,7 @@ public class CommercefacultyActivityTest {
     @Test
     public  void click2(){
         rule.launchActivity(new Intent());
-        onView(anything()).inAdapterView(withId(R.id.listView)).atPosition(1).perform(click());
+        //onView(anything()).inAdapterView(withId(R.id.listView)).atPosition(1).perform(click());
 
 
     }
