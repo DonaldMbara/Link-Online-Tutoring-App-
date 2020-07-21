@@ -3,9 +3,7 @@ package com.example.link_online_tutoring_app_.AptListUser;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -13,14 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.link_online_tutoring_app_.Adapter;
-import com.example.link_online_tutoring_app_.Answer_Model;
-import com.example.link_online_tutoring_app_.FacultiesAcitvities.CommerceActivity;
 import com.example.link_online_tutoring_app_.HomeActivity;
-import com.example.link_online_tutoring_app_.PostsActivity;
 import com.example.link_online_tutoring_app_.R;
-import com.example.link_online_tutoring_app_.ScheduleActivity;
-import com.example.link_online_tutoring_app_.ViewAnswers;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -82,8 +74,8 @@ public class Apt_ListUsers extends AppCompatActivity{
                         final JSONObject ob = (JSONObject) arr.get(i);
                         md = new Name_Model();
 
-                        name = ob.getString("Username");
-                        map.put(ob.getString("Username"), ob.getString("StudentNo"));
+                        name = ob.getString("FirstName");
+                        map.put(ob.getString("FirstName"), ob.getString("StudentNo"));
 
                         md.setName(name);
                         mds.add(md);
